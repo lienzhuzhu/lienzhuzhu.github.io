@@ -7,10 +7,10 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Your Name / Site Title"
+title                    : "Lien Zhu"
 title_separator          : "-"
 name                     : &name "Lien Zhu"
-description              : &description "personal description"
+description              : &description "My Academic Site"
 url                      : https://lienzhuzhu.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "lienzhuzhu/lienzhuzhu.github.io"
