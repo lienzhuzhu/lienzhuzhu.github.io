@@ -15,7 +15,7 @@
 {% if page.title and page.homepage != true %}
   {% assign seo_title = page.title | append: " " | append: site.title_separator | append: " " | append: site.title %}
 {% elsif page.title and page.homepage == true %}
-  {% assign seo_title = "Lien Zhu Academic Homepage" %}
+  {% assign seo_title = "Lien Zhu - Academic Homepage" %}
 {% endif %}
 
 {% if seo_title %}
