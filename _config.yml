@@ -10,7 +10,7 @@ locale                   : "en-US"
 title                    : "Lien Zhu"
 title_separator          : "-"
 name                     : &name "Lien Zhu"
-description              : &description "My Academic Site"
+description              : &description "Lien Zhu Academic Website"
 url                      : https://lienzhuzhu.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "lienzhuzhu/lienzhuzhu.github.io"
@@ -86,35 +86,35 @@ author:
   location         : "St. Louis, MO"
   employer         :
   pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=lien+zhu"
-  googlescholar    : "http://yourfullgooglescholarurl.com"
+  # googlescholar    : "http://yourfullgooglescholarurl.com"
   email            :
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :
-  bitbucket        :
-  codepen          :
-  dribbble         :
-  flickr           :
-  facebook         :
-  foursquare       :
+  # bitbucket        :
+  # codepen          :
+  # dribbble         :
+  # flickr           :
+  # facebook         :
+  # foursquare       :
   github           : "lienzhuzhu"
-  google_plus      :
-  keybase          :
-  instagram        :
+  # google_plus      :
+  # keybase          :
+  # instagram        :
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
-  lastfm           :
+  # lastfm           :
   linkedin         : "lienzhu"
-  orcid            : "http://orcid.org/yourorcidurl"
-  pinterest        :
-  soundcloud       :
+  orcid            : "https://orcid.org/0009-0001-4496-0033"
+  # pinterest        :
+  # soundcloud       :
   stackoverflow    : # http://stackoverflow.com/users/123456/username
-  steam            :
-  tumblr           :
-  twitter          : "replacethistwitterhandle"
-  vine             :
-  weibo            :
-  xing             :
-  youtube          :
-  wikipedia        :
+  # steam            :
+  # tumblr           :
+  # twitter          : "replacethistwitterhandle"
+  # vine             :
+  # weibo            :
+  # xing             :
+  # youtube          :
+  # wikipedia        :
 
 
 # Reading Files
