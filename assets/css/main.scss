@@ -39,3 +39,60 @@
 @import "vendor/font-awesome/brands";
 @import "vendor/magnific-popup/magnific-popup";
 @import "print";
+
+
+// Blog Post formatting
+:root {
+    --logo-height: 100px
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10vw;
+    margin: 15px 0;
+}
+
+.logo {
+    height: var(--logo-height);
+}
+
+figure {
+    margin: 5vh 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.figure-img,
+.figure-caption {
+    max-width: 800px;
+}
+
+.figure-caption {
+    text-align: center;
+    line-height: 1.5rem;
+}
+
+.halves-container,
+.thirds-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.halves-container figure {
+    width: 49%;
+}
+
+.halves-container .figure-img {
+    width: 100%;
+}
+
+.thirds-container figure {
+    width: 33%;
+}
+
+.thirds-container .figure-img {
+    width: 100%;
+}
