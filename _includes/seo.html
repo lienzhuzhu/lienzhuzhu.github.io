@@ -6,8 +6,16 @@
 {% endif %}
 {% assign seo_url = seo_url | default: site.github.url %}
 
-{% if page.title %}
+<!-- Old page title that puts the title separator in between everything -->
+<!-- {% if page.title %}
   {% assign seo_title = page.title | append: " " | append: site.title_separator | append: " " | append: site.title %}
+{% endif %} -->
+
+<!-- This block make different homepage title -->
+{% if page.title and page.homepage != true %}
+  {% assign seo_title = page.title | append: " " | append: site.title_separator | append: " " | append: site.title %}
+{% elsif page.title and page.homepage == true %}
+  {% assign seo_title = "Lien Zhu Academic Homepage" %}
 {% endif %}
 
 {% if seo_title %}
