@@ -9,5 +9,12 @@ redirect_from:
   - /about.html
 ---
 
-Hi, I am Lien Zhu. 
+Hi, I am Lien Zhu. Currently, I am a Master of Engineering in Computer Science and Engineering student interested in computer security.
+
+
+# News
+
+- 2023 April 10. I defend my Master of Engineering project, "Accurate and General Hardware Performance Counting".
+- 2022 October 27. I joined the Computer Security and Privacy Lab under Professor Ning Zhang.
+- 2022 May 20. I graduated with my Bachelor of Arts degree in Biology.
 
