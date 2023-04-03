@@ -58,6 +58,10 @@
     height: var(--logo-height);
 }
 
+.smaller-logo {
+    height: calc(0.5 * var(--logo-height));
+}
+
 figure {
     margin: 5vh 0;
     display: flex;
