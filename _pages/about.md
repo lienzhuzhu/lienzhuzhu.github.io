@@ -9,5 +9,5 @@ redirect_from:
   - /about.html
 ---
 
-Hi, I am Lien Zhu. I like studying computers.  
+Hi, I am Lien Zhu. 
 

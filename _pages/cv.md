@@ -55,4 +55,4 @@ Teaching
   
 Service and leadership
 ======
-* Currently signed in to 43 different slack teams
+* Executive Board Officer for [Association of Graduate Engineering Students](https://ages.wustl.edu/officers/ "AGES")
