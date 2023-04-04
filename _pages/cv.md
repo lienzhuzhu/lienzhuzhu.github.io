@@ -27,11 +27,11 @@ Skills
 ======
 * Linux Kernel Development
   * Source code modification and Build system
-  * Out-ot-tree Module development
+  * Out-of-tree Module development
 * Software Engineering
-  * Docker
-  * AWS
   * `gdb`, Vim
+  * AWS
+  * Docker
 * Languages
   * $\LaTeX$, C, Python, Bash, x86 asm, arm asm
 
