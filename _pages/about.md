@@ -9,7 +9,7 @@ redirect_from:
   - /about.html
 ---
 
-Hi, I am Lien Zhu. Currently, I am a Master of Engineering in Computer Science and Engineering student interested in computer security.
+Hi, I am Lien Zhu. Currently, I am a Master of Engineering in Computer Science and Engineering student researching computer security.
 
 
 # News
