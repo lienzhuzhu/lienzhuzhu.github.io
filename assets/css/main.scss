@@ -100,3 +100,15 @@ figure {
 .thirds-container .figure-img {
     width: 100%;
 }
+
+
+// Portfolio items
+.portfolio-preview-img {
+    max-width: 500px;
+    max-height: 300px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    object-position: center center;
+    display: block;
+}
