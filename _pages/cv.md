@@ -16,24 +16,24 @@ Education
 
 Work experience
 ======
-* Summer 2015: Research Assistant
-  * Github University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
+* Full stack Web Developer \[at\] Sudvarg Digital Solutions
+  * Contract work done during school year
+  * Developed documentation and communication workflow for company wide efficiency 
+  * Held impactful meetings with clients to ensure products exceeded expectations
+  * PHP, WordPress, JavaScript, HTML/CSS
+  * Supervisor: Marion Sudvarg
 
-* Fall 2015: Research Assistant
-  * Github University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
-  
 Skills
 ======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+* Linux Kernel Development
+  * Source code modification and Build system
+  * Out-ot-tree Module development
+* Software Engineering
+  * Docker
+  * AWS
+  * `gdb`, Vim
+* Languages
+  * $\LaTeX$, C, Python, Bash, x86 asm, arm asm
 
 Publications
 ======
