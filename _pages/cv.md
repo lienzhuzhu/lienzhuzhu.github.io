@@ -26,14 +26,14 @@ Work experience
 Skills
 ======
 * Linux Kernel Development
-  * Source code modification and Build system
+  * Source code modification and build system
   * Out-of-tree Module development
 * Software Engineering
   * `gdb`, Vim
   * AWS
   * Docker
 * Languages
-  * $\LaTeX$, C, Python, Bash, x86 asm, arm asm
+  * $\LaTeX$, C, Python, Bash, x86 asm, arm asm, Rust
 
 Publications
 ======
