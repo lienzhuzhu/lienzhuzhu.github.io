@@ -14,7 +14,7 @@ Hi, I am Lien Zhu. Currently, I am a Master of Engineering in Computer Science a
 
 # Interests
 
-I would like to learn more embedded systems. I have seen many cool projects in the space and believe it can enhance life. However, products must be secure otherwise the quality of life improvements are short-lived, so I am also learning security.
+I would like to learn more embedded systems. I have seen many cool projects in this space and believe it can enhance life. I am particularly excited about IoT embedded work that has impact in satisfying healthcare needs at a large scale, because healthcare is too expensive. Of course, with patient-facing products there is always the risk of exposing sensitive data and so my interest in security is also piqued here, specifically with [firmware](https://ieeexplore.ieee.org/document/9152796 "firmware analysis") verification.
 
 
 # News
