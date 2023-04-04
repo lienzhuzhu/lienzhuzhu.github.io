@@ -19,7 +19,7 @@ This site is quite new. I have been immersed in the academic side of computer sc
 
 # Previous Experience
 
-I have worked a lot with [measurement](https://lienzhu.tech/year-archive "Research Blog")
+I have worked a lot with [measurement](https://lienzhu.tech/year-archive "Research Blog").
 
 
 # Interests
