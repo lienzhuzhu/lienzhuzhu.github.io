@@ -19,7 +19,7 @@ Work experience
 * Full stack Web Developer \[at\] Sudvarg Digital Solutions
   * Contract work done during school year
   * Developed documentation and communication workflow for company wide efficiency 
-  * Held impactful meetings with clients to ensure products exceeded expectations
+  * Directed impactful meetings with clients to ensure products exceeded expectations
   * PHP, WordPress, JavaScript, HTML/CSS
   * Supervisor: Marion Sudvarg
 
