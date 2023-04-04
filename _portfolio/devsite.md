@@ -10,4 +10,4 @@ src=
 collection: portfolio
 ---
 
-Visit my [development](https://lienzhu.dev) site to see miscellaneous information.
+Visit my [development](https://lienzhu.dev) site to see works in progress and miscellaneous information.
