@@ -14,17 +14,17 @@ Hi, I am Lien Zhu. Currently, I am a Master of Engineering in Computer Science a
 
 # Messages
 
-This site is quite new. I have been immersed in the academic side of computer science and appreciate would like to share what I learn. So I plan on using this site as my main homepage because of the robust capabilities for blogging and other functions of the AcademicPages template. My old homepage is now my [creative](https://lienzhu.dev "My Old Homepage") site. I am still moving things in between them and deciding what is relevant for different interested readers.
+This site is quite new. I have been immersed in the academic side of computer science and appreciate would like to share what I learn. So I plan on using this site as my main homepage because of the robust capabilities for blogging and other functions of the [AcademicPages](https://github.com/academicpages/academicpages.github.io "AcademicPages Github repo") template. My old homepage is now my [creative](https://lienzhu.dev "My Old Homepage") site. I am still moving things in between them and deciding what is relevant for different interested readers.
 
 
-# Prior Focus 
+# Prior Work
 
 I have worked a lot with [measurement](https://lienzhu.tech/year-archive "Research Blog").
 
 
 # Interests
 
-I would like to learn more embedded systems. I have seen many cool projects in this space and believe it can enhance life. I am particularly excited about IoT embedded work that has impact in satisfying healthcare needs at a large scale, because healthcare is too expensive. Of course, with patient-facing products there is always the risk of exposing sensitive data and so my interest in security is also piqued here, specifically with [firmware](https://ieeexplore.ieee.org/document/9152796 "firmware analysis") verification.
+I would like to learn more embedded systems. I have seen many cool projects in this space and believe it can enhance life. I am particularly excited about IoT embedded work that has impact in satisfying healthcare needs at a large scale, because healthcare is too expensive. Of course, with patient-facing products there is always the risk of exposing sensitive data and so my interest in security is also piqued here, specifically with [firmware](https://ieeexplore.ieee.org/document/9152796 "firmware analysis") verification. Please contact me if you would like to share your knowledge with me.
 
 
 # Life
