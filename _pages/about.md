@@ -17,7 +17,7 @@ Hi, I am Lien Zhu. Currently, I am a Master of Engineering in Computer Science a
 This site is quite new. I have been immersed in the academic side of computer science and appreciate would like to share what I learn. So I plan on using this site as my main homepage because of the robust capabilities for blogging and other functions of the AcademicPages template. My old homepage is now my [creative](https://lienzhu.dev "My Old Homepage") site. I am still moving things in between them and deciding what is relevant for different interested readers.
 
 
-# Previous Experience
+# Prior Focus 
 
 I have worked a lot with [measurement](https://lienzhu.tech/year-archive "Research Blog").
 
@@ -32,3 +32,5 @@ I would like to learn more embedded systems. I have seen many cool projects in t
 - 2023 April 10. I defend my Master of Engineering degree, "Accurate and General Hardware Performance Counting".
 - 2022 October 27. I join the [Computer Security and Privacy Lab](https://cybersecurity.seas.wustl.edu/members.html "CSPL Members") as a master's student under Professor Ning Zhang.
 - 2022 May 20. I graduate with a Bachelor of Arts degree in Biology.
+
+![McKelvey logo](/images/portfolio/mckelvey.png "Everyone dreams. Engineers do.")

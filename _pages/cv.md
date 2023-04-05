@@ -14,6 +14,7 @@ Education
 * B.A. in Biology, Washington University in St. Louis, 2022
 * M.E. in Computer Science and Engineering, McKelvey School of Engineering at Washington University, 2023 (expected)
 
+
 Work experience
 ======
 * Full stack Web Developer \[at\] Sudvarg Digital Solutions
@@ -56,3 +57,4 @@ Teaching
 Service and leadership
 ======
 * Executive Board Officer for [Association of Graduate Engineering Students](https://ages.wustl.edu/officers/ "AGES")
+
