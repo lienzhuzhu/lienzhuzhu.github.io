@@ -14,7 +14,7 @@ Hi, I am Lien Zhu. Currently, I am a Master of Engineering in Computer Science a
 
 # Messages
 
-This site is quite new. I have been immersed in the academic side of computer science and appreciate would like to share what I learn. So I plan on using this site as my main homepage because of the robust capabilities for blogging and other functions of the [AcademicPages](https://github.com/academicpages/academicpages.github.io "AcademicPages Github repo") template. My old homepage is now my [creative](https://lienzhu.dev "My Old Homepage") site. I am still moving things in between them and deciding what is relevant for different interested readers.
+This site is quite new. I have been immersed in the academic side of computer science and engineering and appreciate would like to share what I learn. So I plan on using this site as my main homepage because of the robust capabilities for blogging and other functions of the [AcademicPages](https://github.com/academicpages/academicpages.github.io "AcademicPages Github repo") template. My old homepage is now my [creative](https://lienzhu.dev "My Old Homepage") site. I am still moving things in between them and deciding what is relevant for different interested readers.
 
 
 # Prior Work
