@@ -24,7 +24,7 @@ I have worked a lot with [measurement](https://lienzhu.tech/year-archive "Resear
 
 # Interests
 
-I would like to learn more embedded systems. I have seen many cool projects in this space and believe it can enhance life. I am particularly excited about IoT embedded systems with impact in solving healthcare problems at a large scale, because healthcare is too expensive. Of course, with patient-facing products there is always the risk of exposing sensitive data and so my interest in security is also piqued here, specifically with [firmware](https://ieeexplore.ieee.org/document/9152796 "firmware analysis") verification. Please contact me if you would like to share your knowledge with me.
+I would like to learn more embedded systems. I have seen many cool projects in this space and believe it can enhance life. I am particularly excited about IoT embedded systems with impact in solving healthcare problems at a large scale, because healthcare is too expensive. Of course, with patient-facing products there is always the risk of exposing sensitive data and so my interest in [security](https://ieeexplore.ieee.org/abstract/document/8114479 "security in healthcare iot") is also piqued here, specifically with [firmware](https://ieeexplore.ieee.org/document/9152796 "firmware analysis") verification. Please contact me if you would like to share your knowledge with me.
 
 
 # Life
