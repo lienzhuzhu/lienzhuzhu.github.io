@@ -10,8 +10,8 @@ tags:
 NGINX and Apache showdown.
 
 <div class="logo-container">
-    <img src="/images/2022-07-15-blog-post-2/apache.png" alt="apache logo" class="logo">
-    <img src="/images/2022-07-15-blog-post-2/nginx.png" alt="nginx logo" class="smaller-logo">
+    <img src="/images/2022-07-15-nginx-apache/apache.png" alt="apache logo" class="logo">
+    <img src="/images/2022-07-15-nginx-apache/nginx.png" alt="nginx logo" class="smaller-logo">
 </div>
 
 
@@ -35,14 +35,14 @@ Nginx was faster than Apache in serving static content but Apache handled dynami
 
 <div class="halves-container">
     <figure>
-        <img src="/images/2022-07-15-blog-post-2/requests.png" alt="graph" class="figure-img">
+        <img src="/images/2022-07-15-nginx-apache/requests.png" alt="graph" class="figure-img">
         <figcaption class="figure-caption">
             Figure 1a. Requests per second when Apache and Nginx serve three file types. Time 
             per request was measured across all concurrent requests.
         </figcaption>
     </figure>
     <figure>
-        <img src="/images/2022-07-15-blog-post-2/time.png" alt="graph" class="figure-img">
+        <img src="/images/2022-07-15-nginx-apache/time.png" alt="graph" class="figure-img">
         <figcaption class="figure-caption">
             Figure 1b. Time per request for Apache and Nginx to serve three file types. Time 
             per request was measured across all concurrent requests.
@@ -54,19 +54,19 @@ To visualize the passage of time as the concurrent requests were fulfilled, GNUP
 
 <div class="thirds-container">
     <figure>
-        <img src="/images/2022-07-15-blog-post-2/html.png" alt="graph" class="figure-img">
+        <img src="/images/2022-07-15-nginx-apache/html.png" alt="graph" class="figure-img">
         <figcaption class="figure-caption">
             Figure 2a. Time passed as Apache and Nginx serve concurrent requests of an HTML page.
         </figcaption>
     </figure>
     <figure>
-        <img src="/images/2022-07-15-blog-post-2/php.png" alt="graph" class="figure-img">
+        <img src="/images/2022-07-15-nginx-apache/php.png" alt="graph" class="figure-img">
         <figcaption class="figure-caption">
             Figure 2b. Time passed as Apache and Nginx handle concurrent requests of a PHP script.
         </figcaption>
     </figure>
     <figure>
-        <img src="/images/2022-07-15-blog-post-2/jpg.png" alt="graph" class="figure-img">
+        <img src="/images/2022-07-15-nginx-apache/jpg.png" alt="graph" class="figure-img">
         <figcaption class="figure-caption">
             Figure 2c. Time passed as Apache and Nginx serve concurrent requests of a JPG file.
         </figcaption>
