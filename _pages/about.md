@@ -9,22 +9,22 @@ redirect_from:
   - /about.html
 ---
 
-Hi, I am Lien Zhu. Currently, I am a Master of Engineering in Computer Science and Engineering student researching computer security, specifically systems and software security.
+Hi, I am Lien Zhu. Currently, I am a Master of Engineering in Computer Science and Engineering student interested in security.
 
 
 # Messages
 
-This site is quite new. I have been immersed in the academic side of computer science and engineering and appreciate the culture of sharing knowledge. I would also like to share what I learn. So I plan on using this site as my main homepage because of the robust capabilities for blogging and other functions of the [AcademicPages](https://github.com/academicpages/academicpages.github.io "AcademicPages Github repo") template. My old homepage is now my [creative](https://lienzhu.dev "My Old Homepage") site. I am still moving things in between them and deciding what is relevant for different interested readers.
+I have spent much time this year in the academic side of computer science and engineering and have come to appreciate the culture of sharing knowledge. I plan on using this site as my main homepage because of the robust capabilities for blogging and other functions of the [AcademicPages](https://github.com/academicpages/academicpages.github.io "AcademicPages Github repo") template that will help me share what I learn. My old homepage is now my [development](https://lienzhu.dev "My Old Homepage") site. I am still moving things in between them and deciding what is relevant for different interested readers. I think I will showcase projects in development at that domain and use this web site to discuss their design and construction.
 
 
 # What I do in 1 Sentence
 
-I am working a lot with [performance monitoring](https://lienzhu.tech/year-archive "Research Blog").
+I have been working a lot with [performance monitoring](https://lienzhu.tech/year-archive "Research Blog").
 
 
 # Interests
 
-I would like to learn more about embedded systems. I have seen many cool projects in this space and believe it can enhance life. I am particularly excited about IoT embedded systems with impact in solving healthcare problems at a large scale, because healthcare is too expensive. Of course, with patient-facing products there is always the risk of exposing sensitive data and so my interest in [security](https://ieeexplore.ieee.org/abstract/document/8114479 "security in healthcare iot") is also piqued here, with one area I have become aware of being [firmware](https://ieeexplore.ieee.org/document/9152796 "firmware analysis") verification. Please contact me if you would like to share your knowledge with me and I will hope to share what I know with you.
+I would like to learn more about embedded, networking, and operating systems. Please feel free to give me pointers.
 
 
 # Life
