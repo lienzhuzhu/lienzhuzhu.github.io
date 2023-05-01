@@ -1,7 +1,7 @@
 ---
-title: "Exploring Vulnerabilities in TCP. Part 1: Resetting a TCP connection."
-date: 2023-04-24
-permalink: /posts/2023/04/tcp/reset
+title: "Exploring Vulnerabilities in TCP. Part 2: Hijacking a TCP connection."
+date: 2023-04-30
+permalink: /posts/2023/04/tcp/hijack
 tags:
   - network
   - security
