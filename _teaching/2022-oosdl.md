@@ -1,5 +1,5 @@
 ---
-title: "Engineering Teaching Assistant"
+title: "Engineering Teaching Assistant - Object Oriented Software Development"
 collection: teaching
 type: "Undergraduate Course"
 permalink: /teaching/2022-oosdl
