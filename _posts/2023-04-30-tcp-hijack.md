@@ -32,9 +32,9 @@ The set up is the same as the [previous post](/posts/2023/04/tcp/reset).
 
 Following these steps will hijack a TCP connection between User 1 as the client and User 2 as the server. We will have the server execute an arbitrary command on our behalf.
 
-I first use `telnet` to connect from User 1 to User 2.
+First, I open Wireshark and monitor the LAN interface. I select the bridge interface starting with "br-". The characters following may change if you stop and start the containers in a separate occurrence.
 
-Then, I open Wireshark and monitor the LAN interface. I select the bridge interface starting with "br-". The characters following may change if you stop and start the containers in a separate occurrence.
+Then, I use `telnet` to connect from User 1 to User 2.
 
 <figure>
   <img src="/images/2023-04-30-tcp-hijacking/wireshark-init.png" alt="Wireshark Init Page">
@@ -102,11 +102,11 @@ if __name__ == "__main__":
 	spoof_hijack_packet(args.src_port, args.seq, args.ack)
 ```
 
-For convenience, I designed the program to take the source port number, sequence number, and acknowledgement numbers as arguments. I invoke it as follows with the data gathered from Wireshark.
+For convenience, I designed the program to take the source port number, sequence number, and acknowledgement number as arguments. I invoke it as follows with the data gathered from Wireshark.
 
 <figure>
   <img src="/images/2023-04-30-tcp-hijacking/python-attack.png" alt="Program invocation">
-  <figcaption>Running the attack program with arguments for source port and sequence number.</figcaption>
+  <figcaption>Running the attack program with arguments for source port, sequence, and acknowledgement numbers.</figcaption>
 </figure>
 
 
@@ -125,11 +125,6 @@ Which we can verify matches User 2's hostname.
 </figure>
 
 If you were to go back to the `telnet` connection, we see that the connection no longer takes input. This is because the machines have detected the funny business from our spoofed packet.
-
-<figure>
-  <img src="/images/2023-04-26-tcp-reset/reset-connection.png" alt="Broken telnet connection">
-  <figcaption>The telnet connection is reset.</figcaption>
-</figure>
 
 
 # That's it!
