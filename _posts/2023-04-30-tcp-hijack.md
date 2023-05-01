@@ -67,6 +67,8 @@ In order to see the output of the command, we will set up a TCP server using `ne
 </figure>
 
 
+# Running the exploit
+
 The following code will send our hijack packet:
 
 ```python
