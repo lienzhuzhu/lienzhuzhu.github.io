@@ -10,37 +10,25 @@ tags:
   - netcat
 ---
 
-TCP is one of the core protocols of the internet. This post is the first of a series where we will explore the security vulnerabilities that exist in TCP.
+We hijack a TCP connection.
 
 
-### Updated: April 30, 2023
+### _Updated: May 1, 2023_
 
 
 # Motivation
 
-TCP is a critical protocol at the fourth layer of the OSI model of the network stack, the network layer, yet it has some vulnerabilities. We will reset, hijack, and obtain a reverse shell from a `telnet` connection between two unsuspecting users to demonstrate the vulnerabilities.
+In the first part of this series, we conducted a TCP Reset attack on a `telnet` connection between two users on the same LAN as a malicious actor.
 
-In the first part of this series, we will conduct a TCP Reset attack on the `telnet` connection.
+In this second installment, we will hijack the `telnet` connection and execute an arbitrary command.
 
 
 # Container Environment
 
-There is some set up for this experiment. I am using the SEED Security Lab Ubuntu 20.04 virtual machine. Please visit [SEED Security Labs](https://seedsecuritylabs.org/) for instructions. 
-
-We will use the Docker compose file from the [TCP/ IP Attack Lab](https://seedsecuritylabs.org/Labs_20.04/Networking/TCP_Attacks/). You'll want to unzip the Labsetup folder.
-
-We will use several Docker containers to simulate all the involved machines. In this lab we will assume the attacker is on the same LAN as the victim and all other machines involved.
-
-| Machine | IP Address | Notes |
-| -------- | -------- | -------- |
-| User 1 | 10.9.0.6 | `telnet` Client |
-| User 2 | 10.9.0.7 | `telnet` Server |
-| Attacker | 10.9.0.1 | Will eventually hijack the `telnet` connection |
-
-There will also be a container that represents a server but we will ignore it for these exercises.
+The set up is the same as the [previous post](/posts/2023/04/tcp/reset).
 
  
-# Resetting a telnet Connection
+# Hijacking a telnet Connection
 
 For this demonstration, I will show how an attacker on the same LAN as two machines that have an existing telnet connection can disrupt the connection by spoofing a properly constructed packet.
 
