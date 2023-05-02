@@ -19,7 +19,7 @@ I have spent much time this year in the academic side of computer science and en
 
 # What I do in 1 Sentence
 
-I have been working a lot with [performance monitoring](https://lienzhu.tech/research "Research Blog").
+I have been working a lot with [performance monitoring](https://lienzhu.tech/articles "Research Blog").
 
 
 # Interests
