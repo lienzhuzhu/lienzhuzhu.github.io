@@ -34,4 +34,3 @@ I would like to learn more about embedded, networking, and operating systems. Pl
 # Messages
 
 I have spent much time this year in the academic side of computer science and engineering and have come to appreciate the culture of sharing knowledge. I plan on using this site as my main homepage because of the robust capabilities for blogging and other functions of the [AcademicPages](https://github.com/academicpages/academicpages.github.io "AcademicPages Github repo") template that will help me share what I learn. My old homepage is now my [development](https://lienzhu.dev "My Old Homepage") site. I am still moving things in between them and deciding what is relevant for different interested readers. I think I will showcase projects in development at that domain and use this web site to discuss their design and construction.
-
