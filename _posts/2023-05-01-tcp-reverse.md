@@ -14,7 +14,7 @@ tags:
 We hijack a TCP connection to give us a reverse shell.
 
 
-### _Updated: May 3, 2023_
+### _Updated: May 7, 2023_
 
 
 # Motivation
@@ -26,7 +26,7 @@ In the third and final installment, we will go a step further to execute not an 
 
 # Container Environment
 
-The set up can be found in the [overview post](/posts/2023/04/tcp/reset).
+The set up can be found in the [overview post](/posts/2023/05/tcp).
 
  
 # Hijacking a telnet Connection to Obtain a Reverse Shell

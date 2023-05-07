@@ -13,9 +13,6 @@ tags:
 We hijack a TCP connection.
 
 
-### _Updated: May 1, 2023_
-
-
 # Motivation
 
 In the first part of this series, we conducted a TCP Reset attack on a `telnet` connection between two users on the same LAN as a malicious actor.
@@ -25,7 +22,7 @@ In this second installment, we will hijack the `telnet` connection and execute a
 
 # Container Environment
 
-The set up is the same as the [previous post](/posts/2023/04/tcp/reset).
+The set up is the same as the [previous post](/posts/2023/05/tcp).
 
  
 # Hijacking a telnet Connection
@@ -132,3 +129,6 @@ If you were to go back to the `telnet` connection, we see that the connection no
 We explored the TCP protocol in greater depth, hijacking a TCP connection between two users on the same LAN as the attacker and executing an arbitrary command.
 
 In the final installment of this series, we will go a step further and execute a reverse shell using the TCP hijacking technique presented here.
+
+
+### _Updated: May 7, 2023_
