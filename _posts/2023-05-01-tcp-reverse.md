@@ -13,18 +13,15 @@ tags:
 
 We hijack a TCP connection to give us a reverse shell.
 
-
-### _Updated: May 7, 2023_
-
-
-# Motivation
-
 In the second part of this series, we conducted a TCP hijack attack on a `telnet` connection between two users on the same LAN as a malicious actor.
 
 In the third and final installment, we will go a step further to execute not an arbitrary command, but a reverse shell, a powerful technique that is commonly used in system exploits.
 
 
-# Container Environment
+### _Updated: May 7, 2023_
+
+
+# Setup
 
 The set up can be found in the [overview post](/posts/2023/05/tcp).
 
