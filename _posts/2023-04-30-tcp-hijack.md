@@ -17,9 +17,6 @@ In the first part of this series, we conducted a TCP Reset attack on a `telnet` 
 In this second installment, we will hijack the `telnet` connection and execute an arbitrary command.
 
 
-### _Updated: May 7, 2023_
-
-
 # Setup
 
 The set up is the same as the [previous post](/posts/2023/05/tcp).
@@ -131,4 +128,4 @@ We explored the TCP protocol in greater depth, hijacking a TCP connection betwee
 In the final installment of this series, we will go a step further and execute a reverse shell using the TCP hijacking technique presented here.
 
 
-### _Updated: May 7, 2023_
+### _Updated: May 8, 2023_

@@ -18,9 +18,6 @@ In the second part of this series, we conducted a TCP hijack attack on a `telnet
 In the third and final installment, we will go a step further to execute not an arbitrary command, but a reverse shell, a powerful technique that is commonly used in system exploits.
 
 
-### _Updated: May 7, 2023_
-
-
 # Setup
 
 The set up can be found in the [overview post](/posts/2023/05/tcp).
@@ -131,3 +128,6 @@ If you were to go back to the `telnet` connection, we see that the connection no
 # That's it!
 
 In this series we explored TCP RST and hijacking attacks and extended the hijacking attack to obtain a reverse shell.
+
+
+### _Updated: May 8, 2023_
