@@ -22,7 +22,7 @@ In this second installment, we will hijack the `telnet` connection and execute a
 The set up is the same as the [previous post](/posts/2023/05/tcp).
 
  
-# Hijacking a telnet Connection
+# Hijacking a `telnet` Connection
 
 Following these steps will hijack a TCP connection between User 1 as the client and User 2 as the server. We will have the server execute an arbitrary command on our behalf.
 
@@ -51,7 +51,7 @@ The last TCP packet sent from User 1 to User 2 will inform the source port, sequ
 </figure>
 
 
-## Brief: netcat
+## Brief: `netcat`
 
 In order to see the output of the command, we will set up a TCP server using `netcat`. 
 

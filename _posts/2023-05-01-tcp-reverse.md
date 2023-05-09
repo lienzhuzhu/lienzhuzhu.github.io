@@ -23,7 +23,7 @@ In the third and final installment, we will go a step further to execute not an 
 The set up can be found in the [overview post](/posts/2023/05/tcp).
 
  
-# Hijacking a telnet Connection to Obtain a Reverse Shell
+# Hijacking a `telnet` Connection to Obtain a Reverse Shell
 
 Following these steps will hijack a TCP connection between User 1 as the client and User 2 as the server. We will have the server give us a shell in a technique known as a reverse shell exploit.
 
@@ -53,7 +53,7 @@ The last TCP packet sent from User 1 to User 2 will inform the source port, sequ
 </figure>
 
 
-# Using netcat to establish a TCP server
+# Using `netcat` to establish a TCP server
 
 In order to see the output of the command, we will set up a TCP server using `netcat`. 
 
