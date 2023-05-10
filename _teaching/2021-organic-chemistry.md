@@ -10,11 +10,10 @@ location: "St. Louis, USA"
 
 CHEM 261 Organic Chemistry 1. Fall 2020, Fall 2021
 
-Heading 1
-======
+Achievements
+===
+- Developed and individually taught small group workshop sessions with approximately a dozen students in attendance per session
 
-Heading 2
-======
-
-Heading 3
-======
+Context
+===
+Recruited to assist in teaching fundamental undergraduate course due to high performance as an undergraduate student.

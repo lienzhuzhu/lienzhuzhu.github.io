@@ -12,14 +12,14 @@ redirect_from:
 Hi, I am Lien Zhu. Currently, I am a Master of Engineering in Computer Science and Engineering student interested in security.
 
 
-# What I do in 1 Sentence
+# Experience
 
-I have been working a lot with [performance monitoring](/files/hpc.pdf).
+- I have worked with [performance monitoring](/files/hpc.pdf).
 
 
 # Interests
 
-I would like to learn more about embedded, networking, and operating systems. Please feel free to send a message if you would like to [collaborate](mailto:lienzhucs+collab@gmail.com).
+I would like to learn more about embedded, network security, and operating systems. Please feel free to send a message through email at lienzhucs \[at\] gmail \[dot\] com if you would like to collaborate or give me some pointers.
 
 
 # Life

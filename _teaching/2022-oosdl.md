@@ -12,10 +12,15 @@ CSE 332 Object Oriented Software Development Laboratory. Fall 2022
 
 Achievements
 ======
-- Motivated driven students to participate in hackathon.
+- Developed Make system for established course assignments that eliminated dependency on IDE, reduced student frustration, and streamlined course
+- Clarified concepts through individual guidance during office hours
+- Provided remote assistance through Piazza monitoring
+- Motivated driven students to participate in hackathon
 
 Description
 ======
+- Taught object oriented design using C++
 
-Heading 3
+Context
 ======
+Recruited to assist in teaching fundamental undergraduate course as a master's student due to high performance as an undergraduate student.
