@@ -12,29 +12,28 @@ redirect_from:
 Education
 ======
 * B.A. in Biology, Washington University in St. Louis, 2022
-* M.E. in Computer Science and Engineering, McKelvey School of Engineering at Washington University, 2023 (expected)
+* M.E. in Computer Science and Engineering, McKelvey School of Engineering at Washington University, 2023 (anticipated)
 
 
 Work experience
 ======
-* Full stack Web Developer \[at\] Sudvarg Digital Solutions
+* Full-stack Web Developer \[at\] Sudvarg Digital Solutions
   * Contract work done during school year
   * Developed documentation and communication workflow for company wide efficiency 
   * Directed impactful meetings with clients to ensure products exceeded expectations
   * PHP, WordPress, JavaScript, HTML/CSS
-  * Supervisor: Marion Sudvarg
+  * Supervisor: [Marion Sudvarg](https://sudvarg.com "Marion's page")
 
-Skills
+Skills _(greatest to least)_
 ======
 * Linux Kernel Development
   * Source code modification and build system
   * Out-of-tree Module development
 * Software Engineering
-  * `gdb`, Vim
-  * AWS
-  * Docker
+  * `gdb`, Vim, `Make`
+  * AWS, Docker
 * Languages
-  * $\LaTeX$, C, Python, Bash, x86 asm, arm asm, Rust
+  * Python, C, Bash, $\LaTeX$
 
 Publications
 ======
