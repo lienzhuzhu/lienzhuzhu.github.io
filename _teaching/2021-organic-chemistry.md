@@ -1,5 +1,5 @@
 ---
-title: "Organic Chemistry Teaching Assistant"
+title: "Chemistry Teaching Assistant - Organic Chemistry 1"
 collection: teaching
 type: "Undergraduate Course"
 permalink: /teaching/2021-organic-chemistry
