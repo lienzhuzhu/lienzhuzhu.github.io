@@ -9,7 +9,7 @@ redirect_from:
   - /about.html
 ---
 
-Hi, I am Lien Zhu. Currently, I am a Master of Engineering in Computer Science and Engineering student interested in security.
+Hi, I am Lien Zhu. Currently, I am a Master of Engineering in Computer Science and Engineering student.
 
 
 # Experience
@@ -28,4 +28,4 @@ I would like to learn more about embedded, network security, and operating syste
 - 2022 October 27. I join the [Computer Security and Privacy Lab](https://cybersecurity.seas.wustl.edu/members.html "CSPL Members") as a master's student under Professor Ning Zhang.
 - 2022 May 20. I graduate with a Bachelor of Arts degree in Biology.
 
-![McKelvey logo](/images/portfolio/mckelvey.png "Everyone dreams. Engineers do.")
+![McKelvey logo](/images/mckelvey.png "Everyone dreams. Engineers do.")
