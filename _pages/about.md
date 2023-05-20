@@ -24,6 +24,7 @@ I would like to learn more about embedded, network security, and operating syste
 
 # Life
 
+- 2023 May 15. I graduated from the McKelvey School of Engineering at Washington University in St. Louis with my master's degree in computer science and engineering.
 - 2023 April 10. I successfully defended my Master of Engineering degree. [Accurate and General Hardware Performance Counting](/files/hpc.pdf "Master's Project Writeup").
 - 2022 October 27. I join the [Computer Security and Privacy Lab](https://cybersecurity.seas.wustl.edu/members.html "CSPL Members") as a master's student under Professor Ning Zhang.
 - 2022 May 20. I graduate with a Bachelor of Arts degree in Biology.
