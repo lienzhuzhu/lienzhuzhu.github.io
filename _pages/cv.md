@@ -12,7 +12,7 @@ redirect_from:
 Education
 ======
 * B.A. in Biology, Washington University in St. Louis, 2022
-* M.E. in Computer Science and Engineering, McKelvey School of Engineering at Washington University, 2023 (anticipated)
+* M.E. in Computer Science and Engineering, McKelvey School of Engineering at Washington University, 2023
 
 
 Work experience
