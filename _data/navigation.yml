@@ -15,8 +15,8 @@ main:
   # - title: "Portfolio"
   #   url: /portfolio/
         
-  - title: "Blog Page"
+  - title: "Blog"
     url: https://lienzhuzhu.github.io/blog/
 
-  - title: "Development Page"
+  - title: "Exhibit"
     url: https://lienzhu.dev
