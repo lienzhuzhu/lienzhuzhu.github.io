@@ -9,7 +9,7 @@ redirect_from:
   - /about.html
 ---
 
-Hi, I am Lien Zhu.
+Hi, I am Lien Zhu. Currently, I am a software engineer at Boeing.
 
 
 # Interests
