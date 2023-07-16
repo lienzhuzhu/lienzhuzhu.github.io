@@ -14,7 +14,7 @@ Hi, I am Lien Zhu.
 
 # Interests
 
-I would like to learn more about embedded, network security, and operating systems. Please feel free to send a message through email at lienzhucs \[at\] gmail \[dot\] com if you would like to collaborate or give me some pointers.
+I would like to learn more about embedded networks and tinyML, along with the security implications. Please feel free to send a message through email at lienzhucs \[at\] gmail \[dot\] com if you would like to collaborate or give me some pointers.
 
 
 # Life
