@@ -14,6 +14,8 @@ Hi, I am Lien Zhu. Currently, I am a software engineer at Boeing.
 
 # Interests
 
+During my masters, I worked extensively in investigating questions around Operating Systems and Performance Monitoring.
+
 I would like to learn more about embedded networks and tinyML, along with the security implications. Please feel free to send a message through email at lienzhucs \[at\] gmail \[dot\] com if you would like to collaborate or give me some pointers.
 
 
