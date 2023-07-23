@@ -17,6 +17,9 @@ Education
 
 Work experience
 ======
+* Software Engineer 2 \[at\] The Boeing Company
+  * Boeing Defense, Space, and Security
+
 * Full-stack Web Developer \[at\] Sudvarg Digital Solutions
   * Contract work done during school year
   * Developed documentation and communication workflow for company wide efficiency 
