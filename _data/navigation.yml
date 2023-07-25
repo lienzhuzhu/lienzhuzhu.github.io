@@ -18,5 +18,5 @@ main:
   - title: "Blog"
     url: https://lienzhuzhu.github.io/blog/
 
-  - title: "Visual"
-    url: https://lienzhu.dev
+  #- title: "Visual"
+  #url: https://lienzhu.dev
