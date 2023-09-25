@@ -36,7 +36,7 @@ Skills _(greatest to least)_
   * `gdb`, Vim, `Make`
   * AWS, Docker
 * Languages
-  * Python, C, Bash, $\LaTeX$
+  * Python, C++, C, $\LaTeX$
 
 Publications
 ======
