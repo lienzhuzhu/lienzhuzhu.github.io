@@ -14,7 +14,7 @@ Hi, I am Lien Zhu. Currently, I am a software engineer at Boeing.
 
 # Interests
 
-During my masters, I worked extensively in Operating Systems and Performance Monitoring.
+During my masters, I worked extensively in Operating Systems and Performance Monitoring. Read my master's project report [here](/files/hpc.pdf).
 
 
 # Life
