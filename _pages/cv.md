@@ -20,12 +20,6 @@ Work experience
 * Software Engineer 2 \[at\] The Boeing Company
   * Boeing Defense, Space, and Security
 
-* Full-stack Web Developer \[at\] Sudvarg Digital Solutions
-  * Contract work done during school year
-  * Developed documentation and communication workflow for company wide efficiency 
-  * Directed impactful meetings with clients to ensure products exceeded expectations
-  * PHP, WordPress, JavaScript, HTML/CSS
-  * Supervisor: [Marion Sudvarg](https://sudvarg.com "Marion's page")
 
 Skills _(greatest to least)_
 ======
