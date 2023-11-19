@@ -21,7 +21,7 @@ I have taken interest in ML and AI through course work and projects. If interest
 
 # Life
 
-- 2023 May. I graduated from the McKelvey School of Engineering at Washington University in St. Louis with a Master of Engineering in Computer Science and Engineering degree. Degree date: May 10, Commencement date: May 15.
+- 2023 May. I graduated from the McKelvey School of Engineering at Washington University in St. Louis with a Master of Engineering in Computer Science and Engineering degree.
 - 2023 April. I successfully defended my Master of Engineering degree project. [Accurate and General Hardware Performance Counting](/files/hpc.pdf "Master's Project Writeup").
 - 2022 October. I join the [Computer Security and Privacy Lab](https://cybersecurity.seas.wustl.edu/members.html "CSPL Members") as a master's student under Professor Ning Zhang.
 - 2022 May. I graduated with a Bachelor of Arts degree in Biology.
