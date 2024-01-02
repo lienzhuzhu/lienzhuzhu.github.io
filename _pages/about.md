@@ -14,7 +14,7 @@ Hi, I am Lien Zhu.
 
 # Interests
 
-During my masters, I worked extensively in Operating Systems and Performance Monitoring. Read my master's project report [here](/files/hpc.pdf).
+During my masters, I worked extensively in Operating Systems. Read my master's project report [here](/files/hpc.pdf).
 
 I have taken interest in ML and AI through course work and projects. If interested, see my course [notes](/blog/filter/ml/).
 
