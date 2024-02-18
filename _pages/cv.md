@@ -17,7 +17,7 @@ Education
 
 Work experience
 ======
-* Software Engineer 2 \[at\] The Boeing Company
+* ML Engineer \[at\] The Boeing Company
   * Boeing Defense, Space, and Security
 
 
