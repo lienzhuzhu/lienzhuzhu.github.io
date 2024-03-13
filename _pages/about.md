@@ -18,6 +18,8 @@ During my masters, I worked extensively in Operating Systems. Read my master's p
 
 I have taken interest in ML and AI through course work and projects. If interested, see my course [notes](/blog/filter/ml/).
 
+I strongly support public transportation, mixed-use housing, microtransportation, etc, as car culture directly contributes to physical and mental health deterioration, malnutrition, etc, affecting certain groups of people disproportionately as a social injustice.
+
 
 # Life
 
