@@ -52,5 +52,5 @@ Teaching
   
 Service and leadership
 ======
-* Executive Board Officer for [Association of Graduate Engineering Students](https://ages.wustl.edu/officers/ "AGES")
+* Executive Board Officer for Association of Graduate Engineering Students
 
