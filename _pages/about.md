@@ -9,7 +9,7 @@ redirect_from:
   - /about.html
 ---
 
-Hi, I am Lien Zhu.
+Hi, I am Lien Zhu. My headshot photos are taken by Rashaan Yapp.
 
 
 # Interests
