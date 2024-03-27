@@ -9,7 +9,7 @@ redirect_from:
   - /about.html
 ---
 
-Hi, I am Lien Zhu. My headshot photos are taken by Rashaan Yapp.
+Hi, I am Lien Zhu.
 
 
 # Interests
@@ -20,6 +20,7 @@ I have taken interest in ML and AI through course work and projects. If interest
 
 I strongly support public transportation, mixed-use housing, microtransportation, etc, as car culture directly contributes to physical and mental health deterioration, malnutrition, etc, affecting certain groups of people disproportionately as a social injustice.
 
+My headshot photos are taken by [Rashaan Yapp](https://rashaanyapp.com).
 
 # Life
 
