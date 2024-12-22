@@ -14,9 +14,7 @@ When I watch YouTube videos of other computer scientists and software engineers 
 So, I have decided to work on setting up my own dotfiles more or less from scratch.
 
 
-<h3>
-Goals
-</h3>
+### Goals
 
 - Each application installed must use an easy to read/ modify config file
 - Each application installed must be compatible with MacOS and Ubuntu
@@ -24,9 +22,7 @@ Goals
 - Minimize platform dependency
 
 
-<h3>
-Key applications:
-</h3>
+### Key applications
 
 - __Terminal Multiplexor__
 [tmux](https://github.com/tmux/tmux)
@@ -40,21 +36,14 @@ Key applications:
 - __Text Editor__
 [Neovim](https://neovim.io/)
 
-- __Prompt Customizer__
-[Starship.rs](https://starship.rs/)
 
-
-<h3>
-Dependencies
-</h3>
+### Dependencies
 
 - Rust
 - A Nerd Font
 - ripgrep
 
-<h3>
-Fonts
-</h3>
+### Fonts
 
 Fonts can be installed using homebrew if on MacOS:
 
