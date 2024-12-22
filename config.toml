@@ -8,7 +8,7 @@ theme = 'hugo-bearblog'
 # Basic metadata configuration for your blog.
 title = "Lien Zhu's ʕ•ᴥ•ʔ Bear Blog"
 author = "Lien Zhu"
-copyright = "Copyright © 2023, Lien Zhu."
+copyright = "Copyright © 2024, Lien Zhu."
 languageCode = "en-US"
 
 # Generate a nice robots.txt for SEO
