@@ -1,5 +1,7 @@
 Welcome to my blog where I keep my notes.
 
+[Projects](https://lienzhuzhu.github.io/dev)
+
 ### Thoughts to ponder
 
 Unwavering faith. Ultimate belief. Dependence on The Lord.
