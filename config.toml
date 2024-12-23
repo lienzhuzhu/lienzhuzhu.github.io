@@ -1,12 +1,12 @@
 # Base URL used when generating links to your pages
 # Set to the URL for your site
-baseURL = "https://lienzhuzhu.github.io/blog"
+baseURL = "https://lienzhuzhu.github.io"
 
 # The name of this wonderful theme ;-).
 theme = 'hugo-bearblog'
 
 # Basic metadata configuration for your blog.
-title = "Lien Zhu's ʕ•ᴥ•ʔ Bear Blog"
+title = "Lien Zhu's Blog"
 author = "Lien Zhu"
 copyright = "Copyright © 2024, Lien Zhu."
 languageCode = "en-US"
