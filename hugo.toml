@@ -9,7 +9,7 @@ googleAnalytics = "UA-FAKE" ## or "G-xxxxxxxx" in Google Analytics v4, in hugo v
 hasCJKLanguage = true
 languageCode = "cn"
 theme = "hugo-theme-tokiwa"
-title = "/Users/朱利恩"
+title = "朱利恩"
 
 [markup]
 [markup.highlight]
@@ -37,6 +37,12 @@ identifier = "post"
 name = "Posts"
 url = "/post/"
 weight = 1
+
+[[menu.main]]
+name = "Series"
+url = "/series/"
+weight = 2
+
 [[menu.main]]
 name = "Tags"
 url = "/tags/"
@@ -60,10 +66,10 @@ tag = "tags"
 
 [params.social]
 #bilibili = "http://example.com/"
-github = "https://github.com/"
+github = "https://github.com/lienzhuzhu"
 #gitlab = "https://gitlab.com/"
 #instagram = "http://example.com/"
-mail = "mailto:anon@example.com"
+mail = "mailto:zhu.lien@icloud.com"
 #twitter = "https://twitter.com/"
 #weibo = "http://example.com/"
 #youtube = "https://youtube.com/"
