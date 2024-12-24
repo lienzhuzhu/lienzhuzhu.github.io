@@ -21,7 +21,7 @@ unsafe = true
 [params]
 bannerFont = "fonts/exampleFont" 
 description = """
-Tokiwa-iro is the theme color of this site.
+Unwavering faith. Ultimate belief. Dependence on The Lord. - Jameis Winston
 """ 
 env = "production" # for Google Analytics and DISQUS.
 favicon = "" 
