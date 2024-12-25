@@ -2,9 +2,9 @@
 author = "Lien Zhu"
 title = "Learning From Data Problem Set 1"
 date = "2023-10-19"
-description = "Learning From Data Lesson 1"
-categories = [ "learning", ]
-tags = [ "notes", "ml" ]
+description = "Learning From Data Lecture 1"
+categories = [ "notes", ]
+tags = [ "ml", "data", ]
 series = ["Learning From Data"]
 +++
 
@@ -122,7 +122,7 @@ This $g$ matches $f_1$ for 3 points, $f_2$, $f_3$, $f_5$ for 2 points, and $f_4$
 
 ### Refer to the following output for 7 and 8. The graphs drawn are for the final experimental trial.
 
-```python3
+```zsh
 ❯ python3 hw1/pla.py -N 10
 Iterations: 9.75
 Disagreement: 0.106781
@@ -136,7 +136,7 @@ Disagreement: 0.106781
 
 ### Refer to the following output for 9 and 10.
 
-```python3
+```zsh
 ❯ python3 hw1/pla.py -N 100
 Iterations: 110.169
 Disagreement: 0.013299000000000004

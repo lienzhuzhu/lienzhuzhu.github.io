@@ -3,12 +3,12 @@ author = "Lien Zhu"
 title = "Linear Algebra Notes"
 date = "2023-10-04T19:17:32-07:00"
 description = "Notes on Linear Algebra"
-
-tags = ["notes"]
+tags = ["math",]
+categories = ["notes",]
 +++
 
 
-**Orthogonality, Projection, Gram-Schmidt, and $QR$ Factorization**
+### Orthogonality, Projection, Gram-Schmidt, and $QR$ Factorization
 
 ---
 

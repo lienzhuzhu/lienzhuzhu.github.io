@@ -1,9 +1,10 @@
 +++
 title = "Learning From Data Problem Set 8"
 date = "2023-11-10T17:17:05-08:00"
-# description = ""
-
-tags = ["notes", "ml"]
+description = "Learning From Data Lecture 8"
+categories = [ "notes", ]
+tags = [ "ml", "data", ]
+series = ["Learning From Data"]
 +++
 
 [PDF of problems](https://work.caltech.edu/homework/hw8.pdf)
@@ -11,18 +12,13 @@ tags = ["notes", "ml"]
 [Code Repository](https://github.com/lienzhuzhu/lfd)
 
 
-<h3>
-1. [d]
-</h3>
+### 1. [d]
 
 With the primal problem solves for the weights and the bias term directly, which makes $d+1$ variables of interest.
 
 
-<h3>
-For 2 - 4.
-</h3>
-
-```
+### For 2 - 4.
+```zsh
 ❯ python3 hw8/poly_svm.py
 0 versus all  E_in: 0.10588  E_out: 0.11161  SVs: 2179
 1 versus all  E_in: 0.01440  E_out: 0.02192  SVs: 386
@@ -36,30 +32,19 @@ For 2 - 4.
 9 versus all  E_in: 0.08833  E_out: 0.08819  SVs: 1978
 ```
 
-<h3>
-2. [a]
-</h3>
+### 2. [a]
 
+### 3. [a]
 
-<h3>
-3. [a]
-</h3>
-
-<h3>
-4. [c]
-</h3>
+### 4. [c]
 
 $$
 2179 - 386 = 1793
 $$
 
 
-
-<h3>
-For 5 and 6.
-</h3>
-
-```
+### For 5 and 6.
+```zsh
 ❯ python3 hw8/poly_svm.py --digit=1 --other=5
 Q = 2
 C = 0.0001      1 versus 5  E_in: 0.00897  E_out: 0.01651  SVs: 236
@@ -76,21 +61,13 @@ C = 0.1000      1 versus 5  E_in: 0.00320  E_out: 0.01887  SVs: 25
 C = 1.0000      1 versus 5  E_in: 0.00320  E_out: 0.02123  SVs: 21
 ```
 
-<h3>
-5. [d]
-</h3>
+### 5. [d]
 
-<h3>
-6. [b]
-</h3>
+### 6. [b]
 
 
-
-<h3>
-For 7 and 8.
-</h3>
-
-```
+### For 7 and 8.
+```zsh
 ❯ python3 hw8/cv_poly_svm.py --digit=1 --other=5
 The model with the most selections is C = 0.001
 1 versus 5
@@ -99,21 +76,13 @@ E_out:  0.016509
 SVs:    76
 ```
 
-<h3>
-7. [c]
-</h3>
+### 7. [c]
 
-<h3>
-8. [c]
-</h3>
+### 8. [c]
 
 
-
-<h3>
-For 9 and 10.
-</h3>
-
-```
+### For 9 and 10.
+```zsh
 ❯ python3 hw8/rbf_svm.py --digit=1 --other=5
 C = 0.01        1 versus 5  E_in: 0.00384  E_out: 0.02358  SVs: 406
 C = 1.00        1 versus 5  E_in: 0.00448  E_out: 0.02123  SVs: 31
@@ -122,12 +91,6 @@ C = 10000.00    1 versus 5  E_in: 0.00256  E_out: 0.02358  SVs: 19
 C = 1000000.00  1 versus 5  E_in: 0.00064  E_out: 0.02358  SVs: 17
 ```
 
-<h3>
-9. [e]
-</h3>
+### 9. [e]
 
-<h3>
-10. [c]
-</h3>
-
-[Next Post](../lfd-final)
+### 10. [c]

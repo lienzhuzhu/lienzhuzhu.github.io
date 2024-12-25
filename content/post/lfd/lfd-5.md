@@ -1,9 +1,10 @@
 +++
 title = "Learning From Data Problem Set 5"
-date = "2023-10-27T23:13:23-07:00"
-# description = ""
-
-tags = ["notes", "ml"]
+date = "2023-10-27"
+description = "Learning From Data Lecture 5"
+categories = [ "notes", ]
+tags = [ "ml", "data", ]
+series = ["Learning From Data"]
 +++
 
 [PDF of problems](https://work.caltech.edu/homework/hw5.pdf)
@@ -11,23 +12,23 @@ tags = ["notes", "ml"]
 [Code Repository](https://github.com/lienzhuzhu/lfd)
 
 
-1. [c]
+### 1. [c]
 
 Plugging in the values for $\mathbb{E}[E_{in}(\vec{w})] = \sigma^{2}(1 - \frac{d+1}{N}) \geq 0.008$:
 
 $$
 \begin{aligned}
-\mathbb{E}[E_{in}(\vec{w})]     & =     \sigma^{2}(1 - \frac{d+1}{N}) \\\ \\\
-                                & =     (0.1)^2(1 - \frac{9}{N}) \\\ \\\
-0.01 - \frac{0.09}{N}           & \geq  0.008 \\\ \\\
-0.002                           & \geq  \frac{0.09}{N} \\\ \\\
-N                               & \geq  \frac{0.09}{0.002} \\\ \\\
+\mathbb{E}[E_{in}(\vec{w})]     & =     \sigma^{2}(1 - \frac{d+1}{N}) \\ \\
+                                & =     (0.1)^2(1 - \frac{9}{N}) \\ \\
+0.01 - \frac{0.09}{N}           & \geq  0.008 \\ \\
+0.002                           & \geq  \frac{0.09}{N} \\ \\
+N                               & \geq  \frac{0.09}{0.002} \\ \\
 N                               & \geq  45
 \end{aligned}
 $$
 
 
-2. [d]
+### 2. [d]
 
 We need to think about how the features affect the labels of the regions.
 
@@ -36,18 +37,18 @@ For any given point, it seems the closer it is to the $x_1 = 0$ line, the more i
 It also seems the further away from $x_2 = 0$ a point is, the more it tends to be positively labeled, especially if we compare the size of the regions going up and down to infinity. So $\tilde{w}\_2 > 0$.
 
 
-3. [c]
+### 3. [c]
 
 Use the formula $\frac{Q(Q+3)}{2}$ with $Q=4$.
 
 
-4. [e]
+### 4. [e]
 
 Just use chain rule.
 
 $$
 \begin{aligned}
-\frac{\partial{E}}{\partial{u}} & = \frac{\partial{E}}{\partial{u}}(ue^v-2ve^{-u})^2 \\\ \\\
+\frac{\partial{E}}{\partial{u}} & = \frac{\partial{E}}{\partial{u}}(ue^v-2ve^{-u})^2 \\ \\
                                 & = 2(ue^v - 2ve^{-u})(e^v + 2ve^{-u})
 \end{aligned}
 $$
@@ -55,42 +56,42 @@ $$
 Note that for the gradient descent implementation, we will need the other partial derivative as well, but this is just as easily calculated using chain rule, nothing crazy.
 
 
-Refer to the output for 5 and 6.
+### Refer to the output for 5 and 6.
 
-```
+```zsh
 ❯ python3 hw5/descent.py
 10
 [0.04473629 0.02395871]
 ```
 
-5. [d]
+### 5. [d]
 
-6. [e]
+### 6. [e]
 
 
-7. [a]
+### 7. [a]
 
-```python3
+```zsh
 ❯ python3 hw5/coordinate.py
 [ 6.2970759  -2.85230695]
 0.13981379199615315
 ```
 
 
-Refer to the output for 8 and 9.
+### Refer to the output for 8 and 9.
 
-```
+```zsh
 ❯ python3 hw5/logistic.py -N 100
 E_out:   0.1042528510662979
 Epochs:  333.6
 ```
 
-8. [d]
+### 8. [d]
 
-9. [a]
+### 9. [a]
 
 
-10. [e]
+### 10. [e]
 
 The update rule for PLA is
 $$

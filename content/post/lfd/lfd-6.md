@@ -1,9 +1,10 @@
 +++
 title = "Learning From Data Problem Set 6"
 date = "2023-11-02T01:43:16-07:00"
-# description = ""
-
-tags = ["notes", "ml"]
+description = "Learning From Data Lecture 6"
+categories = [ "notes", ]
+tags = [ "ml", "data", ]
+series = ["Learning From Data"]
 +++
 
 
@@ -12,19 +13,15 @@ tags = ["notes", "ml"]
 [Code Repository](https://github.com/lienzhuzhu/lfd)
 
 
-<h3>
-1. [b]
-</h3>
+### 1. [b]
 
 On average, the smaller hypothesis set will have a higher bias term, which corresponds to deterministic noise. It is true, however, that the smaller hypothesis set would have a decrease in variance that overwhelms the increase in bias.
 
 
 
-<h3>
-Use the following output for problems 2 - 6
-</h3>
+### Use the following output for problems 2 - 6
 
-```
+```zsh
 ❯ python3 hw6/regularization.py
 E_in with no regularization:     0.02857142857142857
 E_out with no regularization:    0.084
@@ -37,40 +34,38 @@ K = 2,   E_in = 0.200000        E_out = 0.228000
 K = 3,   E_in = 0.371429        E_out = 0.436000
 ```
 
-<h3>
-2. [a]
-</h3>
+
+### 2. [a]
 
 This is sort of the baseline performance.
 
-<h3>
-3. [d]
-</h3>
+
+### 3. [d]
 
 Small regularization parameter $\lambda$ corresponds to a large $C$, which barely applies any regularization. So, we get similar results to baseline.
 
-<h3>
-4. [e]
-</h3>
+
+### 4. [e]
+
 
 Too much regularization leads us to underfit the data and target.
 
-<h3>
-5. [d]
-</h3>
+
+### 5. [d]
+
 
 This is just enough regularization.
 
-<h3>
-6. [b]
-</h3>
+
+### 6. [b]
+
 
 When $k=-1$, we get an $E_{out}$ of around $0.056$.
 
 
-<h3>
-7. [c]
-</h3>
+
+### 7. [c]
+
 
 $$
 \begin{aligned}
@@ -82,9 +77,9 @@ $$
 The intersection of these sets will clearly just be the first 3 terms of $\mathcal{H}(10, 0, 3)$, which is the same as $\mathcal{H}_2$. The union of these is not $\mathcal{H}_4$ because that would require an $L_4$ term to survive, but it perishes in the union.
 
 
-<h3>
-8. [d]
-</h3>
+
+### 8. [d]
+
 
 The operation $w_{ij}^{(l)}x_i^{(l-1)}$ is only used in forward propagation and does not appear in backpropagation.
 
@@ -93,16 +88,15 @@ There are $22$ total unique weights in this network and each will be updated dur
 There are $22$ weights and $2$ types of operations of interest, so we would see $44$ of these operations.
 
 
-<h3>
-9. [a]
-</h3>
+
+### 9. [a]
+
 
 We can achieve the minimum number of weights, or connections, by making each hidden layer have a single dimension. This would result in $10$ weights between the input layer and the first hidden layer, with $36$ weights from the first hidden layer to the final output layer.
 
 
-<h3>
-10. [e]
-</h3
+
+### 10. [e]
 
 If laying all the units in a line yields the minimum, surely the opposite would give us the maximum right? Not exactly. If we have one hidden layer with $36$ units, then we get
 $$
@@ -125,7 +119,7 @@ Note that the bias term has no weights going into it.
 
 I have no idea how to do this analytically with optimization. Luckily, $510$ is the largest answer choice and using quadratic programming we get the following solution:
 
-```
+```zsh
 ❯ python3 hw6/edges.py
 L1 =  22
 L2 =  14
@@ -133,5 +127,3 @@ Z =  510
 ```
 
 Though we get kind of lucky here because this is non linear quadratic programming applied to a linear quadratic programming problem.
-
-[Next Post](../lfd-7)

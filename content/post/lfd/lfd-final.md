@@ -1,9 +1,10 @@
 +++
 title = "Learning From Data Final"
 date = "2023-11-10T21:59:16-08:00"
-# description = ""
-
-tags = ["notes", "ml"]
+description = "Learning From Data Final Exam"
+categories = [ "notes", ]
+tags = [ "ml", "data", ]
+series = ["Learning From Data"]
 +++
 
 
@@ -12,24 +13,21 @@ tags = ["notes", "ml"]
 [Code Repository](https://github.com/lienzhuzhu/lfd)
 
 
-<h3>
-1. [e]
-</h3>
+
+### 1. [e]
 
 Use the formula for the transform of a $2$-dimensional feature space to one of dimension $Q$.
 
 $$
 \begin{aligned}
-\frac{Q(Q+3)}{2} &= \frac{10(13)}{2} \\\ \\\
+\frac{Q(Q+3)}{2} &= \frac{10(13)}{2} \\ \\
     &= 65
 \end{aligned}
 $$
 
 
 
-<h3>
-2. [d]
-</h3>
+### 2. [d]
 
 Consider a target function shaped like a bell curve, where points with extreme features were labeled -1 and more moderate points were labeled +1.
 
@@ -37,9 +35,7 @@ Logistic regression wouldn't be an appropriate model to include in any hypothesi
 
 
 
-<h3>
-3. [d]
-</h3>
+### 3. [d]
 
 We know overfitting occurs when we pick a hypothesis such that $E_{in}$ is minimized but we see a larger $E_{out}$ when that hypothesis is used out of sample, compared to other hypotheses. Using this fact as our guiding star, let's go through the answer choices.
 
@@ -59,9 +55,9 @@ Using the difference between out of sample and in sample error would not clue us
 
 
 
-<h3>
-4. [d]
-</h3>
+
+### 4. [d]
+
 
 Stochastic noise captures the probabilistic essence of real-world target functions, shifting the notion of target function to target _distribution_. It's what allows the same input point to have a different label, for instance two credit card applicants with identical application details, but only one is approved while the other is declined.
 
@@ -79,16 +75,12 @@ Why not the other options?
 
 
 
-<h3>
-5. [a]
-</h3>
+### 5. [a]
 
-If $\vec{w}\_{lin}$ is in the constrained hypothesis set $\mathcal{H}(C)$, then there is no need for regularization and $\vec{w}\_{reg} = \vec{w}_{lin}$.
+If $\vec{w}_{lin}$ is in the constrained hypothesis set $\mathcal{H}(C)$, then there is no need for regularization and $\vec{w}_{reg} = \vec{w}_{lin}$.
 
 
-<h3>
-6. [b]
-</h3>
+### 6. [b]
 
 Being able to define an augmented error allows us to solve an unconstrained optimization problem.
 
@@ -105,11 +97,8 @@ Why the other's are incorrect:
 [d]. Regularization concedes increases in $E_{in}$ for decreases in $E_{out}$.
 
 
-<h3>
-For 7. through 10. use this output.
-</h3>
-
-```
+### For 7. through 10. use this output.
+```zsh
 ❯ python3 final/regress.py --digit=1 --other=5
 0 versus all.   E_in: 0.22946  E_out: 0.22770
 1 versus all.   E_in: 0.13770  E_out: 0.13104
@@ -142,50 +131,36 @@ K = 1.00 Digit 1 versus 5. E_in: 0.00512  E_out: 0.02594
 ```
 
 
-<h3>
-7. [d]
-</h3>
+### 7. [d]
 
 8 versus all has $E_{in} = 0.07434$.
 
 
-<h3>
-8. [b]
-</h3>
+### 8. [b]
 
 1 versus all has $E_{out} = 0.02192$ when the transformation is applied.
 
 
-<h3>
-9. [e]
-</h3>
+### 9. [e]
 
 The transformation decreases $E_{out}$ for the 5 versus all classifier from 0.07972 to 0.07922, a marginal improvement.
 
 
-<h3>
-10. [a]
-</h3>
-
-```
+### 10. [a]
+```zsh
 K = 0.01 Digit 1 versus 5. E_in: 0.00448  E_out: 0.02830
 K = 1.00 Digit 1 versus 5. E_in: 0.00512  E_out: 0.02594
 ```
 
 
-<h3>
-11. [c]
-</h3>
+### 11. [c]
 
 First transform each data point using the described transformation, then graph in Desmos, with $x_2$ as the $y$-axis, such that $x_1 = x$ and $x_2 = y$.
 
 The only hyperplane that separates the data correctly is the vertical line $0 = 1 \cdot x_1 + 0 \cdot x_2 + (-0.5)$ which corresponds to choice [c].
 
-<h3>
-12. [c]
-</h3>
-
-```
+### 12. [c]
+```zsh
 ❯ python3 final/svm.py
 libsvm: 5
 [0.02 0.01 0.01 0.04 0.   0.   0.  ]
@@ -194,14 +169,11 @@ Dual:   4
 ```
 
 
-
-<h3>
-Refer to the output below for 13 - 16.
-</h3>
+### Refer to the output below for 13 - 16.
 
 RBF Model versus RBF Kernel SVM with $\gamma = 1.5$ and 9 clusters.
 
-```
+```zsh
 ❯ python3 final/rbf.py --centers=9 --gamma=1.5
 
 Data was inseparable in Z space 0.0%
@@ -231,32 +203,21 @@ SVM E_out:      0.0314
 RBF E_out:      0.0447
 ```
 
-<h3>
-13. [a]
-</h3>
+
+### 13. [a]
 
 Practically zero of the data sets generated were inseparable in the Z space.
 
-<h3>
-14. [e]
-</h3>
+### 14. [e]
 
-<h3>
-15. [d]
-</h3>
+### 15. [d]
 
-<h3>
-16. [d]
-</h3>
+### 16. [d]
 
 Both error values go down.
 
-
-<h3>
-17. [c]
-</h3>
-
-```
+### 17. [c]
+```zsh
 ❯ python3 final/rbf.py --centers=9 --gamma=1.5
 
 Data was inseparable in Z space 0.0%
@@ -283,22 +244,18 @@ RBF E_out:      0.0594
 ````
 
 
-<h3>
-18. [a]
-</h3>
+### 18. [a]
 
-Referring to the output from 9., the RBF Model has zero in sample error approximately $3\\%$ of the time.
+Referring to the output from 9., the RBF Model has zero in sample error approximately $3\%$ of the time.
 
 
-<h3>
-19. [b]
-</h3>
+### 19. [b]
 
 We have a Bayesian prior in this problem. Let's use Baye's rule:
 
 $$
 \begin{aligned}
-P(h=f|\mathcal{D}) &= \frac{P(\mathcal{D}|h=f)\cdot P(h=f)}{P(\mathcal{D})} \\\ \\\
+P(h=f|\mathcal{D}) &= \frac{P(\mathcal{D}|h=f)\cdot P(h=f)}{P(\mathcal{D})} \\ \\
     &\propto P(\mathcal{D}|h=f)\cdot P(h=f)
 \end{aligned}
 $$
@@ -309,8 +266,8 @@ We knew long before that $P(h=f)=1$ because $h \sim \textrm{Uniform}(0,1)$. From
 
 $$
 \begin{aligned}
-P(h=f|\mathcal{D}) &= \frac{P(\mathcal{D}|h=f)\cdot P(h=f)}{P(\mathcal{D})} \\\ \\\
-    &\propto P(\mathcal{D}|h=f)\cdot P(h=f) \\\ \\\
+P(h=f|\mathcal{D}) &= \frac{P(\mathcal{D}|h=f)\cdot P(h=f)}{P(\mathcal{D})} \\ \\
+    &\propto P(\mathcal{D}|h=f)\cdot P(h=f) \\ \\
     &= h \times 1
 \end{aligned}
 $$
@@ -318,9 +275,7 @@ $$
 This means the posterior is increases linearly with $h$ over $[0,1]$.
 
 
-<h3>
-20. [c]
-</h3>
+### 20. [c]
 
 $g(\mathbf{x})$ has a prediction equal to the average of the predictions outputted by $g_1$ and $g_2$, therefore it makes sense that the deviation of $g(\mathbf{x})$ cannot be worse than the average of the deviations of $g_1(\mathbf{x})$ and $g_2(\mathbf{x})$.
 
