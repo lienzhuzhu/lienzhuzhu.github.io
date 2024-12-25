@@ -174,7 +174,7 @@ Flip the logic and we see why $(2)$ and $(4)$ are the "worst case" bounds.
 
 Let's look at result $(3)$ more closely. This result tells us that out of all hypotheses $\mathcal{h} \in \mathcal{H}$, the $g$ selected is likely the best we could do, since there is a fairly high floor, $1-\delta$, on the probability that $E_{in} - \epsilon$ is the lower bound for $E_{out}$. 
 
-Since $g$ was selected as $\underset{h \in \mathcal{H}}{\argmin}(E_{in}(\mathcal{h}))$, every other $h$ will have higher in-sample error, and we have high confidence that out-of-sample error for those hypotheses will also be larger from this bound. $\blacksquare$
+Since $g$ was selected as $\underset{h \in \mathcal{H}}{argmin}(E_{in}(\mathcal{h}))$, every other $h$ will have higher in-sample error, and we have high confidence that out-of-sample error for those hypotheses will also be larger from this bound. $\blacksquare$
 
 
 
