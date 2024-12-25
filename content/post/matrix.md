@@ -1,4 +1,5 @@
 +++
+author = "Lien Zhu"
 title = "Linear Algebra Notes"
 date = "2023-10-04T19:17:32-07:00"
 description = "Notes on Linear Algebra"
@@ -24,13 +25,13 @@ Proof start:
 $$ 
 \begin{aligned}
 A^TA    & = \begin{bmatrix}
-            \mathbf{u}^T\mathbf{u} & \mathbf{u}^T\mathbf{v} \\\ \\\
-            \mathbf{v}^T\mathbf{u} & \mathbf{v}^T\mathbf{v} \\\
-            \end{bmatrix} \\\ \\\
+            \mathbf{u}^T\mathbf{u} & \mathbf{u}^T\mathbf{v} \\ \\
+            \mathbf{v}^T\mathbf{u} & \mathbf{v}^T\mathbf{v} \\
+            \end{bmatrix} \\ \\
         & = \begin{bmatrix}
-            \mathbf{u}^T\mathbf{u} & 0 \\\ \\\
-            0 & \mathbf{v}^T\mathbf{v} \\\
-            \end{bmatrix} \\\
+            \mathbf{u}^T\mathbf{u} & 0 \\ \\
+            0 & \mathbf{v}^T\mathbf{v} \\
+            \end{bmatrix} \\
 \end{aligned}
 $$
 
@@ -45,9 +46,9 @@ $$
 \begin{aligned}
 (A^TA)^{-1}     & = \frac{1}{\mathbf{u}^T\mathbf{u}\cdot\mathbf{v}^T\mathbf{v}}
                     \begin{bmatrix}
-                    \mathbf{v}^T\mathbf{v} & 0 \\\ \\\
-                    0 & \mathbf{u}^T\mathbf{u} \\\
-                    \end{bmatrix} \\\
+                    \mathbf{v}^T\mathbf{v} & 0 \\ \\
+                    0 & \mathbf{u}^T\mathbf{u} \\
+                    \end{bmatrix} \\
 \end{aligned}
 $$
 
@@ -58,16 +59,16 @@ $$
 \begin{aligned}
 A(A^TA)^{-1}A^T\mathbf{b}   & = \frac{1}{\mathbf{u}^T\mathbf{u}\cdot\mathbf{v}^T\mathbf{v}}
                                 \begin{bmatrix}
-                                | & | \\\
-                                \mathbf{u} & \mathbf{v} \\\
+                                | & | \\
+                                \mathbf{u} & \mathbf{v} \\
                                 | & |
                                 \end{bmatrix}
                                 \begin{bmatrix}
-                                \mathbf{v}^T\mathbf{v} & 0 \\\ \\\
-                                0 & \mathbf{u}^T\mathbf{u} \\\
+                                \mathbf{v}^T\mathbf{v} & 0 \\ \\
+                                0 & \mathbf{u}^T\mathbf{u} \\
                                 \end{bmatrix} 
                                 \begin{bmatrix}
-                                - & \mathbf{u} & - \\\
+                                - & \mathbf{u} & - \\
                                 - & \mathbf{v} & -
                                 \end{bmatrix} 
                                 \mathbf{b}
@@ -80,22 +81,22 @@ $$
 \begin{aligned}
 A(A^TA)^{-1}A^T\mathbf{b}   & = \frac{1}{\mathbf{u}^T\mathbf{u}\cdot\mathbf{v}^T\mathbf{v}}
                                 \begin{bmatrix}
-                                | & | \\\
-                                \mathbf{v}^T\mathbf{v}\cdot\mathbf{u} & \mathbf{u}^T\mathbf{u}\cdot\mathbf{v} \\\
+                                | & | \\
+                                \mathbf{v}^T\mathbf{v}\cdot\mathbf{u} & \mathbf{u}^T\mathbf{u}\cdot\mathbf{v} \\
                                 | & |
                                 \end{bmatrix}
                                 \begin{bmatrix}
-                                \mathbf{u}^T\mathbf{b} \\\ \\\
+                                \mathbf{u}^T\mathbf{b} \\ \\
                                 \mathbf{v}^T\mathbf{b}
-                                \end{bmatrix} \\\ \\\
+                                \end{bmatrix} \\ \\
                             & = \frac{1}{\mathbf{u}^T\mathbf{u}\cdot\mathbf{v}^T\mathbf{v}}
                                 \begin{bmatrix}
-                                | & | \\\
-                                \mathbf{v}^T\mathbf{v}\cdot\mathbf{u}\cdot\mathbf{u}^T\mathbf{b} & \mathbf{u}^T\mathbf{u}\cdot\mathbf{v}\cdot\mathbf{v}^T\mathbf{b} \\\
+                                | & | \\
+                                \mathbf{v}^T\mathbf{v}\cdot\mathbf{u}\cdot\mathbf{u}^T\mathbf{b} & \mathbf{u}^T\mathbf{u}\cdot\mathbf{v}\cdot\mathbf{v}^T\mathbf{b} \\
                                 | & |
-                                \end{bmatrix} \\\ \\\
-                            & = \frac{\mathbf{v}^T\mathbf{v}\cdot\mathbf{u}\cdot\mathbf{u}^T\mathbf{b} + \mathbf{u}^T\mathbf{u}\cdot\mathbf{v}\cdot\mathbf{v}^T\mathbf{b}}{\mathbf{u}^T\mathbf{u}\cdot\mathbf{v}^T\mathbf{v}} \\\ \\\
-                            & = \frac{\mathbf{u}^T\mathbf{b}\cdot\mathbf{v}^T\mathbf{v}}{\mathbf{u}^T\mathbf{u}\cdot\mathbf{v}^T\mathbf{v}}\mathbf{u} + \frac{\mathbf{v}^T\mathbf{b}\cdot\mathbf{u}^T\mathbf{u}}{\mathbf{u}^T\mathbf{u}\cdot\mathbf{v}^T\mathbf{v}}\mathbf{v} \\\ \\\
+                                \end{bmatrix} \\ \\
+                            & = \frac{\mathbf{v}^T\mathbf{v}\cdot\mathbf{u}\cdot\mathbf{u}^T\mathbf{b} + \mathbf{u}^T\mathbf{u}\cdot\mathbf{v}\cdot\mathbf{v}^T\mathbf{b}}{\mathbf{u}^T\mathbf{u}\cdot\mathbf{v}^T\mathbf{v}} \\ \\
+                            & = \frac{\mathbf{u}^T\mathbf{b}\cdot\mathbf{v}^T\mathbf{v}}{\mathbf{u}^T\mathbf{u}\cdot\mathbf{v}^T\mathbf{v}}\mathbf{u} + \frac{\mathbf{v}^T\mathbf{b}\cdot\mathbf{u}^T\mathbf{u}}{\mathbf{u}^T\mathbf{u}\cdot\mathbf{v}^T\mathbf{v}}\mathbf{v} \\ \\
                             & = \frac{\mathbf{u}^T\mathbf{b}}{\mathbf{u}^T\mathbf{u}}\mathbf{u} + \frac{\mathbf{v}^T\mathbf{b}}{\mathbf{v}^T\mathbf{v}}\mathbf{v} \quad\blacksquare
 \end{aligned}
 $$

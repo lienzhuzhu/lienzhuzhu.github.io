@@ -1,23 +1,25 @@
 +++
+author = "Lien Zhu"
 title = "C++ Library Set Up"
-date = "2023-08-31T18:00:54-07:00"
-# description = "Notes for setting up some libraries I use for C++ development"
+date = "2023-08-31"
+description = "Notes for setting up some libraries I use for C++ development."
 
-tags = ["engineering"]
+tags = ["tools"]
+categories = ["notes"]
 +++
 
 ### Eigen
 
 Install from Github repo. My preferred method.
 
-```
+```bash
 git clone https://gitlab.com/libeigen/eigen.git /path/to/eigen
 sudo ln -s /path/to/eigen/Eigen /usr/local/include/Eigen
 ```
 
 or use homebrew if on MacOS
 
-```
+```bash
 brew install eigen
 ```
 
@@ -25,7 +27,7 @@ Now, eigen is installed in `/opt/homebrew/Cellar/eigen3` and a link has been cre
 
 I put the following lines in my `.zshrc` file, but you will need to put them in the proper rc file for your shell of choice.
 
-```
+```bash
 CPLUS_INCLUDE_PATH="/usr/local/include/
 export CPLUS_INCLUDE_PATH="/opt/homebrew/include:$CPLUS_INCLUDE_PATH"'
 ```
@@ -36,7 +38,7 @@ It also seems to make the clangd LSP server behave nicely without the need for a
 
 Then, regardless of installation method, test the installation by putting this code into a file called `main.cpp`, though I prefer to use the Github source, so I just `#include Eigen/Dense`:
 
-```
+```c
 #include <iostream>
 #include <eigen3/Eigen/Dense>
  
@@ -56,22 +58,21 @@ int main()
 
 The following commands:
 
-```
+```bash
 g++ main.cpp -o eigen-app
 ./eigen-app
 ```
 
 should produce:
 
-```
+```bash
   3  -1
 2.5 1.5
 ```
 
 
 ### raylib
-
-```
+```bash
 export MACOSX_DEPLOYMENT_TARGET=10.9
 xcode-select --install # not necessary if already have Xcode IDE installed, or have run this command before
 git clone https://github.com/raysan5/raylib.git /path/to/raylib
@@ -178,16 +179,14 @@ int main(void)
 
 
 ### SFML
-
-```
+```bash
 brew install sfml
 brew info sfml
 ```
 
 
 After installation, `homebrew` creates symlinks to these locations
-
-```
+```bash
 /opt/homebrew/include/
 /opt/homebrew/lib/
 ```
@@ -195,7 +194,7 @@ After installation, `homebrew` creates symlinks to these locations
 
 Now we can test to make sure the library has been set up correctly. Put this code into a file called `sfml.cpp`.
 
-```
+```c
 #include <SFML/Graphics.hpp>
 
 int main()
@@ -224,7 +223,7 @@ int main()
 
 In whatever directory `sfml.cpp` is located, run the command:
 
-```
+```bash
 g++ -o sfml-app sfml.cpp -I/opt/homebrew/include/ -L/opt/homebrew/lib/ -lsfml-graphics -lsfml-window -lsfml-system
 ./sfml-app
 ```
@@ -237,9 +236,9 @@ and you should see a red circle show up on the screen.
 
 **Must have XCode IDE**
 
-I think just having xcode-select tools is not enough, the full IDE provides some other tools necessary for mlx.
+I think just having `xcode-select tools` is not enough, the full IDE provides some other tools necessary for mlx.
 
-```
+```bash
 xcode-select --switch /Applications/Xcode.app/Contents/Developer
 git clone git@github.com:ml-explore/mlx.git mlx && cd mlx
 mkdir -p build && cd build

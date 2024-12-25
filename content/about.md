@@ -9,3 +9,5 @@ author = "Lien Zhu"
 My name is Lien Zhu 朱利恩.
 
 If you need a formal biography generator, please use this [tool](https://dev.lienzhu.tech/) 
+
+> PLEASE NOTE: This site is currently being refactored. Some content may look broken.

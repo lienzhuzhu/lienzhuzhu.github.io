@@ -29,7 +29,8 @@ title = "朱利恩"
 [params]
     bannerFont = "fonts/exampleFont" 
     description = """
-    Unwavering faith. Ultimate belief. Dependence on The Lord. - Jameis Winston
+    Unwavering faith. Ultimate belief. Dependence on The Lord.
+    -Jameis Winston
     """ 
     env = "production" # for Google Analytics and DISQUS.
     favicon = "" 

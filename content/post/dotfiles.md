@@ -1,11 +1,12 @@
 +++
+author = "Lien Zhu"
 title = "My Dotfiles"
 date = "2023-08-04T15:09:31-07:00"
-# description = ""
+description = "The set up I use on my machines."
 
-tags = ["engineering"]
-
-draft = false
+tags = ["tools", "neovim","zsh","terminal",]
+categories = ["notes",]
+series = ["dotfiles"]
 +++
 
 
