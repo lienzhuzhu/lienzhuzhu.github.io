@@ -1,8 +1,8 @@
 +++
 author = "Lien Zhu"
-title = "Learning From Data Problem Set 1"
+title = "Learning From Data Problem Set 2"
 date = "2023-10-20"
-description = "Learning From Data Lesson 1"
+description = "Learning From Data Lesson 2"
 categories = [ "learning", ]
 tags = [ "notes", "ml" ]
 series = ["Learning From Data"]
