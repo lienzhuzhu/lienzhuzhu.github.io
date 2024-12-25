@@ -42,6 +42,8 @@ So, I have decided to work on setting up my own dotfiles more or less from scrat
 - Rust
 - A Nerd Font
 - ripgrep
+- fzf
+- fd
 
 ### Fonts
 

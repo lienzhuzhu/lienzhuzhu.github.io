@@ -6,9 +6,7 @@ date = "2023-08-31T18:00:54-07:00"
 tags = ["engineering"]
 +++
 
-<h3>
-Eigen
-</h3>
+### Eigen
 
 Install from Github repo. My preferred method.
 
@@ -71,9 +69,7 @@ should produce:
 ```
 
 
-<h3>
-raylib
-</h3>
+### raylib
 
 ```
 export MACOSX_DEPLOYMENT_TARGET=10.9
@@ -95,7 +91,7 @@ g++ -framework CoreVideo -framework IOKit -framework Cocoa -framework GLUT -fram
 
 Here's sample code showing a bouncing red ball:
 
-```
+```c
 /*******************************************************************************************
 *
 *   raylib [shapes] example - bouncing ball
@@ -181,9 +177,7 @@ int main(void)
 
 
 
-<h3>
-SFML
-</h3>
+### SFML
 
 ```
 brew install sfml
@@ -239,9 +233,7 @@ and you should see a red circle show up on the screen.
 
 
 
-<h3>
-Apple mlx
-</h3>
+### Apple mlx
 
 **Must have XCode IDE**
 
