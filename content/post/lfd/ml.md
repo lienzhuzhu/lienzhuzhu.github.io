@@ -287,7 +287,7 @@ I recently had to download the MNIST datasets. I went to the official website bu
 
 So, I used PyTorch to get the same data:
 
-```
+```python
 import torchvision.datasets as datasets
 
 mnist_data = datasets.MNIST(root='./data', download=True)
@@ -295,7 +295,7 @@ mnist_data = datasets.MNIST(root='./data', download=True)
 
 Proof that it's the same data:
 
-```
+```zsh
 ❯ python3 main.py
 Downloading http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz
 Downloading http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz to ./data/MNIST/raw/train-images-idx3-ubyte.gz
