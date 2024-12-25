@@ -2,7 +2,7 @@
 author = "Lien Zhu"
 title = "My Dotfiles"
 date = "2023-08-04T15:09:31-07:00"
-description = "The set up I use on my machines."
+description = "The setup I use on my machines."
 
 tags = ["tools", "neovim","zsh","terminal",]
 categories = ["notes",]

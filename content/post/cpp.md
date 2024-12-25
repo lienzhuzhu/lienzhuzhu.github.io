@@ -1,6 +1,6 @@
 +++
 author = "Lien Zhu"
-title = "C++ Library Set Up"
+title = "C++ Library Setup"
 date = "2023-08-31"
 description = "Notes for setting up some libraries I use for C++ development."
 
