@@ -48,7 +48,7 @@ We will learn about several tools and techniques:
 - Python and its `scapy` module
 
 
-# That's it!
+# That\'s it!
 
 In this series we explored TCP RST and hijacking attacks and extended the hijacking attack to obtain a reverse shell.
 

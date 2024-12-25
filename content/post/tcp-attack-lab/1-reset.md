@@ -101,7 +101,7 @@ The telnet connection is reset.
 ---
 
 
-# That's it!
+# That\'s it!
 
 In this post we learned about one exploit on TCP connections, namely the TCP Reset attack.
 
