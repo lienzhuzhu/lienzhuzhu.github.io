@@ -32,9 +32,9 @@ $$
 
 We need to think about how the features affect the labels of the regions.
 
-For any given point, it seems the closer it is to the $x_1 = 0$ line, the more it tends to be positively labeled, so being further away is an attribute that would label it more negatively. So having $\tilde{w}\_1 < 0$ makes sense.
+For any given point, it seems the closer it is to the $x_1 = 0$ line, the more it tends to be positively labeled, so being further away is an attribute that would label it more negatively. So having $\tilde{w}_1 < 0$ makes sense.
 
-It also seems the further away from $x_2 = 0$ a point is, the more it tends to be positively labeled, especially if we compare the size of the regions going up and down to infinity. So $\tilde{w}\_2 > 0$.
+It also seems the further away from $x_2 = 0$ a point is, the more it tends to be positively labeled, especially if we compare the size of the regions going up and down to infinity. So $\tilde{w}_2 > 0$.
 
 
 ### 3. [c]
@@ -95,14 +95,14 @@ Epochs:  333.6
 
 The update rule for PLA is
 $$
-\vec{w}\_t = \vec{w}\_{t-1} + y_n\vec{x}_n
+\vec{w}_t = \vec{w}_{t-1} + y_n\vec{x}_n
 $$
 where $(\vec{x}, y)_n$ is the misclassified point.
 
-At first I thought the answer was [b] because the gradient of this error function would yield $-y_n\vec{w}^T\vec{x}\_n$ which would fit with the SGD update rule
+At first I thought the answer was [b] because the gradient of this error function would yield $-y_n\vec{w}^T\vec{x}_n$ which would fit with the SGD update rule
 
 $$
-\vec{w}\_t = \vec{w}\_{t-1} + \eta (-\nabla{e(\vec{w})})
+\vec{w}_t = \vec{w}_{t-1} + \eta (-\nabla{e(\vec{w})})
 $$
 
 to get the PLA update rule.
