@@ -38,13 +38,18 @@ So, I have decided to work on setting up my own dotfiles more or less from scrat
 [Neovim](https://neovim.io/)
 
 
-### Dependencies
+### Apps To Install
 
 - Rust
 - A Nerd Font
 - ripgrep
 - fzf
 - fd
+- yazi
+    - poppler for PDF preview
+    - ffmpeg
+- LaTeX
+    - pandoc
 
 ### Fonts
 
