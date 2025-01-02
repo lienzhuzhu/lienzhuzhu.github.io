@@ -9,7 +9,7 @@ footnoteReturnLinkContents = "^"
 hasCJKLanguage = true
 languageCode = "en"
 theme = "hugo-theme-tokiwa"
-title = "朱利恩"
+title = "Lien Zhu"
 
 [markup]
     [markup.highlight]
