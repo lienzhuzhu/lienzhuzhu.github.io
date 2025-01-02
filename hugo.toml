@@ -76,6 +76,7 @@ title = "Lien Zhu"
 [params.social]
     #bilibili = "http://example.com/"
     github = "https://github.com/lienzhuzhu"
+    linkedin = "https://linkedin.com/in/lienzhu"
     #gitlab = "https://gitlab.com/"
     #instagram = "http://example.com/"
     mail = "mailto:zhu.lien@icloud.com"
