@@ -26,109 +26,110 @@ $gradient-bottom-left: linear-gradient(315deg, #b24c63ff, #c7eae4ff, #a7e8bdff, 
 $gradient-radial: radial-gradient(#b24c63ff, #c7eae4ff, #a7e8bdff, #fcbcb8ff, #ffd972ff);
 
 @font-face {
-  font-family: 'Atkinson Hyperlegible';
-  src: url('fonts/Atkinson-Hyperlegible-Regular.woff2');
-  font-weight: 400;
-  font-style: normal;
+    font-family: 'Atkinson Hyperlegible';
+    src: url('fonts/Atkinson-Hyperlegible-Regular.woff2');
+    font-weight: 400;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: 'Atkinson Hyperlegible';
-  src: url('/fonts/Atkinson-Hyperlegible-Bold.woff2') format('woff2');
-  font-weight: 700;
-  font-style: normal;
+    font-family: 'Atkinson Hyperlegible';
+    src: url('/fonts/Atkinson-Hyperlegible-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: 'Atkinson Hyperlegible';
-  src: url('/fonts/Atkinson-Hyperlegible-Italic.woff2') format('woff2');
-  font-weight: 400;
-  font-style: italic;
+    font-family: 'Atkinson Hyperlegible';
+    src: url('/fonts/Atkinson-Hyperlegible-Italic.woff2') format('woff2');
+    font-weight: 400;
+    font-style: italic;
 }
 
 @font-face {
-  font-family: 'Atkinson Hyperlegible';
-  src: url('/fonts/Atkinson-Hyperlegible-BoldItalic.woff2') format('woff2');
-  font-weight: 700;
-  font-style: italic;
+    font-family: 'Atkinson Hyperlegible';
+    src: url('/fonts/Atkinson-Hyperlegible-BoldItalic.woff2') format('woff2');
+    font-weight: 700;
+    font-style: italic;
 }
 
 @font-face {
-  font-family: 'beautiful';
-  src: url('/fonts/杨任东竹石体-Light-orig.woff2')
-  format('woff2');
-  font-weight: 400;
-  font-style: normal;
+    font-family: 'beautiful';
+    src: url('/fonts/杨任东竹石体-Light-orig.woff2')
+    format('woff2');
+    font-weight: 400;
+    font-style: normal;
 }
 
 body {
-  font-family: 'Atkinson Hyperlegible', 'beautiful', sans-serif;
-  font-size: 1.25rem;
-  padding-left:   20vw;
-  padding-right:  20vw;
+    font-family: 'Atkinson Hyperlegible', 'beautiful', sans-serif;
+    font-size: 1.25rem;
+    padding-left:   20vw;
+    padding-right:  20vw;
+    margin: 0;
 }
 
 .title {
-  font-size: 3rem;
+    font-size: 3rem;
 }
 
 .list-div {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 ul {
-  list-style-position: inside;
+    list-style-position: inside;
 }
 
 .nav-menu {
-  display: flex;
-  justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 }
 
 a {
-  color: $china-rose;
-
-  &:hover,
-  &:visited,
-  &:focus,
-  &:active {
     color: $china-rose;
-  }
 
-  text-decoration: none;
-  font-weight: bold;
+    &:hover,
+    &:visited,
+    &:focus,
+    &:active {
+        color: $china-rose;
+    }
+
+    text-decoration: none;
+    font-weight: bold;
 }
 
 code {
-  white-space: pre-wrap; /* Allows text to wrap and respects line breaks */
-  word-wrap: break-word; /* Break long words if necessary */
-  overflow-wrap: break-word; /* Alternative for better support */
+    white-space: pre-wrap; /* Allows text to wrap and respects line breaks */
+    word-wrap: break-word; /* Break long words if necessary */
+    overflow-wrap: break-word; /* Alternative for better support */
 }
 
 pre {
-  padding: 1rem;
-  overflow: auto;
+    padding: 1rem;
+    overflow: auto;
 }
 /* The line numbers already provide some kind of left/right padding */
 pre[data-linenos] {
-  padding: 1rem 0;
+    padding: 1rem 0;
 }
 pre table td {
-  padding: 0;
+    padding: 0;
 }
 /* The line number cells */
 pre table td:nth-of-type(1) {
-  text-align: center;
-  user-select: none;
+    text-align: center;
+    user-select: none;
 }
 pre mark {
-  /* If you want your highlights to take the full width */
-  display: block;
-  /* The default background colour of a mark is bright yellow */
-  background-color: rgba(254, 252, 232, 0.9);
+    /* If you want your highlights to take the full width */
+    display: block;
+    /* The default background colour of a mark is bright yellow */
+    background-color: rgba(254, 252, 232, 0.9);
 }
 pre table {
-  width: 100%;
-  border-collapse: collapse;
+    width: 100%;
+    border-collapse: collapse;
 }
