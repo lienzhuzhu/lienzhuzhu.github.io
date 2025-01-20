@@ -14,7 +14,7 @@ date = 2025-01-18
 
 ### Inline math
 ```latex
-$ \varphi = \dfrac{1+\sqrt5}{2}= 1.6180339887… $
+This equation is inline: $ \varphi = \dfrac{1+\sqrt5}{2}= 1.6180339887… $
 ```
 
 This equation is inline: $ \varphi = \dfrac{1+\sqrt5}{2}= 1.6180339887… $
@@ -78,7 +78,7 @@ C_p[\ce{H2O(l)}] = \pu{75.3 J // mol K}
 $$
 
 ```latex
-$ C_p[\ce{H2O(l)}] = \pu{75.3 J // mol K} $
+The concentration by pressure of water: $ C_p[\ce{H2O(l)}] = \pu{75.3 J // mol K} $
 ```
 
 The concentration by pressure of water: $ C_p[\ce{H2O(l)}] = \pu{75.3 J // mol K} $
