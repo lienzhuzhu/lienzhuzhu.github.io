@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+{{ section.content | safe }}
+{% endblock content %}
+
+{% block footer %}
+<div>
+    <i class="nf nf-fa-copyright"></i> Lien Zhu {{ now() | date(format="%Y") }}
+</div>
+{% endblock footer %}

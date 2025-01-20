@@ -1,0 +1,28 @@
+# The URL the site will be built for
+base_url = "https://lienzhuzhu.github.io"
+
+# Whether to automatically compile all Sass files in the sass directory
+compile_sass = true
+
+# Whether to build a search index to be used later on by a JavaScript library
+build_search_index = true
+
+[markdown]
+# Whether to do syntax highlighting
+# Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
+highlight_code = true
+
+
+
+
+[extra]
+
+mathjax = true
+mathjax_extra = true
+
+nav_items = [
+    { name = "Home", url = "/", extra_class = "" },
+    { name = "About", url = "/about/", extra_class = "" },
+    { name = "Blog", url = "/blog/", extra_class = "" },
+    { name = "Projects", url = "/dev.html", extra_class = "" },
+]

@@ -1,0 +1,11 @@
+<head>
+    <meta charset="utf-8">
+    <title>
+        {% if page.title %} {{ page.title }}
+        {% elif section.title %} {{ section.title }}
+        {% elif config.title %} {{ config.title }}
+        {% else %} Post {% endif %}
+    </title>
+    <!-- TODO: Use a Tera template to get the path to the css? -->
+    <link rel="stylesheet" href="/main.css"> 
+</head>

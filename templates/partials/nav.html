@@ -1,0 +1,7 @@
+<nav>
+    <div class="nav-menu">
+        {% for item in config.extra.nav_items %}
+        <a href="{{ item.url | safe }}" class="{{ item.extra_class }}">{{ item.name }}</a>
+        {% endfor %}
+    </div>
+</nav>
