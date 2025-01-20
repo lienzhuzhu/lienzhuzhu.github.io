@@ -3,6 +3,7 @@ title = "关于我"
 template = "info-page.html"
 +++
 
+![calligraphy](/img/calligraphy.jpg) 
 
 # 我叫朱利恩
 
