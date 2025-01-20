@@ -1,0 +1,317 @@
+:root {
+    --yellow: #ffe74cff;
+    --rose: #ff5964ff;
+    --snow: #FAF7F7FF;
+    --black: #0a0908;
+    --blue-jeans: #35a7ffff;
+    --silver: rgb(134, 134, 139);
+    --gray: #f0f0f0;
+
+    --rad: 1%;
+    --navheight: 6vh;
+    --margin-val: 5vw;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: var(--snow);
+    cursor: default;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.full-size-section {
+    height: 100vh;
+    width: 100vw;
+}
+
+.padded-section {
+    /* padding: 0 var(--margin-val); */
+}
+
+.flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.silver-text {
+    color: var(--silver);
+}
+
+.inline-text {
+    display: inline;
+}
+
+
+
+/* Navigation Bar */
+
+.nav {
+    z-index: 100;
+    position: fixed;
+    top: 0;
+
+    width: 100%;
+    height: var(--navheight);
+
+    background-color: rgba(10, 9, 8, 0.8);
+    backdrop-filter: saturate(200%) blur(20px);
+
+    display: grid;
+    grid-template-columns: 80% 20%;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.nav-grid-item {
+    width: 100%;
+    height: calc(var(--navheight) / 2);
+}
+
+.nav-item {
+    height: 100%;
+}
+
+.home-link {
+    color: var(--snow);
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    padding-left: var(--margin-val);
+    height: 100%;
+    text-decoration: none;
+}
+
+.home-link:hover,
+.home-link:visited {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.right-nav-align-container {
+    display: flex;
+    justify-content: end;
+    gap: var(--margin-val);
+
+    /* width of 15vw allows linkedin logo to line up with cards */
+    width: 15vw; 
+    height: 100%;
+}
+
+.link-icon-wrapper {
+    height: 100%;
+    object-fit: cover;
+}
+
+.social-icon {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+
+/* Biography */
+
+#bio-section {
+    padding-top: 24vh;
+    padding-bottom: 12vh;
+    padding-bottom: 24vh;
+}
+
+#bio-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* desktop */
+    flex-direction: row;
+}
+
+#headshot-card {
+    width: 30%;
+}
+
+#industry-title {
+    display: none;
+}
+
+.headshot {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.bio-text-card {
+    color: var(--black);
+
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+
+    /* desktop */
+    padding-left: 3%;
+}
+
+.name-wrapper {
+    font-size: 5rem;
+    position: relative;
+    left: -0.25rem; 
+}
+
+.title-wrapper {
+    font-size: 2.5rem;
+    position: relative;
+    left: -0.125rem;
+}
+
+.school-wrapper {
+    position: relative;
+    left: -0.0625rem;
+}
+
+
+/* Project Section */
+
+.project-card-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10vh;
+    height: 100vh;
+    /* margin-bottom: -25vh; /* to pull up the footer */ */
+}
+
+.project-card {
+    min-height: 75vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0 20vw;
+}
+
+.center-text {
+    text-align: center;
+}
+
+.project-title {
+    font-size: 2rem;
+    margin-bottom: 1vh;
+}
+
+.project-description {
+    font-size: 1.3rem;
+    margin-bottom: 1.6vh;
+}
+
+.project-link-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5vw;
+    margin-bottom: 3.2vh;
+}
+.project-link-container > *:only-child {
+    grid-column: 1 / -1; /* Span the full width */
+    justify-self: center; /* Center the item */
+}
+
+.project-link {
+    color: var(--blue-jeans);
+    text-decoration: none;
+}
+.project-link:visited,
+.project-link:focus,
+.project-link:hover {
+    color: var(--blue-jeans);
+}
+.project-link:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.project-preview-container {
+    width: 90%;
+}
+
+.project-preview-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+/* footer */
+
+.footer {
+    width: 100%;
+    height: var(--navheight);
+    margin-top: 0;
+}
+
+.footer-text-wrapper {
+    font-size: 0.8rem;
+}
+
+
+@media (max-aspect-ratio: 1/1) {
+
+    .nav {
+        background-color: rgba(10, 9, 8, 0.925);
+    }
+
+    #bio-card {
+        flex-direction: column;
+        height: auto;
+    }
+    #headshot-card {
+        height: 100%;
+        width: 90%;
+    }
+    .bio-text-card {
+        padding-left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 90vw;
+        height: 100vh;
+    }
+    .name-wrapper {
+        font-size: 3.5rem;
+    }
+    .title-wrapper {
+        font-size: 2rem;
+    }
+    #degree-title {
+        display: none;
+    }
+    .school-wrapper {
+        display: none;
+        /* font-size: 3vw; */
+    }
+
+    .project-card-container {
+        gap: 2vh;
+    }
+
+    .project-card {
+        height: fit-content;
+        padding: 5vh 5vw;
+    }
+    .project-preview-container {
+        width: 80%;
+    }
+
+    .footer {
+        display: none;
+    }
+
+}

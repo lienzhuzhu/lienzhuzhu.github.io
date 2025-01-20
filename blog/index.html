@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+    <meta charset="utf-8">
+    <title>
+         Blog
+        
+    </title>
+    <!-- TODO: Use a Tera template to get the path to the css? -->
+    <link rel="stylesheet" href="/main.css"> 
+</head>
+
+
+    <body>
+
+        <nav>
+    <div class="nav-menu">
+        
+        <a href="/" class="">Home</a>
+        
+        <a href="/about/" class="">About</a>
+        
+        <a href="/blog/" class="">Blog</a>
+        
+        <a href="/dev.html" class="">Projects</a>
+        
+    </div>
+</nav>
+
+
+        <section class="section">
+            <div class="container">
+                
+<h1 class="section-title">
+    Blog
+</h1>
+<div class="list-div">
+    
+    <a href="https://lienzhuzhu.github.io/blog/math/">Math Typesetting 数学</a>
+    
+    <a href="https://lienzhuzhu.github.io/blog/dotfiles/">My Dotfiles</a>
+    
+</div>
+
+            </div>
+        </section>
+
+        <!-- MathJAX config -->
+        <script>
+            MathJax = {
+                /* TODO: Experiment with these delimiters */
+                tex: {
+                    displayMath: [['\\[', '\\]'], ['$$', '$$']],
+                    inlineMath: [['\\(', '\\)'], ['$', '$']],
+                }
+            };
+        </script>
+        <!-- Load V3.+ -->
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+    </body>
+
+
+    <footer>
+        <div>
+            <i class="nf nf-fa-copyright"></i> Lien Zhu 2025
+        </div>
+    </footer>
+
+</html>
