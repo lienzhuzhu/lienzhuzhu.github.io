@@ -8,4 +8,9 @@
     </title>
     <!-- TODO: Use a Tera template to get the path to the css? -->
     <link rel="stylesheet" href="/main.css"> 
+    <script>
+        if (window.location.hostname === "username.github.io" && window.location.pathname === "/") {
+            window.location.href = window.location.origin + "/index";
+        }
+    </script>
 </head>
