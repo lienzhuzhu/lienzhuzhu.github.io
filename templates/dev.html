@@ -8,7 +8,7 @@
     <meta name=”robots” content=”index>
     <link href="styles.css" rel="stylesheet">
     <link rel="canonical" href="https://lienzhu.dev" />
-    <link rel="shortcut icon" href="./img/favicon.ico" />
+    <link rel="shortcut icon" href="/img/favicon.ico" />
     <title>{{ section.title }}</title>
 </head>
 
@@ -23,10 +23,10 @@
         <div class="nav-grid-item">
             <div class="right-nav-align-container">
                 <a href="https://github.com/lienzhuzhu" class="link-icon-wrapper">
-                    <img src="./img/github-nb.svg" id="social-github" alt="github logo" class="social-icon">
+                    <img src="/img/github-nb.svg" id="social-github" alt="github logo" class="social-icon">
                 </a>
                 <a href="https://www.linkedin.com/in/lienzhu" class="link-icon-wrapper">
-                    <img src="./img/linkedin-original.svg" id="social-linkedin" alt="linkedin logo" class="social-icon">
+                    <img src="/img/linkedin-original.svg" id="social-linkedin" alt="linkedin logo" class="social-icon">
                 </a>
             </div>
         </div>
@@ -35,10 +35,15 @@
     <div class="padded-section" id="bio-section">
         <div id="bio-card">
             <div id="headshot-card">
-                <!--`./img/profile.jpg` is in the root-->
+                <!--NOTE: static assets are served from root -->
+                <!--`profile.jpg` is in the root-->
                 <!--So if you want to use it in the Section _index.md,-->
                 <!--you must use `/img/profile.jpg`.-->
-                <img src="./img/profile.jpg" alt="handsome guy" class="headshot">
+                <!--If `profile.jpg` were co-located in the Section root,-->
+                <!--then it can be referenced relatively, `./img/profile.jpg` inside the markdown.-->
+                <!--The html template `dev.html` maps through the Section, so `img` goes to `/img`.-->
+                <!-- Ultimately because `static/` maps to root. -->
+                <img src="/img/profile.jpg" alt="handsome guy" class="headshot">
             </div>
             <div class="bio-text-card">
                 <div class="name-wrapper bold">LIEN<span class="silver-text">ZHU</span></div>
@@ -57,7 +62,7 @@
                 <a class="project-link" href="https://github.com/lienzhuzhu/dotfiles">Check out my dotfiles.</a>
             </div>
             <div class="project-preview-container">
-                <img src="./img/dotfiles.png" alt="dotfiles screengrab" class="project-preview-img">
+                <img src="/img/dotfiles.png" alt="dotfiles screengrab" class="project-preview-img">
             </div>
         </div>
 
@@ -73,7 +78,7 @@
                 <a class="project-link" href="https://github.com/lienzhuzhu/notaker">Learn beautifully.</a>
             </div>
             <div class="project-preview-container">
-                <img src="./img/notaker.png" alt="notaker screengrab" class="project-preview-img">
+                <img src="/img/notaker.png" alt="notaker screengrab" class="project-preview-img">
             </div>
         </div>
 
