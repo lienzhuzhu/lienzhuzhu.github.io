@@ -62,6 +62,7 @@ $gradient-radial: radial-gradient(#b24c63ff, #c7eae4ff, #a7e8bdff, #fcbcb8ff, #f
 }
 
 body {
+    background-color: $jasmine;
     font-family: 'Atkinson Hyperlegible', 'beautiful', sans-serif;
     font-size: 1.25rem;
     padding-left:   20vw;

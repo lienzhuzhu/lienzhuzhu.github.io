@@ -24,5 +24,5 @@ nav_items = [
     { name = "Home", url = "/", extra_class = "" },
     { name = "About", url = "/about/", extra_class = "" },
     { name = "Blog", url = "/blog/", extra_class = "" },
-    { name = "Projects", url = "/dev.html", extra_class = "" },
+    { name = "Projects", url = "/dev", extra_class = "" },
 ]
