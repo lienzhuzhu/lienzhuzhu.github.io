@@ -1,11 +1,20 @@
 {% extends "base.html" %}
 
 {% block content %}
-{{ section.content | safe }}
-{% endblock content %}
 
-{% block footer %}
-<div>
-    <i class="nf nf-fa-copyright"></i> Lien Zhu {{ now() | date(format="%Y") }}
-</div>
-{% endblock footer %}
+<h1 class="title">
+    欢迎你
+</h1>
+
+<h2>
+    Welcome to my home page.
+</h2>
+
+<h3>
+    If you are looking for an interactive biography generator, please hold on tight.
+    One will be available soon.
+</h3>
+
+<strong>For now, please enjoy my blog posts.</strong>
+
+{% endblock content %}
