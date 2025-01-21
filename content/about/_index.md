@@ -16,6 +16,3 @@ One idea I'm thinking about in my free time is sustainable city design. I have s
 Public transportation and micromobility are critical in reducing our carbon footprint and improving our health.
 
 I love to learn about ideas to promote public transportation, so please reach out to talk.
-
-
-{{ youtube(id="EGUMPr9GN8Y") }}
