@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 
+    <!--NOTE: static assets are served from root -->
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -35,14 +37,6 @@
     <div class="padded-section" id="bio-section">
         <div id="bio-card">
             <div id="headshot-card">
-                <!--NOTE: static assets are served from root -->
-                <!--`profile.jpg` is in the root-->
-                <!--So if you want to use it in the Section _index.md,-->
-                <!--you must use `/img/profile.jpg`.-->
-                <!--If `profile.jpg` were co-located in the Section root,-->
-                <!--then it can be referenced relatively, `./img/profile.jpg` inside the markdown.-->
-                <!--The html template `dev.html` maps through the Section, so `img` goes to `/img`.-->
-                <!-- Ultimately because `static/` maps to root. -->
                 <img src="/img/profile.jpg" alt="handsome guy" class="headshot">
             </div>
             <div class="bio-text-card">
