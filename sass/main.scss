@@ -113,6 +113,7 @@ code {
     overflow-wrap: break-word; /* Alternative for better support */
 }
 
+// FROM getzola.org
 pre {
     padding: 1rem;
     overflow: auto;
@@ -138,4 +139,10 @@ pre mark {
 pre table {
     width: 100%;
     border-collapse: collapse;
+}
+// END getzola.org
+
+hr {
+    border-color: black;
+    background-color: black;
 }
