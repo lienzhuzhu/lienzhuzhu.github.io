@@ -1,11 +1,6 @@
 +++
-author = "Lien Zhu"
 title = "Learning From Data Problem Set 2"
 date = "2023-10-20"
-description = "Learning From Data Lecture 2"
-categories = [ "notes", ]
-tags = [ "ml", "data", ]
-series = ["Learning From Data"]
 +++
 
 
@@ -42,7 +37,7 @@ Now that we've broken the question down, it becomes easier to put some math to i
 
 $$
 \begin{aligned}
-P(h(\vec{x}) \neq y)    & = P(y = f(\vec{x}) \cap h(\vec{x}) \neq f(\vec{x})) + P(y \neq f(\vec{x}) \cap h(\vec{x}) = f(\vec{x})) \\\
+P(h(\vec{x}) \neq y)    & =     P\left(y = f(\vec{x}) \cap h(\vec{x}) \neq f(\vec{x})) + P(y \neq f(\vec{x}) \cap h(\vec{x}) = f(\vec{x})\right) \\\\\\\\
                         & = \lambda \mu + (1-\lambda)(1-\mu)
 \end{aligned}
 $$
@@ -79,14 +74,14 @@ E_out estimate: 0.113239
 
 Refer to the following output for 8 - 10.
 
-```zsh
+```bash
 ❯ python3 hw2/transform.py -N 1000
 E_in actual: 0.5050290000
 E_out estimate: 0.5175489999999999
 Average Weights 0.04570844180055819, 0.0016592000474898905, -0.00043616224075597215
 ```
 
-```zsh
+```bash
 ❯ python3 hw2/transform.py -N 1000 --transform
 E_in actual: 0.1236600000
 E_out estimate: 0.125843

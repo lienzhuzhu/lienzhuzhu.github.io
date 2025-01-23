@@ -1,10 +1,6 @@
 +++
 title = "Learning From Data Final"
 date = "2023-11-10T21:59:16-08:00"
-description = "Learning From Data Final Exam"
-categories = [ "notes", ]
-tags = [ "ml", "data", ]
-series = ["Learning From Data"]
 +++
 
 
@@ -37,19 +33,19 @@ Logistic regression wouldn't be an appropriate model to include in any hypothesi
 
 ### 3. [d]
 
-We know overfitting occurs when we pick a hypothesis such that $E_{in}$ is minimized but we see a larger $E_{out}$ when that hypothesis is used out of sample, compared to other hypotheses. Using this fact as our guiding star, let's go through the answer choices.
+We know overfitting occurs when we pick a hypothesis such that $E\_{in}$ is minimized but we see a larger $E\_{out}$ when that hypothesis is used out of sample, compared to other hypotheses. Using this fact as our guiding star, let's go through the answer choices.
 
-[a]. In order for us to have picked on hypothesis over another, it must be the case that one of them had a lower $E_{in}$.
+[a]. In order for us to have picked on hypothesis over another, it must be the case that one of them had a lower $E\_{in}$.
 
 [b]. We must also be able to say that some other hypothesis has lower generalization error than the one selected.
 
-[c]. We must have some estimate of $E_{out}$ for our hypothesis and some other hypothesis that we should have picked, but no time for regrets. This means even if both $E_{out}$ values are equal, because the hypotheses must have had different $E_{in}$'s for us to have selected the poor hypothesis, $E_{out} - E_{in}$ must be different for the 2 hypotheses.
+[c]. We must have some estimate of $E\_{out}$ for our hypothesis and some other hypothesis that we should have picked, but no time for regrets. This means even if both $E\_{out}$ values are equal, because the hypotheses must have had different $E\_{in}$'s for us to have selected the poor hypothesis, $E\_{out} - E\_{in}$ must be different for the 2 hypotheses.
 
-[e]. We must have a choice between 2 or more hypotheses in order to say we overfit the data by selecting some hypothesis. Overfitting is like admitting you had a choice between 2 women to make your girlfriend and you picked the one who was deceptively sweet at first (low $E_{in}$) but not very sweet once you pick her (high $E_{out}$). Looking back you realize you should have picked the one who didn't put up false pretenses (slightly higher $E_{in}$) and would treat you like a king (low $E_{out}$).
+[e]. We must have a choice between 2 or more hypotheses in order to say we overfit the data by selecting some hypothesis. Overfitting is like admitting you had a choice between 2 women to make your girlfriend and you picked the one who was deceptively sweet at first (low $E\_{in}$) but not very sweet once you pick her (high $E\_{out}$). Looking back you realize you should have picked the one who didn't put up false pretenses (slightly higher $E\_{in}$) and would treat you like a king (low $E\_{out}$).
 
 After analyzing incorrect answer choices, we can make a statement about the correct answer choice.
 
-[d]. Comparing $E_{out}-E_{in}$ values is not a principled indicator for overfitting. We may think that larger $E_{out}-E_{in}$ value corresponds to overfitting, but we might imagine a case where the hypothesis we pick has $E_{in} = 0$ and $E_{out} = 0.25$, while some other hypothesis has $E_{in} = 0.50$ and $E_{out} = 0.60$. Then if we go by difference, the other hypothesis looks better, but in reality it has higher out of sample error.
+[d]. Comparing $E\_{out}-E\_{in}$ values is not a principled indicator for overfitting. We may think that larger $E\_{out}-E\_{in}$ value corresponds to overfitting, but we might imagine a case where the hypothesis we pick has $E\_{in} = 0$ and $E\_{out} = 0.25$, while some other hypothesis has $E\_{in} = 0.50$ and $E\_{out} = 0.60$. Then if we go by difference, the other hypothesis looks better, but in reality it has higher out of sample error.
 
 Using the difference between out of sample and in sample error would not clue us in to detect overfitting, since the hypothesis we pick may very well be the best one for that data set and available hypotheses, but have a larger difference.
 
@@ -59,7 +55,7 @@ Using the difference between out of sample and in sample error would not clue us
 ### 4. [d]
 
 
-Stochastic noise captures the probabilistic essence of real-world target functions, shifting the notion of target function to target _distribution_. It's what allows the same input point to have a different label, for instance two credit card applicants with identical application details, but only one is approved while the other is declined.
+Stochastic noise captures the probabilistic essence of real-world target functions, shifting the notion of target function to target \_distribution\_. It's what allows the same input point to have a different label, for instance two credit card applicants with identical application details, but only one is approved while the other is declined.
 
 It does not relate to the hypothesis set.
 
@@ -71,13 +67,13 @@ Why not the other options?
 
 [c]. Deterministic noise captures the intricacies of the target function that cannot be approximated by the hypothesis set.
 
-[e]. Stochastic noise is generated by the probabilistic target distribution, that is why it is a target _distribution_ and not a target _function_.
+[e]. Stochastic noise is generated by the probabilistic target distribution, that is why it is a target \_distribution\_ and not a target \_function\_.
 
 
 
 ### 5. [a]
 
-If $\vec{w}_{lin}$ is in the constrained hypothesis set $\mathcal{H}(C)$, then there is no need for regularization and $\vec{w}_{reg} = \vec{w}_{lin}$.
+If $\vec{w}\_{lin}$ is in the constrained hypothesis set $\mathcal{H}(C)$, then there is no need for regularization and $\vec{w}\_{reg} = \vec{w}\_{lin}$.
 
 
 ### 6. [b]
@@ -85,7 +81,7 @@ If $\vec{w}_{lin}$ is in the constrained hypothesis set $\mathcal{H}(C)$, then t
 Being able to define an augmented error allows us to solve an unconstrained optimization problem.
 
 $$
-\vec{w}_{reg} = (Z^TZ + \lambda{I})^{-1}Z^T\vec{y}
+\vec{w}\_{reg} = (Z^TZ + \lambda{I})^{-1}Z^T\vec{y}
 $$
 
 Why the other's are incorrect:
@@ -94,70 +90,70 @@ Why the other's are incorrect:
 
 [c]. I'm not aware of any relation to the VC dimension besides the fact that regularization can decrease the VC dimension since we shift the notion to effective number of parameters. Validation is used to determine constraints.
 
-[d]. Regularization concedes increases in $E_{in}$ for decreases in $E_{out}$.
+[d]. Regularization concedes increases in $E\_{in}$ for decreases in $E\_{out}$.
 
 
 ### For 7. through 10. use this output.
 ```zsh
 ❯ python3 final/regress.py --digit=1 --other=5
-0 versus all.   E_in: 0.22946  E_out: 0.22770
-1 versus all.   E_in: 0.13770  E_out: 0.13104
-2 versus all.   E_in: 0.10026  E_out: 0.09865
-3 versus all.   E_in: 0.09025  E_out: 0.08271
-4 versus all.   E_in: 0.08943  E_out: 0.09965
-5 versus all.   E_in: 0.07626  E_out: 0.07972
-6 versus all.   E_in: 0.09107  E_out: 0.08470
-7 versus all.   E_in: 0.08847  E_out: 0.07324
-8 versus all.   E_in: 0.07434  E_out: 0.08271
-9 versus all.   E_in: 0.08833  E_out: 0.08819
+0 versus all.   E\_in: 0.22946  E\_out: 0.22770
+1 versus all.   E\_in: 0.13770  E\_out: 0.13104
+2 versus all.   E\_in: 0.10026  E\_out: 0.09865
+3 versus all.   E\_in: 0.09025  E\_out: 0.08271
+4 versus all.   E\_in: 0.08943  E\_out: 0.09965
+5 versus all.   E\_in: 0.07626  E\_out: 0.07972
+6 versus all.   E\_in: 0.09107  E\_out: 0.08470
+7 versus all.   E\_in: 0.08847  E\_out: 0.07324
+8 versus all.   E\_in: 0.07434  E\_out: 0.08271
+9 versus all.   E\_in: 0.08833  E\_out: 0.08819
 
-K = 0.01 Digit 1 versus 5. E_in: 0.03011  E_out: 0.06840
-K = 1.00 Digit 1 versus 5. E_in: 0.03011  E_out: 0.06132
+K = 0.01 Digit 1 versus 5. E\_in: 0.03011  E\_out: 0.06840
+K = 1.00 Digit 1 versus 5. E\_in: 0.03011  E\_out: 0.06132
 
 ❯ python3 final/regress.py --digit=1 --other=5 --transform
-0 versus all.   E_in: 0.10232  E_out: 0.10663
-1 versus all.   E_in: 0.01234  E_out: 0.02192
-2 versus all.   E_in: 0.10026  E_out: 0.09865
-3 versus all.   E_in: 0.09025  E_out: 0.08271
-4 versus all.   E_in: 0.08943  E_out: 0.09965
-5 versus all.   E_in: 0.07626  E_out: 0.07922
-6 versus all.   E_in: 0.09107  E_out: 0.08470
-7 versus all.   E_in: 0.08847  E_out: 0.07324
-8 versus all.   E_in: 0.07434  E_out: 0.08271
-9 versus all.   E_in: 0.08833  E_out: 0.08819
+0 versus all.   E\_in: 0.10232  E\_out: 0.10663
+1 versus all.   E\_in: 0.01234  E\_out: 0.02192
+2 versus all.   E\_in: 0.10026  E\_out: 0.09865
+3 versus all.   E\_in: 0.09025  E\_out: 0.08271
+4 versus all.   E\_in: 0.08943  E\_out: 0.09965
+5 versus all.   E\_in: 0.07626  E\_out: 0.07922
+6 versus all.   E\_in: 0.09107  E\_out: 0.08470
+7 versus all.   E\_in: 0.08847  E\_out: 0.07324
+8 versus all.   E\_in: 0.07434  E\_out: 0.08271
+9 versus all.   E\_in: 0.08833  E\_out: 0.08819
 
-K = 0.01 Digit 1 versus 5. E_in: 0.00448  E_out: 0.02830
-K = 1.00 Digit 1 versus 5. E_in: 0.00512  E_out: 0.02594
+K = 0.01 Digit 1 versus 5. E\_in: 0.00448  E\_out: 0.02830
+K = 1.00 Digit 1 versus 5. E\_in: 0.00512  E\_out: 0.02594
 ```
 
 
 ### 7. [d]
 
-8 versus all has $E_{in} = 0.07434$.
+8 versus all has $E\_{in} = 0.07434$.
 
 
 ### 8. [b]
 
-1 versus all has $E_{out} = 0.02192$ when the transformation is applied.
+1 versus all has $E\_{out} = 0.02192$ when the transformation is applied.
 
 
 ### 9. [e]
 
-The transformation decreases $E_{out}$ for the 5 versus all classifier from 0.07972 to 0.07922, a marginal improvement.
+The transformation decreases $E\_{out}$ for the 5 versus all classifier from 0.07972 to 0.07922, a marginal improvement.
 
 
 ### 10. [a]
 ```zsh
-K = 0.01 Digit 1 versus 5. E_in: 0.00448  E_out: 0.02830
-K = 1.00 Digit 1 versus 5. E_in: 0.00512  E_out: 0.02594
+K = 0.01 Digit 1 versus 5. E\_in: 0.00448  E\_out: 0.02830
+K = 1.00 Digit 1 versus 5. E\_in: 0.00512  E\_out: 0.02594
 ```
 
 
 ### 11. [c]
 
-First transform each data point using the described transformation, then graph in Desmos, with $x_2$ as the $y$-axis, such that $x_1 = x$ and $x_2 = y$.
+First transform each data point using the described transformation, then graph in Desmos, with $x\_2$ as the $y$-axis, such that $x\_1 = x$ and $x\_2 = y$.
 
-The only hyperplane that separates the data correctly is the vertical line $0 = 1 \cdot x_1 + 0 \cdot x_2 + (-0.5)$ which corresponds to choice [c].
+The only hyperplane that separates the data correctly is the vertical line $0 = 1 \cdot x\_1 + 0 \cdot x\_2 + (-0.5)$ which corresponds to choice [c].
 
 ### 12. [c]
 ```zsh
@@ -180,11 +176,11 @@ Data was inseparable in Z space 0.0%
 
 SVM Kernel beat RBF Model 84.9%
 
-SVM E_in:       0.0000
-RBF E_in:       0.0352  and was zero 3.1%
+SVM E\_in:       0.0000
+RBF E\_in:       0.0352  and was zero 3.1%
 
-SVM E_out:      0.0319
-RBF E_out:      0.0545
+SVM E\_out:      0.0319
+RBF E\_out:      0.0545
 ```
 
 RBF Model versus RBF Kernel SVM with $\gamma = 1.5$ and 12 clusters.
@@ -196,11 +192,11 @@ Data was inseparable in Z space 0.0%
 
 SVM Kernel beat RBF Model 79.2%
 
-SVM E_in:       0.0000
-RBF E_in:       0.0231  and was zero 8.5%
+SVM E\_in:       0.0000
+RBF E\_in:       0.0231  and was zero 8.5%
 
-SVM E_out:      0.0314
-RBF E_out:      0.0447
+SVM E\_out:      0.0314
+RBF E\_out:      0.0447
 ```
 
 
@@ -224,11 +220,11 @@ Data was inseparable in Z space 0.0%
 
 SVM Kernel beat RBF Model 85.8%
 
-SVM E_in:       0.0000
-RBF E_in:       0.0347  and was zero 3.3%
+SVM E\_in:       0.0000
+RBF E\_in:       0.0347  and was zero 3.3%
 
-SVM E_out:      0.0318
-RBF E_out:      0.0539
+SVM E\_out:      0.0318
+RBF E\_out:      0.0539
 
 ❯ python3 final/rbf.py --centers=9 --gamma=2
 
@@ -236,11 +232,11 @@ Data was inseparable in Z space 0.0%
 
 SVM Kernel beat RBF Model 87.5%
 
-SVM E_in:       0.0000
-RBF E_in:       0.0399  and was zero 2.3%
+SVM E\_in:       0.0000
+RBF E\_in:       0.0399  and was zero 2.3%
 
-SVM E_out:      0.0336
-RBF E_out:      0.0594
+SVM E\_out:      0.0336
+RBF E\_out:      0.0594
 ````
 
 
@@ -277,6 +273,6 @@ This means the posterior is increases linearly with $h$ over $[0,1]$.
 
 ### 20. [c]
 
-$g(\mathbf{x})$ has a prediction equal to the average of the predictions outputted by $g_1$ and $g_2$, therefore it makes sense that the deviation of $g(\mathbf{x})$ cannot be worse than the average of the deviations of $g_1(\mathbf{x})$ and $g_2(\mathbf{x})$.
+$g(\mathbf{x})$ has a prediction equal to the average of the predictions outputted by $g\_1$ and $g\_2$, therefore it makes sense that the deviation of $g(\mathbf{x})$ cannot be worse than the average of the deviations of $g\_1(\mathbf{x})$ and $g\_2(\mathbf{x})$.
 
-In fact, $g$ is better than the average of $g_1$ and $g_2$ when $g_1(\mathbf{x}) \cdot g_2(\mathbf{x}) < 0$, and is exactly equal to the average when $g_1 \cdot g_2 > 0$.
+In fact, $g$ is better than the average of $g\_1$ and $g\_2$ when $g\_1(\mathbf{x}) \cdot g\_2(\mathbf{x}) < 0$, and is exactly equal to the average when $g\_1 \cdot g\_2 > 0$.

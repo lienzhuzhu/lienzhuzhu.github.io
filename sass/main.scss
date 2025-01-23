@@ -66,8 +66,8 @@ body {
     font-family: 'Atkinson Hyperlegible', 'beautiful', sans-serif;
     font-size: 1.25rem;
     padding-top: 2.5vh;
-    padding-left:   20vw;
-    padding-right:  20vw;
+    padding-left:   10vw;
+    padding-right:  10vw;
     margin: 0;
 }
 
@@ -105,6 +105,12 @@ a {
 
     text-decoration: none;
     font-weight: bold;
+    width: auto;
+    max-width: max-content;
+}
+
+.list-div-post-link {
+    margin: 5px 0;
 }
 
 code {

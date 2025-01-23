@@ -1,11 +1,6 @@
 +++
-author = "Lien Zhu"
 title = "Learning From Data Problem Set 1"
 date = "2023-10-19"
-description = "Learning From Data Lecture 1"
-categories = [ "notes", ]
-tags = [ "ml", "data", ]
-series = ["Learning From Data"]
 +++
 
 
@@ -43,7 +38,7 @@ All together now:
 
 $$
 \begin{aligned}
-P(\textrm{Second ball drawn is black } | \textrm{ First ball drawn is black})   & = \frac{\frac{1}{2}}{\frac{1}{2} \cdot 1 + \frac{1}{2} \cdot \frac{1}{2}} \\ \\
+P(\textrm{Second ball drawn is black } | \textrm{ First ball drawn is black})   & = \frac{\frac{1}{2}}{\frac{1}{2} \cdot 1 + \frac{1}{2} \cdot \frac{1}{2}} \\\\\\\\
                                                                                 & = \frac{2}{3}
 \end{aligned}
 $$
@@ -55,7 +50,7 @@ Use binomial distribution. Let $X \sim \text{Binom}(10, 0.55)$. Then the $P(X = 
 
 $$
 \begin{aligned}
-P(X = 0)    & = \binom{10}{0}(0.55)^0(0.45)^10 \\ \\
+P(X = 0)    & = \binom{10}{0}(0.55)^0(0.45)^10 \\\\\\\\
             & = 3.405 \times 10^{-4}
 \end{aligned}
 $$
@@ -69,8 +64,8 @@ Then, we can have $Y \sim \text{Binom}(1000, 3.405 \times 10^{-4})$ since we cal
 
 $$
 \begin{aligned}
-P(Y \geq 1) & = 1 - P(Y = 0) \\ \\
-            & = 1 - \binom{1000}{0}(3.405 \times 10^{-4})^0(1 - 3.405 \times 10^{-4})^{1000} \\ \\
+P(Y \geq 1) & = 1 - P(Y = 0) \\\\\\\\
+            & = 1 - \binom{1000}{0}(3.405 \times 10^{-4})^0(1 - 3.405 \times 10^{-4})^{1000} \\\\\\\\
             & = 0.2886
 \end{aligned}
 $$
@@ -83,11 +78,11 @@ Below is a table describing the remaining data points and the 8 possible target 
 $$
 \begin{array}{|c|c|c|c|c|c|c|c|c|}
 \hline
-x_n & f_1 & f_2 & f_3 & f_4 & f_5 & f_6 & f_7 & f_8 \\
+x_n & f_1 & f_2 & f_3 & f_4 & f_5 & f_6 & f_7 & f_8 \\\\
 \hline
-\text{1 0 1} & 0 & 0 & 0 & 0 & 1 & 1 & 1 & 1   \\
-\text{1 1 0} & 0 & 0 & 1 & 1 & 0 & 0 & 1 & 1   \\
-\text{1 1 1} & 0 & 1 & 0 & 1 & 0 & 1 & 0 & 1   \\
+\text{1 0 1} & 0 & 0 & 0 & 0 & 1 & 1 & 1 & 1   \\\\
+\text{1 1 0} & 0 & 0 & 1 & 1 & 0 & 0 & 1 & 1   \\\\
+\text{1 1 1} & 0 & 1 & 0 & 1 & 0 & 1 & 0 & 1   \\\\
 \hline
 \end{array}
 $$
@@ -97,8 +92,8 @@ Now let's analyze each option for $g$:
 
 [a]. $g(x_n) = 
 \begin{bmatrix}
-1 \\
-1 \\
+1 \\\\
+1 \\\\
 1
 \end{bmatrix}
 $
@@ -108,8 +103,8 @@ This $g$ matches $f_8$ for 3 points, $f_4$, $f_6$, $f_7$ for 2 points, and $f_2$
 
 [b]. $g(x_n) = 
 \begin{bmatrix}
-0 \\
-0 \\
+0 \\\\
+0 \\\\
 0
 \end{bmatrix}
 $

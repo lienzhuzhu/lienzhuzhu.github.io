@@ -1,11 +1,6 @@
 +++
-author = "Lien Zhu"
 title = "Learning From Data Problem Set 3"
 date = "2023-10-23"
-description = "Learning From Data Lecture 3"
-categories = [ "notes", ]
-tags = [ "ml", "data", ]
-series = ["Learning From Data"]
 +++
 
 
@@ -17,9 +12,9 @@ We can express our confidence as $\delta = 2Me^{-2\epsilon^2N}$ and manipulate t
 
 $$
 \begin{aligned}
-2Me^{-2\epsilon^2N} & = \delta \\\ \\\
-e^{-2\epsilon^2N}   & = \frac{\delta}{2M} \\\ \\\
--2\epsilon^2N       & = \ln{\frac{\delta}{2M}} \\\ \\\
+2Me^{-2\epsilon^2N} & = \delta \\\\
+e^{-2\epsilon^2N}   & = \frac{\delta}{2M} \\\\
+-2\epsilon^2N       & = \ln{\frac{\delta}{2M}} \\\\
 N                   & = \frac{1}{2\epsilon^2}\ln{\frac{2M}{\delta}}
 \end{aligned}
 $$
@@ -32,7 +27,7 @@ $\delta = 0.03$
 For $M = 1$:
 $$
 \begin{aligned}
-N   & =         \frac{1}{2\epsilon^2}\ln{\frac{2}{\delta}} \\\ \\\
+N   & =         \frac{1}{2\epsilon^2}\ln{\frac{2}{\delta}} \\\\\\\\
     & \approx   840 
 \end{aligned}
 $$
@@ -43,7 +38,7 @@ $$
 For $M = 10$:
 $$
 \begin{aligned}
-N   & =         \frac{1}{2\epsilon^2}\ln{\frac{20}{\delta}} \\\ \\\
+N   & =         \frac{1}{2\epsilon^2}\ln{\frac{20}{\delta}} \\\\\\\\
     & \approx   1300 
 \end{aligned}
 $$
@@ -54,7 +49,7 @@ $$
 For $M = 100$:
 $$
 \begin{aligned}
-N   & =         \frac{1}{2\epsilon^2}\ln{\frac{200}{\delta}} \\\ \\\
+N   & =         \frac{1}{2\epsilon^2}\ln{\frac{200}{\delta}} \\\\\\\\
     & \approx   1761 
 \end{aligned}
 $$
@@ -87,11 +82,11 @@ For 5 points, we can label the $1^{st}$, $3^{rd}$, and $5^{th}$ points as positi
 
 Let's apply the same logic as we use for finding the growth function for the single positive interval. If we pick 4 distinct segments to place our start and end points, then we have $\binom{N+1}{4}$ combinations. 
 
-Now what about the non-disticnt cases? Well, there's really only one because as long the left-most interval's end point is the same or overlaps with the right-most interval's start point, then it reduces to the single interval case where we have $\binom{N+1}{2}$ choices.
+Now what about the non-distinct cases? Well, there's really only one because as long the left-most interval's end point is the same or overlaps with the right-most interval's start point, then it reduces to the single interval case where we have $\binom{N+1}{2}$ choices.
 
 Of course, we still have the single outcome where all start points are in the same segment as their endpoints and so we add a 1. Putting these results together gets us:
 
-$m_{\mathcal{H}} = \binom{N+1}{4} + \binom{N+1}{2} + 1$
+$m\_{\mathcal{H}} = \binom{N+1}{4} + \binom{N+1}{2} + 1$
 
 
 ### 8. [d]
@@ -114,4 +109,4 @@ $\therefore$ 9 is the smallest answer out of the choices given.
 
 ### 10. [b]
 
-Convince yourself that the concentric circles case is just the $1$-interval revolved around $360\degree$.
+Convince yourself that the concentric circles case is just the $1$-interval revolved around $360$ degrees.

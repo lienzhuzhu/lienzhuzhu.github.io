@@ -1,10 +1,6 @@
 +++
 title = "Learning From Data Problem Set 8"
-date = "2023-11-10T17:17:05-08:00"
-description = "Learning From Data Lecture 8"
-categories = [ "notes", ]
-tags = [ "ml", "data", ]
-series = ["Learning From Data"]
+date = "2023-11-10"
 +++
 
 [PDF of problems](https://work.caltech.edu/homework/hw8.pdf)

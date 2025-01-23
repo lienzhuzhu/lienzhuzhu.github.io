@@ -1,8 +1,6 @@
 +++
-author = "Lien Zhu"
 title = "Learning From Data Book Notes"
 date = "2023-10-18"
-description = "Notes I took while reading Learning From Data"
 +++
 
 
@@ -48,7 +46,7 @@ Also, $\mathbb{P}(A \cup B) = \mathbb{P}(A) + \mathbb{P}(B) - \mathbb{P}(A \cap 
 
 $$
 \begin{aligned}
-\mathbb{P}(A \cup B)    & =     \mathbb{P}(A) + \mathbb{P}(B) - \mathbb{P}(A \cap B) \\
+\mathbb{P}(A \cup B)    & =     \mathbb{P}(A) + \mathbb{P}(B) - \mathbb{P}(A \cap B) \\\\\\\\
                         & \leq  \mathbb{P}(A) + \mathbb{P}(B)
 \end{aligned}
 $$
@@ -60,8 +58,10 @@ Basically, if $A$ and $B$ are disjoint, then by definition $\mathbb{P}(A \cap B)
 Because $g$ is one of the $h_M$'s, we know this implication holds true:
 
 $$
-|E_{in}(g) - E_{out}(g)| > \epsilon \quad\implies\quad |E_{in}(h_1) - E_{out}(h_1)| > \epsilon \textbf{ or } |E_{in}(h_2) - E_{out}(h_2)| > \epsilon \dots \textbf{ or } |E_{in}(h_M) - E_{out}(h_M)| > \epsilon \\ \\
+|E_{in}(g) - E_{out}(g)| > \epsilon \quad\implies\quad |E_{in}(h_1) - E_{out}(h_1)| > \epsilon \textbf{ or } |E_{in}(h_2) - E_{out}(h_2)| > \epsilon \dots \textbf{ or } |E_{in}(h_M) - E_{out}(h_M)| > \epsilon \\
 $$
+
+Then we know that...
 
 $$
 \therefore \mathbb{P}(|E_{in}(g) - E_{out}(g)| > \epsilon) \quad\leq\quad \mathbb{P}[|E_{in}(h_1) - E_{out}(h_1)| > \epsilon \textbf{ or } |E_{in}(h_2) - E_{out}(h_2)| > \epsilon \dots \textbf{ or } |E_{in}(h_M) - E_{out}(h_M)| > \epsilon]
@@ -71,7 +71,7 @@ $$
 The RHS of that expression follows the addition rule:
 $$
 \begin{aligned}
-\mathbb{P}[|E_{in}(h_1) - E_{out}(h_1)| > \epsilon \textbf{ or } |E_{in}(h_2) - E_{out}(h_2)| > \epsilon \dots \textbf{ or } |E_{in}(h_M) - E_{out}(h_M)| > \epsilon]   & \quad\leq\quad    \sum_{m=1}^{M}\mathbb{P}(|E_{in}(h_m) - E_{out}(h_m)| > \epsilon) \\ \\
+\mathbb{P}[|E_{in}(h_1) - E_{out}(h_1)| > \epsilon \textbf{ or } |E_{in}(h_2) - E_{out}(h_2)| > \epsilon \dots \textbf{ or } |E_{in}(h_M) - E_{out}(h_M)| > \epsilon]   & \quad\leq\quad    \sum_{m=1}^{M}\mathbb{P}(|E_{in}(h_m) - E_{out}(h_m)| > \epsilon) \\\\
                                                                                                                                                                         & \quad=\quad       2Me^{-2\epsilon^2N}
 \end{aligned}
 $$
@@ -95,8 +95,8 @@ Later, we'll see how we can tighten this bound by taking into account these over
 From the previous derivation we have
 $$
 \begin{array}{cl}
-& \mathbb{P}(|E_{in}(g) - E_{out}(g)| > \epsilon) \leq 2Me^{-2\epsilon^2N}) \\ \\
-\implies & \mathbb{P}(|E_{in}(g) - E_{out}(g)| \leq \epsilon) = 1 - \mathbb{P}(|E_{in}(g) - E_{out}(g)| > \epsilon) \\ \\
+& \mathbb{P}(|E_{in}(g) - E_{out}(g)| > \epsilon) \leq 2Me^{-2\epsilon^2N}) \\\\
+\implies & \mathbb{P}(|E_{in}(g) - E_{out}(g)| \leq \epsilon) = 1 - \mathbb{P}(|E_{in}(g) - E_{out}(g)| > \epsilon) \\\\
 \geq & 1 - 2Me^{-2\epsilon^2N}
 \end{array}
 $$
@@ -104,7 +104,7 @@ $$
 $i.e.$ with probability at least $1 - 2Me^{-2\epsilon^2N}$ the following is true
 $$
 \begin{array}{c}
-|E_{in}(g) - E_{out}(g)| \leq \epsilon \equiv E_{out}(g) - E_{in}(g) \leq \epsilon \\ \\
+|E_{in}(g) - E_{out}(g)| \leq \epsilon \equiv E_{out}(g) - E_{in}(g) \leq \epsilon \\\\\\\\
 \therefore E_{out}(g) \leq E_{in}(g) + \epsilon
 \end{array}
 $$
@@ -118,12 +118,12 @@ But we can express $\epsilon$ in terms of $\delta$
 
 $$
 \begin{aligned}
-2Me^{-2\epsilon^2N}         & =    \delta \\ \\
-e^{-2\epsilon^2N}           & =    \frac{\delta}{2M} \\ \\
-\ln{e^{-2\epsilon^2N}}      & =    \ln{\frac{\delta}{2M}} \\ \\
--2\epsilon^2N               & =    \ln{\frac{\delta}{2M}} \\ \\
-\epsilon^2                  & =    \frac{1}{2N}\ln{\frac{2M}{\delta}} \\ \\
-\epsilon                    & =    \sqrt{\frac{1}{2N}\ln{\frac{2M}{\delta}}} \\ \\
+2Me^{-2\epsilon^2N}         & =    \delta \\\\
+e^{-2\epsilon^2N}           & =    \frac{\delta}{2M} \\\\
+\ln{e^{-2\epsilon^2N}}      & =    \ln{\frac{\delta}{2M}} \\\\
+-2\epsilon^2N               & =    \ln{\frac{\delta}{2M}} \\\\
+\epsilon^2                  & =    \frac{1}{2N}\ln{\frac{2M}{\delta}} \\\\
+\epsilon                    & =    \sqrt{\frac{1}{2N}\ln{\frac{2M}{\delta}}} \\\\
 \end{aligned}
 $$
 
@@ -141,8 +141,8 @@ $$
 The Hoeffding bound directly implies with probability at ***most*** $\delta$:
 $$
 \begin{aligned}
-|E_{in} - E_{out}| > \epsilon   & \equiv    E_{in} - E_{out} > \epsilon \implies E_{out} < E_{in} - \epsilon \quad(1) \\ \\
-                                & \equiv    E_{out} - E_{in} > \epsilon \implies E_{out} > E_{in} + \epsilon \quad(2) \\ \\
+|E_{in} - E_{out}| > \epsilon   & \equiv    E_{in} - E_{out} > \epsilon \implies E_{out} < E_{in} - \epsilon \quad(1) \\\\
+                                & \equiv    E_{out} - E_{in} > \epsilon \implies E_{out} > E_{in} + \epsilon \quad(2) \\\\
 \end{aligned}
 $$
 
@@ -155,8 +155,8 @@ $$
 which implies that with probability at ***least*** $1-\delta$:
 $$
 \begin{aligned}
-|E_{in} - E_{out}| \leq \epsilon    & \equiv    E_{in} - E_{out} \leq \epsilon \implies E_{out} \geq E_{in} - \epsilon \quad(3) \\ \\
-                                    & \equiv    E_{out} - E_{in} \leq \epsilon \implies E_{out} \leq E_{in} + \epsilon \quad(4) \\ \\
+|E_{in} - E_{out}| \leq \epsilon    & \equiv    E_{in} - E_{out} \leq \epsilon \implies E_{out} \geq E_{in} - \epsilon \quad(3) \\\\
+                                    & \equiv    E_{out} - E_{in} \leq \epsilon \implies E_{out} \leq E_{in} + \epsilon \quad(4) \\\\
 \end{aligned}
 $$
 
@@ -171,7 +171,7 @@ Flip the logic and we see why $(2)$ and $(4)$ are the "worst case" bounds.
 
 Let's look at result $(3)$ more closely. This result tells us that out of all hypotheses $\mathcal{h} \in \mathcal{H}$, the $g$ selected is likely the best we could do, since there is a fairly high floor, $1-\delta$, on the probability that $E_{in} - \epsilon$ is the lower bound for $E_{out}$. 
 
-Since $g$ was selected as $\underset{h \in \mathcal{H}}{argmin}(E_{in}(\mathcal{h}))$, every other $h$ will have higher in-sample error, and we have high confidence that out-of-sample error for those hypotheses will also be larger from this bound. $\blacksquare$
+Since $g$ was selected as $\underset{h \in \mathcal{H}}{\textrm{argmin}}(E_{in}(\mathcal{h}))$, every other $h$ will have higher in-sample error, and we have high confidence that out-of-sample error for those hypotheses will also be larger from this bound. $\blacksquare$
 
 
 
@@ -179,21 +179,21 @@ Since $g$ was selected as $\underset{h \in \mathcal{H}}{argmin}(E_{in}(\mathcal{
 
 This is Exercise 2.4 in the book.
 
-The VC Dimension $d_{vc}$ is a measure of the complexity of a hypothesis set. The $d_{vc}$ for any $d$-dimensional perceptron can in fact be derived analytically. From our observations of $\mathbb{R}^2$ and $\mathbb{R}^3$ datasets, we have a hunch that $d_{vc} = d+1$ for any perceptron of dimension $d$.
+The VC Dimension $d\_{vc}$ is a measure of the complexity of a hypothesis set. The $d\_{vc}$ for any $d$-dimensional perceptron can in fact be derived analytically. From our observations of $\mathbb{R}^2$ and $\mathbb{R}^3$ datasets, we have a hunch that $d_{vc} = d+1$ for any perceptron of dimension $d$.
 
-To confirm this, we must show that $d_{vc} \geq d+1$ and $d_{vc} \leq d+1$, which is only possible if $d_{vc} = d+1$.
+To confirm this, we must show that $d\_{vc} \geq d+1$ and $d_{vc} \leq d+1$, which is only possible if $d_{vc} = d+1$.
 
-**Proof: $d_{vc} \geq d+1$**
+**Proof: $d\_{vc} \geq d+1$**
 
 We must show that $d+1$ points can be shattered. Let's put $d+1$ points as the rows of a dataset matrix $\mathbf{X}$.
 
 $$
 \mathbf{X} = 
 \begin{bmatrix}
- & -- & \vec{x}_1 & -- & \\
- & -- & \vec{x}_2 & -- & \\
- & & \vdots & & \\
- & -- & \vec{x}_{d+1} & -- & \\
+ & -- & \vec{x}\_1 & -- & \\\\
+ & -- & \vec{x}\_2 & -- & \\\\
+ & & \vdots & & \\\\
+ & -- & \vec{x}\_{d+1} & -- & \\\\
 \end{bmatrix}
 $$
 
@@ -219,32 +219,32 @@ This time $\mathbf{X}$ will have an extra row.
 $$
 \mathbf{X} = 
 \begin{bmatrix}
- & -- & \vec{x}_1 & -- & \\
- & -- & \vec{x}_2 & -- & \\
- & & \vdots & & \\
- & -- & \vec{x}_{d+1} & -- & \\
- & -- & \vec{x}_{d+2} & -- & \\
+ & -- & \vec{x}\_1 & -- & \\\\
+ & -- & \vec{x}\_2 & -- & \\\\
+ & & \vdots & & \\\\
+ & -- & \vec{x}\_{d+1} & -- & \\\\
+ & -- & \vec{x}\_{d+2} & -- & \\\\
 \end{bmatrix}
 $$
 
-This is clearly a tall matrix, which means it does not have full row rank, and one of the points $\vec{x}_j$ is some linear combination of the other rows, _i.e._
+This is clearly a tall matrix, which means it does not have full row rank, and one of the points $\vec{x}\_j$ is some linear combination of the other rows, _i.e._
 
 $$
-\vec{x}_j = \sum_{i \neq j}a_i\vec{x}_i
+\vec{x}\_j = \sum\_{i \neq j}a\_i\vec{x}\_i
 $$
 
 We need to show that there is no set of $d+2$ points in $\mathbb{R}^{d+1}$ that can be shattered by the $d+1$-perceptron, _i.e._ there exists some $\vec{y}$ that cannot be produced.
 
-Suppose we want to obtain the dichotomy might have $y_i = \vec{w}^T\vec{x}_i = \textrm{sign}(a_i)$ when $a_i \neq 0$, and classifies $\vec{x}_j$ as a negative point such that $y_j = \vec{w}^T\vec{x}_j = -1$. This is certainly a dichotomy we would expect to be achievable if $d+2$ points can be shattered aka $d+2$ is not a break point.
+Suppose we want to obtain the dichotomy might have $y\_i = \vec{w}^T\vec{x}\_i = \textrm{sign}(a\_i)$ when $a\_i \neq 0$, and classifies $\vec{x}\_j$ as a negative point such that $y\_j = \vec{w}^T\vec{x}\_j = -1$. This is certainly a dichotomy we would expect to be achievable if $d+2$ points can be shattered aka $d+2$ is not a break point.
 
 We will use proof by contradiction to show that no such $\vec{w}$ that shatters $d+2$ points can exist. For now, assume $\vec{w}$ is able to produce $2^{d+2}$ dichotomies.
 
 $$
 \begin{aligned}
-y_j     & = \vec{w}^T\vec{x}_j \\ \\
-        & = \vec{w}^T\sum_{i\neq j}a_i\vec{x}_i \\ \\
-        & = \sum_{i\neq j}a_i\vec{w}^T\vec{x}_i \\ \\
-        & = \sum_{i\neq j}a_iy_i = -1\textrm{?}
+y\_j     & = \vec{w}^T\vec{x}\_j \\\\\\\\
+        & = \vec{w}^T\sum\_{i\neq j}a\_i\vec{x}\_i \\\\\\\\
+        & = \sum\_{i\neq j}a\_i\vec{w}^T\vec{x}\_i \\\\\\\\
+        & = \sum\_{i\neq j}a\_iy\_i = -1\textrm{?}
 \end{aligned}
 $$
 

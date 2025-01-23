@@ -1,10 +1,6 @@
 +++
 title = "Learning From Data Problem Set 6"
-date = "2023-11-02T01:43:16-07:00"
-description = "Learning From Data Lecture 6"
-categories = [ "notes", ]
-tags = [ "ml", "data", ]
-series = ["Learning From Data"]
+date = "2023-11-02"
 +++
 
 
@@ -69,7 +65,7 @@ When $k=-1$, we get an $E_{out}$ of around $0.056$.
 
 $$
 \begin{aligned}
-\mathcal{H}(10, 0, 3) &= w_0L_0 + w_1L_1 + w_2L_2 + 0 + \dots + 0 \\\
+\mathcal{H}(10, 0, 3) &= w_0L_0 + w_1L_1 + w_2L_2 + 0 + \dots + 0 \\\\
 \mathcal{H}(10, 0, 4) &= w_0L_0 + w_1L_1 + w_2L_2 + w_3L_3 + 0 + \dots + 0 \\\
 \end{aligned}
 $$

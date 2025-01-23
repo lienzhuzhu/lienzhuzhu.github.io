@@ -1,10 +1,6 @@
 +++
 title = "Learning From Data Problem Set 5"
 date = "2023-10-27"
-description = "Learning From Data Lecture 5"
-categories = [ "notes", ]
-tags = [ "ml", "data", ]
-series = ["Learning From Data"]
 +++
 
 [PDF of problems](https://work.caltech.edu/homework/hw5.pdf)
@@ -18,11 +14,11 @@ Plugging in the values for $\mathbb{E}[E_{in}(\vec{w})] = \sigma^{2}(1 - \frac{d
 
 $$
 \begin{aligned}
-\mathbb{E}[E_{in}(\vec{w})]     & =     \sigma^{2}(1 - \frac{d+1}{N}) \\ \\
-                                & =     (0.1)^2(1 - \frac{9}{N}) \\ \\
-0.01 - \frac{0.09}{N}           & \geq  0.008 \\ \\
-0.002                           & \geq  \frac{0.09}{N} \\ \\
-N                               & \geq  \frac{0.09}{0.002} \\ \\
+\mathbb{E}[E_{in}(\vec{w})]     & =     \sigma^{2}(1 - \frac{d+1}{N}) \\\\
+                                & =     (0.1)^2(1 - \frac{9}{N}) \\\\
+0.01 - \frac{0.09}{N}           & \geq  0.008 \\\\
+0.002                           & \geq  \frac{0.09}{N} \\\\
+N                               & \geq  \frac{0.09}{0.002} \\\\
 N                               & \geq  45
 \end{aligned}
 $$
@@ -48,7 +44,7 @@ Just use chain rule.
 
 $$
 \begin{aligned}
-\frac{\partial{E}}{\partial{u}} & = \frac{\partial{E}}{\partial{u}}(ue^v-2ve^{-u})^2 \\ \\
+\frac{\partial{E}}{\partial{u}} & = \frac{\partial{E}}{\partial{u}}(ue^v-2ve^{-u})^2 \\\\
                                 & = 2(ue^v - 2ve^{-u})(e^v + 2ve^{-u})
 \end{aligned}
 $$
@@ -95,16 +91,17 @@ Epochs:  333.6
 
 The update rule for PLA is
 $$
-\vec{w}_t = \vec{w}_{t-1} + y_n\vec{x}_n
+\vec{w}\_t = \vec{w}\_{t-1} + y\_{n} \vec{x}\_n
 $$
+
 where $(\vec{x}, y)_n$ is the misclassified point.
 
-At first I thought the answer was [b] because the gradient of this error function would yield $-y_n\vec{w}^T\vec{x}_n$ which would fit with the SGD update rule
+At first I thought the answer was **b** because the gradient of this error function would yield $-y\_n\vec{w}^T\vec{x}\_n$ which would fit with the SGD update rule
 
 $$
-\vec{w}_t = \vec{w}_{t-1} + \eta (-\nabla{e(\vec{w})})
+\vec{w}\_t = \vec{w}\_{t-1} + \eta (-\nabla{e(\vec{w})})
 $$
 
 to get the PLA update rule.
 
-But then I remembered, SGD goes over every point, not every point requires an update. So the adjustment must be 0 when the label and signal are in agreement, which is reflected in option [e].
+But then I remembered, SGD goes over every point, not every point requires an update. So the adjustment must be 0 when the label and signal are in agreement, which is reflected in option **e**

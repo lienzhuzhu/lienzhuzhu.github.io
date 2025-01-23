@@ -1,10 +1,6 @@
 +++
 title = "Learning From Data Problem Set 7"
-date = "2023-11-04T22:03:50-07:00"
-description = "Learning From Data Lecture 7"
-categories = [ "notes", ]
-tags = [ "ml", "data", ]
-series = ["Learning From Data"]
+date = "2023-11-04"
 +++
 
 
@@ -32,9 +28,9 @@ We can calculate this analytically. Let $X \sim \textrm{Uniform}(0,1)$ and $Y \s
 
 $$
 \begin{aligned}
-P(Z \leq z) &= P(min(X,Y) \leq z) \\ \\
-    &= 1 - P(X>z \cap Y>z) \\ \\
-    &= 1 - P(X>z) \cdot P(Y>z) \\ \\
+P(Z \leq z) &= P(\textrm{min(X,Y)} \leq z) \\\\
+    &= 1 - P(X>z \cap Y>z) \\\\
+    &= 1 - P(X>z) \cdot P(Y>z) \\\\
     &= 1 - (1-z)^2
 \end{aligned}
 $$
@@ -43,8 +39,8 @@ We differentiate to get the PDF
 
 $$
 \begin{aligned}
-\frac{d}{dz}(1-(1-z)^2) &= -2(1-z)(-1) \\ \\
-    &= 2(1-z) \\ \\
+\frac{d}{dz}(1-(1-z)^2) &= -2(1-z)(-1) \\\\
+    &= 2(1-z) \\\\
 \end{aligned}
 $$
 
@@ -52,9 +48,9 @@ Then find the expectation using the definition of expected value
 
 $$
 \begin{aligned}
-\mathbb{E}(Z) &= \int_0^1 z \cdot 2(1-z) dz \\ \\
-    &= 2\int_0^1 z - z^2 dz \\ \\
-    &= 2\left[\left.\frac{1}{2}z^2 - \frac{1}{3}z^3 \right|^1_0\right] \\ \\
+\mathbb{E}(Z) &= \int_0^1 z \cdot 2(1-z) dz \\\\
+    &= 2\int_0^1 z - z^2 dz \\\\
+    &= 2\left[\left.\frac{1}{2}z^2 - \frac{1}{3}z^3 \right|^1_0\right] \\\\
     &= \frac{1}{3}
 \end{aligned}
 $$
@@ -70,8 +66,9 @@ E_{CV}(h_0) = \frac{1}{3}\left[e_1(h_0) + e_2(h_0) + e_3(h_0)\right]
 $$
 
 $e_1(h_0)$: Train on $(\rho,1)$ and $(1,0)$.
+
 $$
-g^-_1(x,y) = 0.5
+\overline{g}_1(x,y) = 0.5
 $$
 
 Then
@@ -84,7 +81,7 @@ Following this process, $e_2(h_0) = 1$ and $e_3(h_0) = \frac{1}{4}$.
 Then we obtain
 $$
 \begin{aligned}
-E_{CV}(h_0) &= \frac{0.25 + 1 + 0.25}{3} \\ \\
+E_{CV}(h_0) &= \frac{0.25 + 1 + 0.25}{3} \\\\
     &= \frac{1}{2}
 \end{aligned}
 $$
@@ -93,7 +90,7 @@ The process for $h_1$ is a bit more involved because we need to find expressions
 
 For $e_1(h_1)$, we obtain the slope of the line through $(\rho,1)$ and $(1,0)$
 $$
-m = \frac{1-0}{\rho - 1} = \frac{1}{\rho - 1} \\
+m = \frac{1-0}{\rho - 1} = \frac{1}{\rho - 1}
 $$
 
 Which means the line through these points is
@@ -104,7 +101,7 @@ $$
 Now we need the error on the validation point $(-1,0)$
 $$
 \begin{aligned}
-e_1(h_1) &= \left(0 - (\frac{-1-1}{\rho -1})\right)^2 \\ \\
+e_1(h_1) &= \left(0 - (\frac{-1-1}{\rho -1})\right)^2 \\\\
     &= \frac{4}{(\rho -1)^2}
 \end{aligned}
 $$
@@ -120,9 +117,9 @@ Now we are ready to find $\rho$.
 
 $$
 \begin{aligned}
-E_{CV}(h_0) &= E_{CV}(h_1) \\ \\
-\frac{1}{2} &= \frac{1}{3}\left[\frac{4}{(\rho -1)^2} + 1 + \frac{4}{(\rho +1)^2}\right] \\ \\
-\frac{(\rho +1)^2 + (\rho -1)^2}{(\rho -1)^2(\rho +1)^2} &= \frac{1}{8} \\ \\
+E_{CV}(h_0) &= E_{CV}(h_1) \\\\\\\\
+\frac{1}{2} &= \frac{1}{3}\left[\frac{4}{(\rho -1)^2} + 1 + \frac{4}{(\rho +1)^2}\right] \\\\\\\\
+\frac{(\rho +1)^2 + (\rho -1)^2}{(\rho -1)^2(\rho +1)^2} &= \frac{1}{8} \\\\\\\\
 (\rho+1)^2 - \frac{1}{8}(\rho +1)^2(\rho -1)^2 + (\rho -1)^2 &= 0
 \end{aligned}
 $$
@@ -169,6 +166,6 @@ Dual won                 0.598 times
 
 ### 9. [d]
 
-Though, I noticed SVM wins very close to 60% of the time, sometimes going under 60%, so it's between [c] and [d]. The SVM hyperplane obtained from the primal problem solution seems to track the libsvm hyperplane better than the dual solution.
+Though, I noticed SVM wins very close to 60% of the time, sometimes going under 60%, so it's between **c** and **d**. The SVM hyperplane obtained from the primal problem solution seems to track the libsvm hyperplane better than the dual solution.
 
 ### 10. [b]
