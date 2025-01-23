@@ -16,3 +16,7 @@ One idea I'm thinking about in my free time is sustainable city design. I have s
 Public transportation and micromobility are critical in reducing our carbon footprint and improving our health.
 
 I love to learn about ideas to promote public transportation, so please reach out to talk.
+
+> **Some math texts use pictorial illustrations, and some do not. Like the words, the picture needs slow and careful study. A quick glance will not do, as it might in a biology text.**
+>
+> *The OSU at Newark Dept. of Mathematics*

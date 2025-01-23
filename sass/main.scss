@@ -152,3 +152,14 @@ hr {
     border-color: black;
     background-color: black;
 }
+
+blockquote {
+    display: block;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 40px;
+
+    border-left: 6px solid $china-rose;
+    padding-left: 1rem;
+}
