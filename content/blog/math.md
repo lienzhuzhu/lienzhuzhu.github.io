@@ -5,6 +5,10 @@ date = 2025-01-18
 
 # 数学 (or Mathematics in the King's)
 
+> **Some math texts use pictorial illustrations, and some do not. Like the words, the picture needs slow and careful study. A quick glance will not do, as it might in a biology text.**
+>
+> *The OSU at Newark Dept. of Mathematics*
+
 **HUGO MIGRATION NOTES**
 - Must escape all `\` symbols for newlines
 
