@@ -1,10 +1,7 @@
 +++
 author = "Lien Zhu"
 title = "Linear Algebra Notes"
-date = "2023-10-04T19:17:32-07:00"
-description = "Notes on Linear Algebra"
-tags = ["math",]
-categories = ["notes",]
+date = "2023-10-04"
 +++
 
 
