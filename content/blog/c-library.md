@@ -1,7 +1,6 @@
 +++
-date = '2025-01-19T10:21:51-06:00'
-draft = false
 title = 'C Library Setup'
+date = '2025-01-19'
 description = 'Setting up Raylib and Raygui'
 +++
 
