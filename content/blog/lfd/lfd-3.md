@@ -22,6 +22,7 @@ $$
 Then for the next 3 problems we can use this expression by plugging in for $M$, $\delta$, and $\epsilon$:
 
 $\epsilon = 0.05$
+
 $\delta = 0.03$
 
 For $M = 1$:
