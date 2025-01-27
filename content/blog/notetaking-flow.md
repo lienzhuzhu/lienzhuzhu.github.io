@@ -1,8 +1,10 @@
 +++
 title = "My Notetaking System"
 date = "2025-01-23"
-draft = true
+draft = false
 +++
+
+> WIP
 
 # How I take notes in NeoVim
 
