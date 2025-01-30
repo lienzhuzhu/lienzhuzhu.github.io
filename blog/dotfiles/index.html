@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+    <meta charset="utf-8">
+    <title>
+         My Dotfiles
+        
+    </title>
+    <!-- TODO: Use a Tera template to get the path to the css? -->
+    <link rel="stylesheet" href="/main.css"> 
+</head>
+
+
+    <body>
+
+        <nav>
+    <div class="nav-menu">
+        
+        <a href="/" class="">Home</a>
+        
+        <a href="/about/" class="">About</a>
+        
+        <a href="/blog/" class="">Blog</a>
+        
+        <a href="/dev" class="">Projects</a>
+        
+    </div>
+</nav>
+
+
+        <section class="section">
+            <div class="container">
+                
+<h1 class="title">
+    My Dotfiles
+</h1>
+<p class="subtitle"><strong>2023-08-04</strong></p>
+<p>When I watch YouTube videos of other computer scientists and software engineers I can't help but admire their sleek, clean development environment setups. They give off an air of control and mastery, having tamed their machines to which I could only heed my wit.</p>
+<p>So, I have decided to work on setting up my own dotfiles more or less from scratch.</p>
+<h3 id="goals">Goals</h3>
+<ul>
+<li>Each application installed must use an easy to read/ modify config file</li>
+<li>Each application installed must be compatible with MacOS and Ubuntu</li>
+<li>Create an idempotent <code>install.sh</code> script</li>
+<li>Minimize platform dependency</li>
+</ul>
+<h3 id="key-applications">Key applications</h3>
+<p><strong>Terminal Multiplexor</strong></p>
+<p><a href="https://github.com/tmux/tmux">tmux</a></p>
+<p><strong>Terminal Emulator</strong></p>
+<p><a href="https://wezfurlong.org/wezterm/index.html">Wezterm</a></p>
+<p><strong>Shell</strong></p>
+<p><a href="https://zsh.org/">zsh</a></p>
+<p><strong>Text Editor</strong></p>
+<p><a href="https://neovim.io/">Neovim</a></p>
+<h3 id="apps-to-install">Apps To Install</h3>
+<ul>
+<li>Rust</li>
+<li>A Nerd Font</li>
+<li>ripgrep</li>
+<li>fzf</li>
+<li>fd</li>
+<li>yazi
+<ul>
+<li>poppler for PDF preview</li>
+<li>ffmpeg</li>
+</ul>
+</li>
+<li>LaTeX
+<ul>
+<li>pandoc</li>
+</ul>
+</li>
+</ul>
+<h3 id="fonts">Fonts</h3>
+<p>Fonts can be installed using homebrew if on MacOS:</p>
+<pre data-lang="zsh" style="background-color:#2b303b;color:#c0c5ce;" class="language-zsh "><code class="language-zsh" data-lang="zsh"><span style="color:#bf616a;">brew</span><span> tap homebrew/cask-fonts
+</span><span style="color:#bf616a;">brew</span><span> install font-&lt;font of choice&gt;-nerd-font
+</span></code></pre>
+<p><strong>NOTE</strong>: you may have to experiment with the names.</p>
+<p>or directly as zip files from the Nerd Font repo <code>github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts</code>.</p>
+<p>The best place to store fonts on MacOS is <code>~/Library/Fonts/</code>.</p>
+
+
+            </div>
+        </section>
+
+        <!-- MathJAX config -->
+        <script>
+            MathJax = {
+                /* TODO: Experiment with these delimiters */
+                tex: {
+                    displayMath: [['\\[', '\\]'], ['$$', '$$']],
+                    inlineMath: [['\\(', '\\)'], ['$', '$']],
+                }
+            };
+        </script>
+        <!-- Load V3.+ -->
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+    </body>
+
+
+    <footer>
+        <div>
+            <i class="nf nf-fa-copyright"></i> Lien Zhu 2025
+        </div>
+    </footer>
+
+</html>

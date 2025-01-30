@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+    <meta charset="utf-8">
+    <title>
+         Learning From Data Problem Set 5
+        
+    </title>
+    <!-- TODO: Use a Tera template to get the path to the css? -->
+    <link rel="stylesheet" href="/main.css"> 
+</head>
+
+
+    <body>
+
+        <nav>
+    <div class="nav-menu">
+        
+        <a href="/" class="">Home</a>
+        
+        <a href="/about/" class="">About</a>
+        
+        <a href="/blog/" class="">Blog</a>
+        
+        <a href="/dev" class="">Projects</a>
+        
+    </div>
+</nav>
+
+
+        <section class="section">
+            <div class="container">
+                
+<h1 class="title">
+    Learning From Data Problem Set 5
+</h1>
+<p class="subtitle"><strong>2023-10-27</strong></p>
+<p><a href="https://work.caltech.edu/homework/hw5.pdf">PDF of problems</a></p>
+<p><a href="https://github.com/lienzhuzhu/lfd">Code Repository</a></p>
+<h3 id="1-c">1. [c]</h3>
+<p>Plugging in the values for $\mathbb{E}[E_{in}(\vec{w})] = \sigma^{2}(1 - \frac{d+1}{N}) \geq 0.008$:</p>
+<p>$$
+\begin{aligned}
+\mathbb{E}[E_{in}(\vec{w})]     &amp; =     \sigma^{2}(1 - \frac{d+1}{N}) \\
+&amp; =     (0.1)^2(1 - \frac{9}{N}) \\
+0.01 - \frac{0.09}{N}           &amp; \geq  0.008 \\
+0.002                           &amp; \geq  \frac{0.09}{N} \\
+N                               &amp; \geq  \frac{0.09}{0.002} \\
+N                               &amp; \geq  45
+\end{aligned}
+$$</p>
+<h3 id="2-d">2. [d]</h3>
+<p>We need to think about how the features affect the labels of the regions.</p>
+<p>For any given point, it seems the closer it is to the $x_1 = 0$ line, the more it tends to be positively labeled, so being further away is an attribute that would label it more negatively. So having $\tilde{w}_1 &lt; 0$ makes sense.</p>
+<p>It also seems the further away from $x_2 = 0$ a point is, the more it tends to be positively labeled, especially if we compare the size of the regions going up and down to infinity. So $\tilde{w}_2 &gt; 0$.</p>
+<h3 id="3-c">3. [c]</h3>
+<p>Use the formula $\frac{Q(Q+3)}{2}$ with $Q=4$.</p>
+<h3 id="4-e">4. [e]</h3>
+<p>Just use chain rule.</p>
+<p>$$
+\begin{aligned}
+\frac{\partial{E}}{\partial{u}} &amp; = \frac{\partial{E}}{\partial{u}}(ue^v-2ve^{-u})^2 \\
+&amp; = 2(ue^v - 2ve^{-u})(e^v + 2ve^{-u})
+\end{aligned}
+$$</p>
+<p>Note that for the gradient descent implementation, we will need the other partial derivative as well, but this is just as easily calculated using chain rule, nothing crazy.</p>
+<h3 id="refer-to-the-output-for-5-and-6">Refer to the output for 5 and 6.</h3>
+<pre data-lang="zsh" style="background-color:#2b303b;color:#c0c5ce;" class="language-zsh "><code class="language-zsh" data-lang="zsh"><span style="color:#bf616a;">❯</span><span> python3 hw5/descent.py
+</span><span style="color:#bf616a;">10
+</span><span style="color:#bf616a;">[0.04473629</span><span> 0.02395871]
+</span></code></pre>
+<h3 id="5-d">5. [d]</h3>
+<h3 id="6-e">6. [e]</h3>
+<h3 id="7-a">7. [a]</h3>
+<pre data-lang="zsh" style="background-color:#2b303b;color:#c0c5ce;" class="language-zsh "><code class="language-zsh" data-lang="zsh"><span style="color:#bf616a;">❯</span><span> python3 hw5/coordinate.py
+</span><span style="color:#96b5b4;">[</span><span> 6.2970759  -2.85230695]
+</span><span style="color:#bf616a;">0.13981379199615315
+</span></code></pre>
+<h3 id="refer-to-the-output-for-8-and-9">Refer to the output for 8 and 9.</h3>
+<pre data-lang="zsh" style="background-color:#2b303b;color:#c0c5ce;" class="language-zsh "><code class="language-zsh" data-lang="zsh"><span style="color:#bf616a;">❯</span><span> python3 hw5/logistic.py</span><span style="color:#bf616a;"> -N</span><span> 100
+</span><span style="color:#bf616a;">E_out:</span><span>   0.1042528510662979
+</span><span style="color:#bf616a;">Epochs:</span><span>  333.6
+</span></code></pre>
+<h3 id="8-d">8. [d]</h3>
+<h3 id="9-a">9. [a]</h3>
+<h3 id="10-e">10. [e]</h3>
+<p>The update rule for PLA is
+$$
+\vec{w}_t = \vec{w}_{t-1} + y_{n} \vec{x}_n
+$$</p>
+<p>where $(\vec{x}, y)_n$ is the misclassified point.</p>
+<p>At first I thought the answer was <strong>b</strong> because the gradient of this error function would yield $-y_n\vec{w}^T\vec{x}_n$ which would fit with the SGD update rule</p>
+<p>$$
+\vec{w}_t = \vec{w}_{t-1} + \eta (-\nabla{e(\vec{w})})
+$$</p>
+<p>to get the PLA update rule.</p>
+<p>But then I remembered, SGD goes over every point, not every point requires an update. So the adjustment must be 0 when the label and signal are in agreement, which is reflected in option <strong>e</strong></p>
+
+
+            </div>
+        </section>
+
+        <!-- MathJAX config -->
+        <script>
+            MathJax = {
+                /* TODO: Experiment with these delimiters */
+                tex: {
+                    displayMath: [['\\[', '\\]'], ['$$', '$$']],
+                    inlineMath: [['\\(', '\\)'], ['$', '$']],
+                }
+            };
+        </script>
+        <!-- Load V3.+ -->
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+    </body>
+
+
+    <footer>
+        <div>
+            <i class="nf nf-fa-copyright"></i> Lien Zhu 2025
+        </div>
+    </footer>
+
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+    <meta charset="utf-8">
+    <title>
+         My Notetaking System
+        
+    </title>
+    <!-- TODO: Use a Tera template to get the path to the css? -->
+    <link rel="stylesheet" href="/main.css"> 
+</head>
+
+
+    <body>
+
+        <nav>
+    <div class="nav-menu">
+        
+        <a href="/" class="">Home</a>
+        
+        <a href="/about/" class="">About</a>
+        
+        <a href="/blog/" class="">Blog</a>
+        
+        <a href="/dev" class="">Projects</a>
+        
+    </div>
+</nav>
+
+
+        <section class="section">
+            <div class="container">
+                
+<h1 class="title">
+    My Notetaking System
+</h1>
+<p class="subtitle"><strong>2025-01-23</strong></p>
+<blockquote>
+<p>WIP</p>
+</blockquote>
+<h1 id="how-i-take-notes-in-neovim">How I take notes in NeoVim</h1>
+<h3 id="there-are-3-components">There are 3 components</h3>
+<ol>
+<li><code>notaker.nvim</code></li>
+<li>Script to render PDFs</li>
+<li>Shell alias with <code>fzf</code></li>
+</ol>
+<h3 id="neovim-doesn-t-even-need-to-be-inside-notaker-cortex-dir-to-grep-terms">Neovim doesn't even need to be inside <code>NOTAKER_CORTEX_DIR</code> to <code>grep</code> terms</h3>
+<p>This is most useful when I'm writing a paper in $\LaTeX$ (also in nvim) and suddenly need to look something up from my course notes to refresh my memory about a term, or see what my professor had to say, then I can just look it up.</p>
+<h3 id="notaker-py-compiles-notes-into-a-pdf-booklet-wip"><code>Notaker.py</code> compiles notes into a PDF booklet (WIP)</h3>
+<h3 id="use-fzf-to-quickly-find-notes-and-open-in-neovim">Use <code>fzf</code> to quickly find notes and open in NeoVim</h3>
+<p><code>ntf</code> zsh alias allows me to fuzzy find any note.
+The structure can become large, so fuzzy finding is necessary.</p>
+<h3 id="if-i-know-i-am-in-notaker-cortex-dir">If I know I am in <code>NOTAKER_CORTEX_DIR</code>...</h3>
+<p>Just use <code>fzf-lua.nvim</code> to find files and for <code>live_grep</code></p>
+<ul>
+<li>Sometimes I first get into <code>NOTAKER_CORTEX_DIR</code> note file, change Neovim's pwd to the Cortex using <code>`</code>, then fzf-lua will have the correct context</li>
+<li>of course, the <code>vimgrep</code> binding will work too</li>
+</ul>
+
+
+            </div>
+        </section>
+
+        <!-- MathJAX config -->
+        <script>
+            MathJax = {
+                /* TODO: Experiment with these delimiters */
+                tex: {
+                    displayMath: [['\\[', '\\]'], ['$$', '$$']],
+                    inlineMath: [['\\(', '\\)'], ['$', '$']],
+                }
+            };
+        </script>
+        <!-- Load V3.+ -->
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+    </body>
+
+
+    <footer>
+        <div>
+            <i class="nf nf-fa-copyright"></i> Lien Zhu 2025
+        </div>
+    </footer>
+
+</html>

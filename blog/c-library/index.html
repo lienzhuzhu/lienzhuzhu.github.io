@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+    <meta charset="utf-8">
+    <title>
+         C Library Setup
+        
+    </title>
+    <!-- TODO: Use a Tera template to get the path to the css? -->
+    <link rel="stylesheet" href="/main.css"> 
+</head>
+
+
+    <body>
+
+        <nav>
+    <div class="nav-menu">
+        
+        <a href="/" class="">Home</a>
+        
+        <a href="/about/" class="">About</a>
+        
+        <a href="/blog/" class="">Blog</a>
+        
+        <a href="/dev" class="">Projects</a>
+        
+    </div>
+</nav>
+
+
+        <section class="section">
+            <div class="container">
+                
+<h1 class="title">
+    C Library Setup
+</h1>
+<p class="subtitle"><strong>2025-01-19</strong></p>
+<h2 id="raylib">Raylib</h2>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#b48ead;">export </span><span style="color:#bf616a;">MACOSX_DEPLOYMENT_TARGET</span><span>=</span><span style="color:#a3be8c;">10.9
+</span><span style="color:#bf616a;">xcode-select --install </span><span style="color:#65737e;"># not necessary if already have Xcode IDE installed, or have run this command before
+</span><span style="color:#bf616a;">git</span><span> clone https://github.com/raysan5/raylib.git /path/to/raylib
+</span><span style="color:#96b5b4;">cd</span><span> /path/to/raylib/src
+</span><span style="color:#bf616a;">make
+</span><span>
+</span><span style="color:#bf616a;">cp</span><span> /path/to/raylib/src/raylib.h project/root/include/raylib.h
+</span><span style="color:#bf616a;">cp</span><span> /path/to/raylib/src/raymath.h project/root/include/raylib/raymath.h
+</span><span style="color:#bf616a;">cp</span><span> /path/to/raylib/src/libraylib.a project/root/lib/libraylib.a
+</span></code></pre>
+
+
+            </div>
+        </section>
+
+        <!-- MathJAX config -->
+        <script>
+            MathJax = {
+                /* TODO: Experiment with these delimiters */
+                tex: {
+                    displayMath: [['\\[', '\\]'], ['$$', '$$']],
+                    inlineMath: [['\\(', '\\)'], ['$', '$']],
+                }
+            };
+        </script>
+        <!-- Load V3.+ -->
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+    </body>
+
+
+    <footer>
+        <div>
+            <i class="nf nf-fa-copyright"></i> Lien Zhu 2025
+        </div>
+    </footer>
+
+</html>
