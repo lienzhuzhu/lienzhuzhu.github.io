@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+    <meta charset="utf-8">
+    <title>
+         Learning From Data Problem Set 7
+        
+    </title>
+    <!-- TODO: Use a Tera template to get the path to the css? -->
+    <link rel="stylesheet" href="/main.css"> 
+</head>
+
+
+    <body>
+
+        <nav>
+    <div class="nav-menu">
+        
+        <a href="/" class="">Home</a>
+        
+        <a href="/about/" class="">About</a>
+        
+        <a href="/blog/" class="">Blog</a>
+        
+        <a href="/dev" class="">Projects</a>
+        
+    </div>
+</nav>
+
+
+        <section class="section">
+            <div class="container">
+                
+<h1 class="title">
+    Learning From Data Problem Set 7
+</h1>
+<p class="subtitle"><strong>2023-11-04</strong></p>
+<p><a href="https://work.caltech.edu/homework/hw7.pdf">PDF of problems</a></p>
+<p><a href="https://github.com/lienzhuzhu/lfd">Code Repository</a></p>
+<h3 id="refer-to-the-output-for-1-5">Refer to the output for 1-5.</h3>
+<pre data-lang="zsh" style="background-color:#2b303b;color:#c0c5ce;" class="language-zsh "><code class="language-zsh" data-lang="zsh"><span style="color:#bf616a;">❯</span><span> python3 hw7/validation.py
+</span><span style="color:#bf616a;">Q</span><span> = 3:  K = 10. E_val = 0.300 E_out = 0.420     K = 25: E_val = 0.280 E_out = 0.396
+</span><span style="color:#bf616a;">Q</span><span> = 4:  K = 10. E_val = 0.500 E_out = 0.416     K = 25: E_val = 0.360 E_out = 0.388
+</span><span style="color:#bf616a;">Q</span><span> = 5:  K = 10. E_val = 0.200 E_out = 0.188     K = 25: E_val = 0.200 E_out = 0.284
+</span><span style="color:#bf616a;">Q</span><span> = 6:  K = 10. E_val = 0.000 E_out = 0.084     K = 25: E_val = 0.080 E_out = 0.192
+</span><span style="color:#bf616a;">Q</span><span> = 7:  K = 10. E_val = 0.100 E_out = 0.072     K = 25: E_val = 0.120 E_out = 0.196
+</span></code></pre>
+<h3 id="6-d">6. [d]</h3>
+<p>We can calculate this analytically. Let $X \sim \textrm{Uniform}(0,1)$ and $Y \sim \textrm{Uniform}(0,1)$. Then $Z=\textrm{min}(X, Y)$ and</p>
+<p>$$
+\begin{aligned}
+P(Z \leq z) &amp;= P(\textrm{min(X,Y)} \leq z) \\
+&amp;= 1 - P(X&gt;z \cap Y&gt;z) \\
+&amp;= 1 - P(X&gt;z) \cdot P(Y&gt;z) \\
+&amp;= 1 - (1-z)^2
+\end{aligned}
+$$</p>
+<p>We differentiate to get the PDF</p>
+<p>$$
+\begin{aligned}
+\frac{d}{dz}(1-(1-z)^2) &amp;= -2(1-z)(-1) \\
+&amp;= 2(1-z) \\
+\end{aligned}
+$$</p>
+<p>Then find the expectation using the definition of expected value</p>
+<p>$$
+\begin{aligned}
+\mathbb{E}(Z) &amp;= \int_0^1 z \cdot 2(1-z) dz \\
+&amp;= 2\int_0^1 z - z^2 dz \\
+&amp;= 2\left[\left.\frac{1}{2}z^2 - \frac{1}{3}z^3 \right|^1_0\right] \\
+&amp;= \frac{1}{3}
+\end{aligned}
+$$</p>
+<h3 id="7-c">7. [c]</h3>
+<p>We need to find expressions for the cross-validation errors for each hypothesis set.</p>
+<p>$$
+E_{CV}(h_0) = \frac{1}{3}\left[e_1(h_0) + e_2(h_0) + e_3(h_0)\right]
+$$</p>
+<p>$e_1(h_0)$: Train on $(\rho,1)$ and $(1,0)$.</p>
+<p>$$
+\overline{g}_1(x,y) = 0.5
+$$</p>
+<p>Then
+$$
+e_1(h_0) = (0-0.5)^2 = \frac{1}{4}
+$$</p>
+<p>Following this process, $e_2(h_0) = 1$ and $e_3(h_0) = \frac{1}{4}$.</p>
+<p>Then we obtain
+$$
+\begin{aligned}
+E_{CV}(h_0) &amp;= \frac{0.25 + 1 + 0.25}{3} \\
+&amp;= \frac{1}{2}
+\end{aligned}
+$$</p>
+<p>The process for $h_1$ is a bit more involved because we need to find expressions for some lines.</p>
+<p>For $e_1(h_1)$, we obtain the slope of the line through $(\rho,1)$ and $(1,0)$
+$$
+m = \frac{1-0}{\rho - 1} = \frac{1}{\rho - 1}
+$$</p>
+<p>Which means the line through these points is
+$$
+y = \frac{x-1}{\rho - 1}
+$$</p>
+<p>Now we need the error on the validation point $(-1,0)$
+$$
+\begin{aligned}
+e_1(h_1) &amp;= \left(0 - (\frac{-1-1}{\rho -1})\right)^2 \\
+&amp;= \frac{4}{(\rho -1)^2}
+\end{aligned}
+$$</p>
+<p>We follow this process to get $e_2(h_1)$ and $e_3(h_1)$
+$$
+e_2(h_1) = 1 \textrm{ and } e_3(h_1) = \frac{4}{(\rho +1)^2}
+$$</p>
+<p>Now we are ready to find $\rho$.</p>
+<p>$$
+\begin{aligned}
+E_{CV}(h_0) &amp;= E_{CV}(h_1) \\\\
+\frac{1}{2} &amp;= \frac{1}{3}\left[\frac{4}{(\rho -1)^2} + 1 + \frac{4}{(\rho +1)^2}\right] \\\\
+\frac{(\rho +1)^2 + (\rho -1)^2}{(\rho -1)^2(\rho +1)^2} &amp;= \frac{1}{8} \\\\
+(\rho+1)^2 - \frac{1}{8}(\rho +1)^2(\rho -1)^2 + (\rho -1)^2 &amp;= 0
+\end{aligned}
+$$</p>
+<p>At this point I just plugged into a graphing calculator and found the positive zero at $\sqrt{9+4\sqrt{6}}$.</p>
+<h3 id="8-c">8. [c]</h3>
+<pre data-lang="zsh" style="background-color:#2b303b;color:#c0c5ce;" class="language-zsh "><code class="language-zsh" data-lang="zsh"><span style="color:#bf616a;">❯</span><span> python3 hw7/lin_svm.py</span><span style="color:#bf616a;"> -N</span><span> 10
+</span><span style="color:#bf616a;">PLA</span><span> E_out:               0.10657499999999999
+</span><span style="color:#bf616a;">SVM</span><span> E_out:               0.088106
+</span><span style="color:#bf616a;">Primal</span><span> E_out:            0.08810400000000002
+</span><span style="color:#bf616a;">Dual</span><span> E_out:              0.08813800000000001
+</span><span>
+</span><span style="color:#bf616a;">Support</span><span> Vectors:         2.836 support vectors
+</span><span style="color:#bf616a;">Primal</span><span> Vectors:          2.827 support vectors
+</span><span style="color:#bf616a;">Dual</span><span> Vectors:            2.879 support vectors
+</span><span>
+</span><span style="color:#bf616a;">SVM</span><span> won                  0.623 times
+</span><span style="color:#bf616a;">Primal</span><span> won               0.624 times
+</span><span style="color:#bf616a;">Dual</span><span> won                 0.625 times
+</span></code></pre>
+<h3 id="for-9-and-10">For 9 and 10.</h3>
+<pre data-lang="zsh" style="background-color:#2b303b;color:#c0c5ce;" class="language-zsh "><code class="language-zsh" data-lang="zsh"><span style="color:#bf616a;">❯</span><span> python3 hw7/lin_svm.py</span><span style="color:#bf616a;"> -N</span><span> 100
+</span><span style="color:#bf616a;">PLA</span><span> E_out:               0.013668000000000003
+</span><span style="color:#bf616a;">SVM</span><span> E_out:               0.010621
+</span><span style="color:#bf616a;">Primal</span><span> E_out:            0.010623
+</span><span style="color:#bf616a;">Dual</span><span> E_out:              0.010740000000000001
+</span><span>
+</span><span style="color:#bf616a;">Support</span><span> Vectors:         3.0 support vectors
+</span><span style="color:#bf616a;">Primal</span><span> Vectors:          2.998 support vectors
+</span><span style="color:#bf616a;">Dual</span><span> Vectors:            3.151 support vectors
+</span><span>
+</span><span style="color:#bf616a;">SVM</span><span> won                  0.6 times
+</span><span style="color:#bf616a;">Primal</span><span> won               0.6 times
+</span><span style="color:#bf616a;">Dual</span><span> won                 0.598 times
+</span></code></pre>
+<h3 id="9-d">9. [d]</h3>
+<p>Though, I noticed SVM wins very close to 60% of the time, sometimes going under 60%, so it's between <strong>c</strong> and <strong>d</strong>. The SVM hyperplane obtained from the primal problem solution seems to track the libsvm hyperplane better than the dual solution.</p>
+<h3 id="10-b">10. [b]</h3>
+
+
+            </div>
+        </section>
+
+        <!-- MathJAX config -->
+        <script>
+            MathJax = {
+                /* TODO: Experiment with these delimiters */
+                tex: {
+                    displayMath: [['\\[', '\\]'], ['$$', '$$']],
+                    inlineMath: [['\\(', '\\)'], ['$', '$']],
+                }
+            };
+        </script>
+        <!-- Load V3.+ -->
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+    </body>
+
+
+    <footer>
+        <div>
+            <i class="nf nf-fa-copyright"></i> Lien Zhu 2025
+        </div>
+    </footer>
+
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+    <meta charset="utf-8">
+    <title>
+         Linear Algebra Notes
+        
+    </title>
+    <!-- TODO: Use a Tera template to get the path to the css? -->
+    <link rel="stylesheet" href="/main.css"> 
+</head>
+
+
+    <body>
+
+        <nav>
+    <div class="nav-menu">
+        
+        <a href="/" class="">Home</a>
+        
+        <a href="/about/" class="">About</a>
+        
+        <a href="/blog/" class="">Blog</a>
+        
+        <a href="/dev" class="">Projects</a>
+        
+    </div>
+</nav>
+
+
+        <section class="section">
+            <div class="container">
+                
+<h1 class="title">
+    Linear Algebra Notes
+</h1>
+<p class="subtitle"><strong>2023-10-04</strong></p>
+<h3 id="orthogonality-projection-gram-schmidt-and-qr-factorization">Orthogonality, Projection, Gram-Schmidt, and $QR$ Factorization</h3>
+<hr />
+<p>Show that if $\mathbf{u} \perp \mathbf{v}$ and $\mathbf{C}(A)=\{\mathbf{u}, \mathbf{v}\}$ then</p>
+<p>$$
+A(A^TA)^{-1}A^T\mathbf{b} = \mathbf{u}\frac{\mathbf{u}^T\mathbf{b}}{\mathbf{u}^T\mathbf{u}} + \mathbf{v}\frac{\mathbf{v}^T\mathbf{b}}{\mathbf{v}^T\mathbf{v}}
+$$</p>
+<p>In other words, show that given an orthogonal basis of a subspace, projecting some vector $\mathbf{b}$ onto that subspace is the same as adding together the projections onto the subspaces spanned by each individual basis vector (note: each of the subspaces is a line).</p>
+<p>Proof start:</p>
+<p>$$
+\begin{aligned}
+A^TA    &amp; = \begin{bmatrix}
+\mathbf{u}^T\mathbf{u} &amp; \mathbf{u}^T\mathbf{v} \\
+\mathbf{v}^T\mathbf{u} &amp; \mathbf{v}^T\mathbf{v}
+\end{bmatrix} \\\\
+&amp; = \begin{bmatrix}
+\mathbf{u}^T\mathbf{u} &amp; 0 \\
+0 &amp; \mathbf{v}^T\mathbf{v}
+\end{bmatrix}
+\end{aligned}
+$$</p>
+<p>Remember, $\mathbf{u} \perp \mathbf{v}$, so $\mathbf{u}^T\mathbf{v} = \mathbf{v}^T\mathbf{u} = 0$. This is the critical fact which cleans up the inverse of that matrix product, otherwise we would be left with a mess.</p>
+<p><em>Note that this is only true if the basis vectors are orthogonal. Imagine two basis vectors that span a plane which are almost colinear. Then, the sum of the projections onto each subspace spanned by the individual basis vectors (the lines) would be almost double in magnitude that of the actual projection onto the plane spanned by the two vectors.</em></p>
+<p>This is a $2\times2$ matrix, so finding the inverse is easy.</p>
+<p>$$
+\begin{aligned}
+(A^TA)^{-1}     &amp; = \frac{1}{\mathbf{u}^T\mathbf{u}\cdot\mathbf{v}^T\mathbf{v}}
+\begin{bmatrix}
+\mathbf{v}^T\mathbf{v} &amp; 0 \\
+0 &amp; \mathbf{u}^T\mathbf{u}
+\end{bmatrix}
+\end{aligned}
+$$</p>
+<p>Zooming out we have:</p>
+<p>$$
+\begin{aligned}
+A(A^TA)^{-1}A^T\mathbf{b}   &amp; = \frac{1}{\mathbf{u}^T\mathbf{u}\cdot\mathbf{v}^T\mathbf{v}}
+\begin{bmatrix}
+| &amp; | \\
+\mathbf{u} &amp; \mathbf{v} \\
+| &amp; |
+\end{bmatrix}
+\begin{bmatrix}
+\mathbf{v}^T\mathbf{v} &amp; 0 \\
+0 &amp; \mathbf{u}^T\mathbf{u}
+\end{bmatrix}
+\begin{bmatrix}
+- &amp; \mathbf{u} &amp; - \\
+- &amp; \mathbf{v} &amp; -
+\end{bmatrix}
+\mathbf{b}
+\end{aligned}
+$$</p>
+<p>Let's multiply each pair of matrices:</p>
+<p>$$
+\begin{aligned}
+A(A^TA)^{-1}A^T\mathbf{b}   &amp; = \frac{1}{\mathbf{u}^T\mathbf{u}\cdot\mathbf{v}^T\mathbf{v}}
+\begin{bmatrix}
+| &amp; | \\
+\mathbf{v}^T\mathbf{v}\cdot\mathbf{u} &amp; \mathbf{u}^T\mathbf{u}\cdot\mathbf{v} \\
+| &amp; |
+\end{bmatrix}
+\begin{bmatrix}
+\mathbf{u}^T\mathbf{b} \\
+\mathbf{v}^T\mathbf{b}
+\end{bmatrix} \\\\
+&amp; = \frac{1}{\mathbf{u}^T\mathbf{u}\cdot\mathbf{v}^T\mathbf{v}}
+\begin{bmatrix}
+| &amp; | \\
+\mathbf{v}^T\mathbf{v}\cdot\mathbf{u}\cdot\mathbf{u}^T\mathbf{b} &amp; \mathbf{u}^T\mathbf{u}\cdot\mathbf{v}\cdot\mathbf{v}^T\mathbf{b} \\
+| &amp; |
+\end{bmatrix} \\\\
+&amp; = \frac{\mathbf{v}^T\mathbf{v}\cdot\mathbf{u}\cdot\mathbf{u}^T\mathbf{b} + \mathbf{u}^T\mathbf{u}\cdot\mathbf{v}\cdot\mathbf{v}^T\mathbf{b}}{\mathbf{u}^T\mathbf{u}\cdot\mathbf{v}^T\mathbf{v}} \\\\
+&amp; = \frac{\mathbf{u}^T\mathbf{b}\cdot\mathbf{v}^T\mathbf{v}}{\mathbf{u}^T\mathbf{u}\cdot\mathbf{v}^T\mathbf{v}}\mathbf{u} + \frac{\mathbf{v}^T\mathbf{b}\cdot\mathbf{u}^T\mathbf{u}}{\mathbf{u}^T\mathbf{u}\cdot\mathbf{v}^T\mathbf{v}}\mathbf{v} \\\\
+&amp; = \frac{\mathbf{u}^T\mathbf{b}}{\mathbf{u}^T\mathbf{u}}\mathbf{u} + \frac{\mathbf{v}^T\mathbf{b}}{\mathbf{v}^T\mathbf{v}}\mathbf{v} \quad\blacksquare
+\end{aligned}
+$$</p>
+<p>This result shows us why the Gram-Schmidt process works. If we already found the first two orthogonal basis vectors, we can just subtract away the individual projections to get the <em>error</em> portion of the third vector when projected onto the subspace spanned by the first two vectors.</p>
+<hr />
+
+
+            </div>
+        </section>
+
+        <!-- MathJAX config -->
+        <script>
+            MathJax = {
+                /* TODO: Experiment with these delimiters */
+                tex: {
+                    displayMath: [['\\[', '\\]'], ['$$', '$$']],
+                    inlineMath: [['\\(', '\\)'], ['$', '$']],
+                }
+            };
+        </script>
+        <!-- Load V3.+ -->
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+    </body>
+
+
+    <footer>
+        <div>
+            <i class="nf nf-fa-copyright"></i> Lien Zhu 2025
+        </div>
+    </footer>
+
+</html>
