@@ -4,7 +4,7 @@ date = "2023-10-20"
 +++
 
 
-[PDF of problems](https://https://work.caltech.edu/homework/hw2.pdf)
+[PDF of problems](https://work.caltech.edu/homework/hw2.pdf)
 
 [Code Repository](https://github.com/lienzhuzhu/lfd)
 
