@@ -5,10 +5,6 @@ template = "info-page.html"
 
 # lee-EHN Joo
 
-> **Unwavering faith. Ultimate belief. Dependence on the Lord.**
->
-> *Jameis Winston*
-
 Healthcare $\bigcup$ Technology $\bigcup$ Culture
 
 One idea I'm thinking about in my free time is sustainable city design. I have spent some time learning about different technical and cultural approaches to mobility and public services.
