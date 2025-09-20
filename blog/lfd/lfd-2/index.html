@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+    <meta charset="utf-8">
+    <title>
+         Learning From Data Problem Set 2
+        
+    </title>
+    <!-- TODO: Use a Tera template to get the path to the css? -->
+    <link rel="stylesheet" href="/main.css"> 
+</head>
+
+
+    <body>
+
+        <nav>
+    <div class="nav-menu">
+        
+        <a href="/" class="">Home</a>
+        
+        <a href="/about/" class="">About</a>
+        
+        <a href="/blog/" class="">Blog</a>
+        
+        <a href="/dev" class="">Projects</a>
+        
+    </div>
+</nav>
+
+
+        <section class="section">
+            <div class="container">
+                
+<h1 class="title">
+    Learning From Data Problem Set 2
+</h1>
+<p class="subtitle"><strong>2023-10-20</strong></p>
+<p><a href="https://work.caltech.edu/homework/hw2.pdf">PDF of problems</a></p>
+<p><a href="https://github.com/lienzhuzhu/lfd">Code Repository</a></p>
+<h3 id="refer-to-the-code-repository-above-for-problems-1-and-2">Refer to the code repository above for problems 1 and 2.</h3>
+<pre data-lang="zsh" style="background-color:#2b303b;color:#c0c5ce;" class="language-zsh "><code class="language-zsh" data-lang="zsh"><span style="color:#bf616a;">❯</span><span> python3 hw2/coin.py
+</span><span style="color:#bf616a;">Average</span><span> value of ν_min: 0.037552
+</span></code></pre>
+<h3 id="1-b">1. [b]</h3>
+<p>I get something in the range $[0.03, 0.04]$ for the average value of $\nu_{min}$ so the correct answer is pretty close to being 0.1 but alas it is still correct to say 0.01.</p>
+<h3 id="2-d">2. [d]</h3>
+<p>The graphs show us that the $c_{min}$ coin is not bounded by the Hoeffding bound as we would expect. This makes sense because the Hoeffding inequality only applies to situations where we decide on a strategy before working on the data. In the learning problem, we pick $g$ based on the performance of many $h$'s on the dataset.</p>
+<h3 id="3-e">3. [e]</h3>
+<p>The key point of the concept of noise is that sometimes $y \neq f(\vec{x})$, or in other words, $y$ does not correspond the $f(\vec{x})$ completely.</p>
+<p>We want to find $P(h(\vec{x}) \neq y)$. We know that $y = f(\vec{x})$ with probability $\lambda$ and does not match $f(\vec{x})$ with a probability of $1-\lambda$. We want to add together the probabilities of the instances where $h(\vec{x}) \neq y$, which is when $h(\vec{x}) = f(\vec{x})$ but $y \neq f(\vec{x})$, and $h(\vec{x}) \neq f(\vec{x})$ but $y = f(\vec{x})$.</p>
+<p>Now that we've broken the question down, it becomes easier to put some math to it:</p>
+<p>$$
+\begin{aligned}
+P(h(\vec{x}) \neq y)    &amp; =     P\left(y = f(\vec{x}) \cap h(\vec{x}) \neq f(\vec{x})) + P(y \neq f(\vec{x}) \cap h(\vec{x}) = f(\vec{x})\right) \\\\
+&amp; = \lambda \mu + (1-\lambda)(1-\mu)
+\end{aligned}
+$$</p>
+<h3 id="4-b">4. [b]</h3>
+<p>When $\lambda = 0.5$, the correspondence between $y$ and $f(\vec{x})$ is basically random.</p>
+<h3 id="refer-to-the-following-output-for-5-7">Refer to the following output for 5 - 7.</h3>
+<pre data-lang="zsh" style="background-color:#2b303b;color:#c0c5ce;" class="language-zsh "><code class="language-zsh" data-lang="zsh"><span style="color:#bf616a;">❯</span><span> python3 hw2/linregression.py</span><span style="color:#bf616a;"> -N</span><span> 100
+</span><span style="color:#bf616a;">Iterations:</span><span> 92.548
+</span><span style="color:#bf616a;">E_in</span><span> actual: 0.0368600000
+</span><span style="color:#bf616a;">E_out</span><span> estimate: 0.046408
+</span></code></pre>
+<pre data-lang="zsh" style="background-color:#2b303b;color:#c0c5ce;" class="language-zsh "><code class="language-zsh" data-lang="zsh"><span style="color:#bf616a;">❯</span><span> python3 hw2/linregression.py</span><span style="color:#bf616a;"> -N</span><span> 10
+</span><span style="color:#bf616a;">Iterations:</span><span> 3.533
+</span><span style="color:#bf616a;">E_in</span><span> actual: 0.0248000000
+</span><span style="color:#bf616a;">E_out</span><span> estimate: 0.113239
+</span></code></pre>
+<h3 id="5-c">5. [c]</h3>
+<h3 id="6-c">6. [c]</h3>
+<h3 id="7-a">7. [a]</h3>
+<p>Refer to the following output for 8 - 10.</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">❯</span><span> python3 hw2/transform.py</span><span style="color:#bf616a;"> -N</span><span> 1000
+</span><span style="color:#bf616a;">E_in</span><span> actual: 0.5050290000
+</span><span style="color:#bf616a;">E_out</span><span> estimate: 0.5175489999999999
+</span><span style="color:#bf616a;">Average</span><span> Weights 0.04570844180055819, 0.0016592000474898905,</span><span style="color:#bf616a;"> -0</span><span>.00043616224075597215
+</span></code></pre>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">❯</span><span> python3 hw2/transform.py</span><span style="color:#bf616a;"> -N</span><span> 1000</span><span style="color:#bf616a;"> --transform
+</span><span style="color:#bf616a;">E_in</span><span> actual: 0.1236600000
+</span><span style="color:#bf616a;">E_out</span><span> estimate: 0.125843
+</span><span style="color:#bf616a;">Average</span><span> Weights</span><span style="color:#bf616a;"> -0</span><span>.9927863729005009,</span><span style="color:#bf616a;"> -0</span><span>.0003033668427597578, 0.001665119377568957,</span><span style="color:#bf616a;"> -0</span><span>.000659864590567796, 1.5606316940261602, 1.558196435074335
+</span></code></pre>
+<h3 id="8-d">8. [d]</h3>
+<p><code>python3 hw2/transform.py -N 1000</code> has E_in really close to $0.5$.</p>
+<p>The graph shows the original data points and the regression line from the last trial.</p>
+<h3 id="9-a">9. [a]</h3>
+<p><code>python3 hw2/transform.py -N 1000 --transform</code> has the $1.5$ coefficients on the last two terms which affect the result the most, so I selected [a].</p>
+<h3 id="10-b">10. [b]</h3>
+
+
+            </div>
+        </section>
+
+        <!-- MathJAX config -->
+        <script>
+            MathJax = {
+                /* TODO: Experiment with these delimiters */
+                tex: {
+                    displayMath: [['\\[', '\\]'], ['$$', '$$']],
+                    inlineMath: [['\\(', '\\)'], ['$', '$']],
+                }
+            };
+        </script>
+        <!-- Load V3.+ -->
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+    </body>
+
+
+    <footer>
+        <div>
+            <i class="nf nf-fa-copyright"></i> Lien Zhu 2025
+        </div>
+    </footer>
+
+</html>

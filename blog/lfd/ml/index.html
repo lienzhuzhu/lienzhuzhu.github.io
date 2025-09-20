@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+    <meta charset="utf-8">
+    <title>
+         Learning From Data Book Notes
+        
+    </title>
+    <!-- TODO: Use a Tera template to get the path to the css? -->
+    <link rel="stylesheet" href="/main.css"> 
+</head>
+
+
+    <body>
+
+        <nav>
+    <div class="nav-menu">
+        
+        <a href="/" class="">Home</a>
+        
+        <a href="/about/" class="">About</a>
+        
+        <a href="/blog/" class="">Blog</a>
+        
+        <a href="/dev" class="">Projects</a>
+        
+    </div>
+</nav>
+
+
+        <section class="section">
+            <div class="container">
+                
+<h1 class="title">
+    Learning From Data Book Notes
+</h1>
+<p class="subtitle"><strong>2023-10-18</strong></p>
+<h3 id="linear-regression-to-obtain-a-perceptron">Linear Regression To Obtain A Perceptron</h3>
+<p>The lectures mentioned using the analytic linear regression algorithm to obtain a perceptron, or at least an initial weight vector, but it wasn't immediately obvious to me from the language of the video how we fit the data with the added dimension of the output, particularly because if you look at a perceptron, it splits the points in half, it doesn't go through them as we expect for a linear regression line of best fit.</p>
+<p>The lecture describes the process at a high level but I want to elaborate on what it looks like at a lower level. A problem with two features has points in $\mathbb{R}^2$ and the labels are denoted using plus signs and crosses or whatnot, but when using linear regression we need to consider the label as a real number output. So we do just that and plot the points in the $XY$ plane against +1 and -1 as outputs. Then we fit a hyperplane which in this case will be a plane that goes through the points as best as possible, a plane in this case because now we are in $\mathbb{R}^4$ thanks to the added dimension of the output. But where's our perceptron? We need to take the $Z=0$ or $XY$ plane and intersect it with the plane of best fit to find our perceptron, which is a hyperplane in the dimension one smaller than when we had the labels as outputs, since in classification we denote the label using some indicator like symbols or color.</p>
+<p>That is where the perceptron can be found using linear regression. The intersection of two planes is generally going to be a line, unless they are parallel or have a shared basis. The plane $z = 0$ is the threshold $y = 0$.</p>
+<h3 id="perceptron-weight-vector-is-normal-to-the-perceptron">Perceptron Weight Vector Is Normal To The Perceptron</h3>
+<p>The perceptron is basically the equation</p>
+<p>$$x_1w_1 + x_2w_2 + \dots + x_dw_d + x_{d+1}w_{d+1} = 0$$</p>
+<p>so every $\vec{x}$ that satisfies this equation is in the the separating plane or line. But the inner product of every such vector with the weight vector is 0, which means $\vec{w} \perp \{\vec{x} : \vec{x} \in \textrm{ perceptron}\}$.</p>
+<hr />
+<h3 id="loosening-the-hoeffding-inequality-for-g">Loosening the Hoeffding Inequality for $g$</h3>
+<p>The Hoeffding Inequality for any particular hypothesis $h$ bounds the deviation between $E_{in}$ and $E_{out}$ as</p>
+<p>$$
+\mathbb{P}(|E_{in}(h) - E_{out}(h)| &gt; \epsilon) \leq 2e^{-2\epsilon^2N}
+$$</p>
+<p><strong>Small problem</strong></p>
+<p>When bounding the approximation of $E_{out}(g)$ by $E_{in}(g)$, we cannot just plug in $g$ for $h$. This is because $g$ is selected after applying the hypothesis set $\mathcal{H}$ onto the data, so $g$ is cherry-picked based on performance of the hypotheses.</p>
+<p>Instead, we have to use the implication and addition rule of probability.</p>
+<p><strong>The solution</strong></p>
+<p>If $A \implies B$, then $\mathbb{P}(A) \leq \mathbb{P}(B)$, since event $B$ always occurs whenever $A$ occurs, but may also occur when $A$ does not occur.</p>
+<p>Also, $\mathbb{P}(A \cup B) = \mathbb{P}(A) + \mathbb{P}(B) - \mathbb{P}(A \cap B)$ by the addition rule of probability. In fact, we can derive what's called the <em>Union Bound</em> from this rule:</p>
+<p>$$
+\begin{aligned}
+\mathbb{P}(A \cup B)    &amp; =     \mathbb{P}(A) + \mathbb{P}(B) - \mathbb{P}(A \cap B) \\\\
+&amp; \leq  \mathbb{P}(A) + \mathbb{P}(B)
+\end{aligned}
+$$</p>
+<p>Basically, if $A$ and $B$ are disjoint, then by definition $\mathbb{P}(A \cap B) = 0$, $i.e.$ there is no overlap between $A$ and $B$. This means in general, the union of any two events, disjoint or not, is less than or equal the probability of the disjoint case.</p>
+<p><strong>Translating to our problem</strong></p>
+<p>Because $g$ is one of the $h_M$'s, we know this implication holds true:</p>
+<p>$$
+|E_{in}(g) - E_{out}(g)| &gt; \epsilon \quad\implies\quad |E_{in}(h_1) - E_{out}(h_1)| &gt; \epsilon \textbf{ or } |E_{in}(h_2) - E_{out}(h_2)| &gt; \epsilon \dots \textbf{ or } |E_{in}(h_M) - E_{out}(h_M)| &gt; \epsilon \
+$$</p>
+<p>Then we know that...</p>
+<p>$$
+\therefore \mathbb{P}(|E_{in}(g) - E_{out}(g)| &gt; \epsilon) \quad\leq\quad \mathbb{P}[|E_{in}(h_1) - E_{out}(h_1)| &gt; \epsilon \textbf{ or } |E_{in}(h_2) - E_{out}(h_2)| &gt; \epsilon \dots \textbf{ or } |E_{in}(h_M) - E_{out}(h_M)| &gt; \epsilon]
+$$</p>
+<p>The RHS of that expression follows the addition rule:
+$$
+\begin{aligned}
+\mathbb{P}[|E_{in}(h_1) - E_{out}(h_1)| &gt; \epsilon \textbf{ or } |E_{in}(h_2) - E_{out}(h_2)| &gt; \epsilon \dots \textbf{ or } |E_{in}(h_M) - E_{out}(h_M)| &gt; \epsilon]   &amp; \quad\leq\quad    \sum_{m=1}^{M}\mathbb{P}(|E_{in}(h_m) - E_{out}(h_m)| &gt; \epsilon) \\
+&amp; \quad=\quad       2Me^{-2\epsilon^2N}
+\end{aligned}
+$$</p>
+<p>Which leaves us with
+$$
+\mathbb{P}(|E_{in}(g) - E_{out}(g)| &gt; \epsilon) \quad\leq\quad 2Me^{-2\epsilon^2N} \quad\blacksquare
+$$</p>
+<p><strong>Discussion on this bound</strong></p>
+<p>We can already see that if the cardinality of the hypothesis space, $|\mathcal{H}| = M$, is infinite, the bound is useless, it is too loose because it considers the worst case that no hypotheses will overlap in their classifications on $\mathcal{D}$. In reality, for any given $\mathcal{D}$, many hypotheses will output the same classifications. Take for instance the perceptron and let's say we have two points, one of which is $+1$ the other $-1$. There are basically an infinite number of $h$'s that would classify these two examples in $\mathcal{D}$ correctly!</p>
+<p>Later, we'll see how we can tighten this bound by taking into account these overlapping, or effectively equal, hypotheses.</p>
+<h3 id="generalization-bound">Generalization Bound</h3>
+<p>From the previous derivation we have
+$$
+\begin{array}{cl}
+&amp; \mathbb{P}(|E_{in}(g) - E_{out}(g)| &gt; \epsilon) \leq 2Me^{-2\epsilon^2N}) \\
+\implies &amp; \mathbb{P}(|E_{in}(g) - E_{out}(g)| \leq \epsilon) = 1 - \mathbb{P}(|E_{in}(g) - E_{out}(g)| &gt; \epsilon) \\
+\geq &amp; 1 - 2Me^{-2\epsilon^2N}
+\end{array}
+$$</p>
+<p>$i.e.$ with probability at least $1 - 2Me^{-2\epsilon^2N}$ the following is true
+$$
+\begin{array}{c}
+|E_{in}(g) - E_{out}(g)| \leq \epsilon \equiv E_{out}(g) - E_{in}(g) \leq \epsilon \\\\
+\therefore E_{out}(g) \leq E_{in}(g) + \epsilon
+\end{array}
+$$</p>
+<p>Let $\delta = 2Me^{-2\epsilon^2N}$. So with probability at least $1-\delta$
+$$
+E_{out} \leq E_{in}(g) + \epsilon
+$$</p>
+<p>But we can express $\epsilon$ in terms of $\delta$</p>
+<p>$$
+\begin{aligned}
+2Me^{-2\epsilon^2N}         &amp; =    \delta \\
+e^{-2\epsilon^2N}           &amp; =    \frac{\delta}{2M} \\
+\ln{e^{-2\epsilon^2N}}      &amp; =    \ln{\frac{\delta}{2M}} \\
+-2\epsilon^2N               &amp; =    \ln{\frac{\delta}{2M}} \\
+\epsilon^2                  &amp; =    \frac{1}{2N}\ln{\frac{2M}{\delta}} \\
+\epsilon                    &amp; =    \sqrt{\frac{1}{2N}\ln{\frac{2M}{\delta}}} \\
+\end{aligned}
+$$</p>
+<p>$$
+\therefore E_{out}(g) \leq E_{in}(g) + \sqrt{\frac{1}{2N}\ln{\frac{2M}{\delta}}}
+$$</p>
+<p>In fact, we can look at the 3 other inequalities of the Hoeffding bound
+$$
+P(|E_{in} - E_{out}| &gt; \epsilon) \leq \delta
+$$</p>
+<p>The Hoeffding bound directly implies with probability at <em><strong>most</strong></em> $\delta$:
+$$
+\begin{aligned}
+|E_{in} - E_{out}| &gt; \epsilon   &amp; \equiv    E_{in} - E_{out} &gt; \epsilon \implies E_{out} &lt; E_{in} - \epsilon \quad(1) \\
+&amp; \equiv    E_{out} - E_{in} &gt; \epsilon \implies E_{out} &gt; E_{in} + \epsilon \quad(2) \\
+\end{aligned}
+$$</p>
+<p>We already looked at one side of the complement of the Hoeffding bound
+$$
+P[(|E_{in} - E_{out}| &gt; \epsilon)^C] = P(|E_{in} - E_{out}| \leq \epsilon) \geq \delta
+$$</p>
+<p>which implies that with probability at <em><strong>least</strong></em> $1-\delta$:
+$$
+\begin{aligned}
+|E_{in} - E_{out}| \leq \epsilon    &amp; \equiv    E_{in} - E_{out} \leq \epsilon \implies E_{out} \geq E_{in} - \epsilon \quad(3) \\
+&amp; \equiv    E_{out} - E_{in} \leq \epsilon \implies E_{out} \leq E_{in} + \epsilon \quad(4) \\
+\end{aligned}
+$$</p>
+<p>Result $(4)$ is the bound we saw before. Let's go over what these 4 bounds mean.</p>
+<p>Results $(1)$ and $(3)$ are what we can think of as our "best case" upper and lower bounds on $E_{out}$, respectively, because they relate $E_{out}$ to the smaller value of $E_{in} - \epsilon$.</p>
+<p>To elaborate, result $(1)$ translates to "we have a ceiling on the probability that $E_{out}$ will be smaller than $E_{in} - \epsilon$, but it is a short ceiling, which means it is far more likely that $E_{out}$ will be closer to being less than or equal to $E_{in} + \epsilon$, $1-\delta$ probable to be more exact.</p>
+<p>Flip the logic and we see why $(2)$ and $(4)$ are the "worst case" bounds.</p>
+<p>Let's look at result $(3)$ more closely. This result tells us that out of all hypotheses $\mathcal{h} \in \mathcal{H}$, the $g$ selected is likely the best we could do, since there is a fairly high floor, $1-\delta$, on the probability that $E_{in} - \epsilon$ is the lower bound for $E_{out}$.</p>
+<p>Since $g$ was selected as $\underset{h \in \mathcal{H}}{\textrm{argmin}}(E_{in}(\mathcal{h}))$, every other $h$ will have higher in-sample error, and we have high confidence that out-of-sample error for those hypotheses will also be larger from this bound. $\blacksquare$</p>
+<h3 id="vc-dimension-for-perceptron-can-be-expressed-analytically">VC Dimension For Perceptron Can Be Expressed Analytically</h3>
+<p>This is Exercise 2.4 in the book.</p>
+<p>The VC Dimension $d_{vc}$ is a measure of the complexity of a hypothesis set. The $d_{vc}$ for any $d$-dimensional perceptron can in fact be derived analytically. From our observations of $\mathbb{R}^2$ and $\mathbb{R}^3$ datasets, we have a hunch that $d_{vc} = d+1$ for any perceptron of dimension $d$.</p>
+<p>To confirm this, we must show that $d_{vc} \geq d+1$ and $d_{vc} \leq d+1$, which is only possible if $d_{vc} = d+1$.</p>
+<p><strong>Proof: $d_{vc} \geq d+1$</strong></p>
+<p>We must show that $d+1$ points can be shattered. Let's put $d+1$ points as the rows of a dataset matrix $\mathbf{X}$.</p>
+<p>$$
+\mathbf{X} =
+\begin{bmatrix}
+&amp; -- &amp; \vec{x}_1 &amp; -- &amp; \\
+&amp; -- &amp; \vec{x}_2 &amp; -- &amp; \\
+&amp; &amp; \vdots &amp; &amp; \\
+&amp; -- &amp; \vec{x}_{d+1} &amp; -- &amp; \\
+\end{bmatrix}
+$$</p>
+<p>Because each $\vec{x}$ has $d+1$ features, $\mathbf{X}$ is square. We can choose any dataset to maintain generality so let $\mathbf{X}$ contain only linearly independent points aka row vectors. This means $\mathbf{X}$ is invertible as it is a square matrix with independent columns (and rows).</p>
+<p>Okay, we've established what $\mathbf{X}$, but what question am I trying to answer? The critical question is can we find some hypothesis $\vec{w}$ that will produce any of the possible $2^{d+1}$ $d+1$-dimensional $\vec{y}$ output vectors.</p>
+<p>Well, $\mathbf{X}$ reduces to the identity matrix, which means any $\vec{y}$ can be obtained as a linear combination of the columns of $\mathbf{X}$. Therefore, $\vec{y}$ must be in the column space and must be achievable by any co-efficient vector $\vec{w}$.</p>
+<p>$$
+\vec{w} = \mathbf{X}^{-1}\vec{y}
+$$</p>
+<p>We conclude that any one of the $2^{d+1}$ $\vec{y}$'s imaginable can be achieved on $d+1$ points and succesfully show that $d_{vc} \geq d+1$.</p>
+<p><strong>Proof: $d_{vc} \leq d+1$</strong></p>
+<p>Proving that $d_{vc}$ is at most $d+1$ requires showing that there no set of $d+2$ points can be shattered, <em>i.e.</em> we cannot achieve $2^{d+2}$ dichotomies or $\vec{y}$'s on $d+2$ points.</p>
+<p>This time $\mathbf{X}$ will have an extra row.</p>
+<p>$$
+\mathbf{X} =
+\begin{bmatrix}
+&amp; -- &amp; \vec{x}_1 &amp; -- &amp; \\
+&amp; -- &amp; \vec{x}_2 &amp; -- &amp; \\
+&amp; &amp; \vdots &amp; &amp; \\
+&amp; -- &amp; \vec{x}_{d+1} &amp; -- &amp; \\
+&amp; -- &amp; \vec{x}_{d+2} &amp; -- &amp; \\
+\end{bmatrix}
+$$</p>
+<p>This is clearly a tall matrix, which means it does not have full row rank, and one of the points $\vec{x}_j$ is some linear combination of the other rows, <em>i.e.</em></p>
+<p>$$
+\vec{x}_j = \sum_{i \neq j}a_i\vec{x}_i
+$$</p>
+<p>We need to show that there is no set of $d+2$ points in $\mathbb{R}^{d+1}$ that can be shattered by the $d+1$-perceptron, <em>i.e.</em> there exists some $\vec{y}$ that cannot be produced.</p>
+<p>Suppose we want to obtain the dichotomy might have $y_i = \vec{w}^T\vec{x}_i = \textrm{sign}(a_i)$ when $a_i \neq 0$, and classifies $\vec{x}_j$ as a negative point such that $y_j = \vec{w}^T\vec{x}_j = -1$. This is certainly a dichotomy we would expect to be achievable if $d+2$ points can be shattered aka $d+2$ is not a break point.</p>
+<p>We will use proof by contradiction to show that no such $\vec{w}$ that shatters $d+2$ points can exist. For now, assume $\vec{w}$ is able to produce $2^{d+2}$ dichotomies.</p>
+<p>$$
+\begin{aligned}
+y_j     &amp; = \vec{w}^T\vec{x}_j \\\\
+&amp; = \vec{w}^T\sum_{i\neq j}a_i\vec{x}_i \\\\
+&amp; = \sum_{i\neq j}a_i\vec{w}^T\vec{x}_i \\\\
+&amp; = \sum_{i\neq j}a_iy_i = -1\textrm{?}
+\end{aligned}
+$$</p>
+<p>Except that last equality cannot be true! We said this desired dichotomy has $y_i = \textrm{sign}(a_i)$ when $a_i \neq 0$ and $y_j = +1$.</p>
+<p>$$
+\therefore \sum_{i\neq j}a_iy_i = \sum_{i\neq j}a_i\cdot\textrm{sign}(a_i) &gt; 0 \neq y_j = -1
+$$</p>
+<p>We have found a dichotomy that cannot be produced for any $d+2$ points with a perceptron hypothesis $\vec{w}$ and conclude that $d+2$ is the first breakpoint.</p>
+<p>$$
+\therefore d_{vc} \leq d+1
+$$</p>
+<p>Since we have shown that</p>
+<p>$$
+d+1 \leq d_{vc} \leq d+1
+$$</p>
+<p>it must be that</p>
+<p>$$
+d_{vc} = d+1 \quad \blacksquare
+$$</p>
+<h3 id="bias-variance-as-accuracy-precision">Bias-Variance As Accuracy-Precision</h3>
+<p>Accuracy is to Bias as Precision is to Variance. In the single hypothesis hypothesis-set, the hypothesis set is very precise but not accurate, while a more complex hypothesis set may capture the correct classifications, but it also generates other results.</p>
+<h3 id="download-common-datasets">Download Common Datasets</h3>
+<p>I recently had to download the MNIST datasets. I went to the official website but it prompted me for sign in credentials that I don't have.</p>
+<p>So, I used PyTorch to get the same data:</p>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span style="color:#b48ead;">import </span><span>torchvision.datasets </span><span style="color:#b48ead;">as </span><span>datasets
+</span><span>
+</span><span>mnist_data = datasets.</span><span style="color:#bf616a;">MNIST</span><span>(</span><span style="color:#bf616a;">root</span><span>=&#39;</span><span style="color:#a3be8c;">./data</span><span>&#39;, </span><span style="color:#bf616a;">download</span><span>=</span><span style="color:#d08770;">True</span><span>)
+</span></code></pre>
+<p>Proof that it's the same data:</p>
+<pre data-lang="zsh" style="background-color:#2b303b;color:#c0c5ce;" class="language-zsh "><code class="language-zsh" data-lang="zsh"><span style="color:#bf616a;">❯</span><span> python3 main.py
+</span><span style="color:#bf616a;">Downloading</span><span> http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz
+</span><span style="color:#bf616a;">Downloading</span><span> http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz to ./data/MNIST/raw/train-images-idx3-ubyte.gz
+</span><span style="color:#bf616a;">100.0</span><span>%
+</span><span style="color:#bf616a;">Extracting</span><span> ./data/MNIST/raw/train-images-idx3-ubyte.gz to ./data/MNIST/raw
+</span><span>
+</span><span style="color:#bf616a;">Downloading</span><span> http://yann.lecun.com/exdb/mnist/train-labels-idx1-ubyte.gz
+</span><span style="color:#bf616a;">Downloading</span><span> http://yann.lecun.com/exdb/mnist/train-labels-idx1-ubyte.gz to ./data/MNIST/raw/train-labels-idx1-ubyte.gz
+</span><span style="color:#bf616a;">100.0</span><span>%
+</span><span style="color:#bf616a;">Extracting</span><span> ./data/MNIST/raw/train-labels-idx1-ubyte.gz to ./data/MNIST/raw
+</span><span>
+</span><span style="color:#bf616a;">Downloading</span><span> http://yann.lecun.com/exdb/mnist/t10k-images-idx3-ubyte.gz
+</span><span style="color:#bf616a;">Downloading</span><span> http://yann.lecun.com/exdb/mnist/t10k-images-idx3-ubyte.gz to ./data/MNIST/raw/t10k-images-idx3-ubyte.gz
+</span><span style="color:#bf616a;">100.0</span><span>%
+</span><span style="color:#bf616a;">Extracting</span><span> ./data/MNIST/raw/t10k-images-idx3-ubyte.gz to ./data/MNIST/raw
+</span><span>
+</span><span style="color:#bf616a;">Downloading</span><span> http://yann.lecun.com/exdb/mnist/t10k-labels-idx1-ubyte.gz
+</span><span style="color:#bf616a;">Downloading</span><span> http://yann.lecun.com/exdb/mnist/t10k-labels-idx1-ubyte.gz to ./data/MNIST/raw/t10k-labels-idx1-ubyte.gz
+</span><span style="color:#bf616a;">100.0</span><span>%
+</span><span style="color:#bf616a;">Extracting</span><span> ./data/MNIST/raw/t10k-labels-idx1-ubyte.gz to ./data/MNIST/raw
+</span></code></pre>
+<p>It downloads from the official <a href="http://yann.lecun.com/exdb/mnist">site</a>.</p>
+
+
+            </div>
+        </section>
+
+        <!-- MathJAX config -->
+        <script>
+            MathJax = {
+                /* TODO: Experiment with these delimiters */
+                tex: {
+                    displayMath: [['\\[', '\\]'], ['$$', '$$']],
+                    inlineMath: [['\\(', '\\)'], ['$', '$']],
+                }
+            };
+        </script>
+        <!-- Load V3.+ -->
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+    </body>
+
+
+    <footer>
+        <div>
+            <i class="nf nf-fa-copyright"></i> Lien Zhu 2025
+        </div>
+    </footer>
+
+</html>

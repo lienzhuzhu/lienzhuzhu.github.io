@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+    <meta charset="utf-8">
+    <title>
+         Math Typesetting 数学
+        
+    </title>
+    <!-- TODO: Use a Tera template to get the path to the css? -->
+    <link rel="stylesheet" href="/main.css"> 
+</head>
+
+
+    <body>
+
+        <nav>
+    <div class="nav-menu">
+        
+        <a href="/" class="">Home</a>
+        
+        <a href="/about/" class="">About</a>
+        
+        <a href="/blog/" class="">Blog</a>
+        
+        <a href="/dev" class="">Projects</a>
+        
+    </div>
+</nav>
+
+
+        <section class="section">
+            <div class="container">
+                
+<h1 class="title">
+    Math Typesetting 数学
+</h1>
+<p class="subtitle"><strong>2025-01-18</strong></p>
+<h1 id="shu-xue-or-mathematics-in-the-king-s">数学 (or Mathematics in the King's)</h1>
+<blockquote>
+<p><strong>Some math texts use pictorial illustrations, and some do not. Like the words, the picture needs slow and careful study. A quick glance will not do, as it might in a biology text.</strong></p>
+<p><em>The OSU at Newark Dept. of Mathematics</em></p>
+</blockquote>
+<p><strong>HUGO MIGRATION NOTES</strong></p>
+<ul>
+<li>Must escape all <code>\</code> symbols for newlines</li>
+</ul>
+<p><strong>TODO: Fix this.</strong></p>
+<h2 id="examples">Examples</h2>
+<h3 id="inline-math">Inline math</h3>
+<pre data-lang="latex" style="background-color:#2b303b;color:#c0c5ce;" class="language-latex "><code class="language-latex" data-lang="latex"><span>This equation is inline: $ </span><span style="color:#b48ead;">\varphi </span><span>= </span><span style="color:#96b5b4;">\dfrac</span><span>{</span><span style="color:#d08770;">1</span><span>+</span><span style="color:#96b5b4;">\sqrt</span><span style="color:#d08770;">5</span><span>}{</span><span style="color:#d08770;">2</span><span>}= </span><span style="color:#d08770;">1.6180339887</span><span>… $
+</span></code></pre>
+<p>This equation is inline: $ \varphi = \dfrac{1+\sqrt5}{2}= 1.6180339887… $</p>
+<h3 id="block-math">Block math</h3>
+<pre data-lang="latex" style="background-color:#2b303b;color:#c0c5ce;" class="language-latex "><code class="language-latex" data-lang="latex"><span>$$
+</span><span> </span><span style="color:#b48ead;">\varphi </span><span>= </span><span style="color:#d08770;">1</span><span>+</span><span style="color:#96b5b4;">\frac</span><span>{</span><span style="color:#d08770;">1</span><span>} {</span><span style="color:#d08770;">1</span><span>+</span><span style="color:#96b5b4;">\frac</span><span>{</span><span style="color:#d08770;">1</span><span>} {</span><span style="color:#d08770;">1</span><span>+</span><span style="color:#96b5b4;">\frac</span><span>{</span><span style="color:#d08770;">1</span><span>} {</span><span style="color:#d08770;">1</span><span>+</span><span style="color:#96b5b4;">\cdots</span><span>} } } 
+</span><span>$$
+</span></code></pre>
+<p>$$
+\varphi = 1+\frac{1} {1+\frac{1} {1+\frac{1} {1+\cdots} } }
+$$</p>
+<h3 id="a-parenthetical-matrix">A parenthetical matrix</h3>
+<pre data-lang="latex" style="background-color:#2b303b;color:#c0c5ce;" class="language-latex "><code class="language-latex" data-lang="latex"><span>$$
+</span><span style="color:#b48ead;">\begin</span><span>{pmatrix}
+</span><span>   </span><span style="color:#bf616a;">a </span><span style="color:#d08770;">&amp; </span><span style="color:#bf616a;">b </span><span style="color:#d08770;">\\\\
+</span><span>   </span><span style="color:#bf616a;">c </span><span style="color:#d08770;">&amp; </span><span style="color:#bf616a;">d
+</span><span style="color:#b48ead;">\end</span><span>{pmatrix}
+</span><span>$$
+</span></code></pre>
+<p>$$
+\begin{pmatrix}
+a &amp; b \\
+c &amp; d
+\end{pmatrix}
+$$</p>
+<h3 id="here-s-a-longer-equation-in-an-aligned-environment">Here's a longer equation in an aligned environment:</h3>
+<pre data-lang="latex" style="background-color:#2b303b;color:#c0c5ce;" class="language-latex "><code class="language-latex" data-lang="latex"><span>$$
+</span><span style="color:#b48ead;">\begin</span><span>{aligned}
+</span><span style="color:#96b5b4;">\dagger \text</span><span>{Some long expression}    </span><span style="color:#d08770;">&amp; </span><span>= </span><span style="color:#96b5b4;">\frac</span><span>{</span><span style="color:#96b5b4;">\frac</span><span>{</span><span style="color:#d08770;">2</span><span>}{</span><span style="color:#bf616a;">N</span><span>} </span><span style="color:#96b5b4;">\pm \sqrt</span><span>{</span><span style="color:#d08770;">(</span><span style="color:#96b5b4;">\frac</span><span>{</span><span style="color:#d08770;">2</span><span>}{</span><span style="color:#bf616a;">N</span><span>}</span><span style="color:#d08770;">)</span><span>^</span><span style="color:#d08770;">2 </span><span>+ </span><span style="color:#d08770;">4 </span><span style="color:#96b5b4;">\cdot \frac</span><span>{</span><span style="color:#d08770;">1</span><span>}{</span><span style="color:#bf616a;">N</span><span>}</span><span style="color:#96b5b4;">\ln</span><span>{</span><span style="color:#96b5b4;">\frac</span><span>{</span><span style="color:#d08770;">6</span><span style="color:#bf616a;">m</span><span>_{</span><span style="color:#96b5b4;">\mathcal</span><span>{</span><span style="color:#bf616a;">H</span><span>}}</span><span style="color:#d08770;">(2</span><span style="color:#bf616a;">N</span><span style="color:#d08770;">)</span><span>}{</span><span style="color:#b48ead;">\delta</span><span>}}}}{</span><span style="color:#d08770;">2</span><span>} </span><span style="color:#d08770;">\\\\
+</span><span>            </span><span style="color:#d08770;">&amp; </span><span>= </span><span style="color:#96b5b4;">\frac</span><span>{</span><span style="color:#d08770;">1</span><span>}{</span><span style="color:#bf616a;">N</span><span>} </span><span style="color:#96b5b4;">\pm \frac</span><span>{</span><span style="color:#d08770;">1</span><span>}{</span><span style="color:#bf616a;">N</span><span>}</span><span style="color:#96b5b4;">\sqrt</span><span>{</span><span style="color:#d08770;">1</span><span>+</span><span style="color:#bf616a;">N</span><span style="color:#96b5b4;">\ln</span><span>{</span><span style="color:#96b5b4;">\frac</span><span>{</span><span style="color:#d08770;">6</span><span style="color:#bf616a;">m</span><span>_{</span><span style="color:#96b5b4;">\mathcal</span><span>{</span><span style="color:#bf616a;">H</span><span>}}</span><span style="color:#d08770;">(2</span><span style="color:#bf616a;">N</span><span style="color:#d08770;">)</span><span>}{</span><span style="color:#b48ead;">\delta</span><span>}}}
+</span><span style="color:#b48ead;">\end</span><span>{aligned}
+</span><span>$$
+</span></code></pre>
+<p>$$
+\begin{aligned}
+\dagger \text{Some long expression}    &amp; = \frac{\frac{2}{N} \pm \sqrt{(\frac{2}{N})^2 + 4 \cdot \frac{1}{N}\ln{\frac{6m_{\mathcal{H}}(2N)}{\delta}}}}{2} \\
+&amp; = \frac{1}{N} \pm \frac{1}{N}\sqrt{1+N\ln{\frac{6m_{\mathcal{H}}(2N)}{\delta}}}
+\end{aligned}
+$$</p>
+<h3 id="some-chemistry">Some chemistry</h3>
+<pre data-lang="latex" style="background-color:#2b303b;color:#c0c5ce;" class="language-latex "><code class="language-latex" data-lang="latex"><span>$$</span><span style="color:#bf616a;">C</span><span>_</span><span style="color:#bf616a;">p</span><span style="color:#d08770;">[</span><span style="color:#96b5b4;">\ce</span><span>{</span><span style="color:#bf616a;">H</span><span style="color:#d08770;">2</span><span style="color:#bf616a;">O</span><span style="color:#d08770;">(</span><span style="color:#bf616a;">l</span><span style="color:#d08770;">)</span><span>}</span><span style="color:#d08770;">] </span><span>= </span><span style="color:#96b5b4;">\pu</span><span>{</span><span style="color:#d08770;">75.3 </span><span style="color:#bf616a;">J </span><span>// </span><span style="color:#bf616a;">mol K</span><span>}$$
+</span></code></pre>
+<p>$$
+C_p[\ce{H2O(l)}] = \pu{75.3 J // mol K}
+$$</p>
+<pre data-lang="latex" style="background-color:#2b303b;color:#c0c5ce;" class="language-latex "><code class="language-latex" data-lang="latex"><span>The concentration by pressure of water: $ </span><span style="color:#bf616a;">C</span><span>_</span><span style="color:#bf616a;">p</span><span style="color:#d08770;">[</span><span style="color:#96b5b4;">\ce</span><span>{</span><span style="color:#bf616a;">H</span><span style="color:#d08770;">2</span><span style="color:#bf616a;">O</span><span style="color:#d08770;">(</span><span style="color:#bf616a;">l</span><span style="color:#d08770;">)</span><span>}</span><span style="color:#d08770;">] </span><span>= </span><span style="color:#96b5b4;">\pu</span><span>{</span><span style="color:#d08770;">75.3 </span><span style="color:#bf616a;">J </span><span>// </span><span style="color:#bf616a;">mol K</span><span>} $
+</span></code></pre>
+<p>The concentration by pressure of water: $ C_p[\ce{H2O(l)}] = \pu{75.3 J // mol K} $</p>
+<p>$ \LaTeX = {\infty}^{\infty} $</p>
+
+
+            </div>
+        </section>
+
+        <!-- MathJAX config -->
+        <script>
+            MathJax = {
+                /* TODO: Experiment with these delimiters */
+                tex: {
+                    displayMath: [['\\[', '\\]'], ['$$', '$$']],
+                    inlineMath: [['\\(', '\\)'], ['$', '$']],
+                }
+            };
+        </script>
+        <!-- Load V3.+ -->
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+    </body>
+
+
+    <footer>
+        <div>
+            <i class="nf nf-fa-copyright"></i> Lien Zhu 2025
+        </div>
+    </footer>
+
+</html>

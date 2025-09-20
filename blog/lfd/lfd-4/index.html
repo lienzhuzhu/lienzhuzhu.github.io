@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+    <meta charset="utf-8">
+    <title>
+         Learning From Data Problem Set 4
+        
+    </title>
+    <!-- TODO: Use a Tera template to get the path to the css? -->
+    <link rel="stylesheet" href="/main.css"> 
+</head>
+
+
+    <body>
+
+        <nav>
+    <div class="nav-menu">
+        
+        <a href="/" class="">Home</a>
+        
+        <a href="/about/" class="">About</a>
+        
+        <a href="/blog/" class="">Blog</a>
+        
+        <a href="/dev" class="">Projects</a>
+        
+    </div>
+</nav>
+
+
+        <section class="section">
+            <div class="container">
+                
+<h1 class="title">
+    Learning From Data Problem Set 4
+</h1>
+<p class="subtitle"><strong>2023-10-26</strong></p>
+<p><a href="https://work.caltech.edu/homework/hw4.pdf">PDF of problems</a></p>
+<p><a href="https://github.com/lienzhuzhu/lfd">Code Repository</a></p>
+<h3 id="1-d">1. [d]</h3>
+<p>I made a small script to do the iterative calculation:</p>
+<pre data-lang="zsh" style="background-color:#2b303b;color:#c0c5ce;" class="language-zsh "><code class="language-zsh" data-lang="zsh"><span style="color:#bf616a;">❯</span><span> python3 hw4/sample-complexity.py
+</span><span style="color:#bf616a;">452955.4551979035
+</span></code></pre>
+<h3 id="2-d">2. [d]</h3>
+<p>For problems 2 and 3 we need to find an explicit form for the Parrondo and Van den Broek and Devroye bounds.</p>
+<p>First, recall the quadratic formula as we will use it later.</p>
+<p>$$
+\frac{-b \pm \sqrt{b^2-4ac}}{2a}
+$$</p>
+<p><em>Parrondo and Van den Broek</em></p>
+<p>$$
+\begin{aligned}
+\epsilon    &amp;   \leq    \sqrt{\frac{1}{N}(2\epsilon + \ln{\frac{6m_{\mathcal{H}}(2N)}{\delta}})} \\\\
+\epsilon^2  &amp;   \leq    \frac{1}{N}(2\epsilon + \ln{\frac{6m_{\mathcal{H}}(2N)}{\delta}}) \\\\
+\epsilon^2 - \frac{2}{N}\epsilon - \frac{1}{N}\ln{\frac{6m_{\mathcal{H}}(2N)}{\delta}}    &amp; \leq  0 \\\\
+\end{aligned}
+$$</p>
+<p>Now we apply the quadratic formula. Let's first make clear what the values will be:</p>
+<p>$$
+\begin{aligned}
+a &amp;= 1 \\
+b &amp;= -\frac{2}{N} \\
+c &amp;= -\frac{1}{N}\ln{\frac{6m_{\mathcal{H}}(2N)}{\delta}}
+\end{aligned}
+$$</p>
+<p>Now we can get to work:</p>
+<p>$$
+\begin{aligned}
+\epsilon    &amp; = \frac{\frac{2}{N} \pm \sqrt{(\frac{2}{N})^2 + 4 \cdot \frac{1}{N}\ln{\frac{6m_{\mathcal{H}}(2N)}{\delta}}}}{2} \\\\
+&amp; = \frac{1}{N} \pm \frac{1}{N}\sqrt{1+N\ln{\frac{6m_{\mathcal{H}}(2N)}{\delta}}}
+\end{aligned}
+$$</p>
+<p>We note that the quadratic opens upward since $a &gt; 0$. That means that for $\epsilon$ between the two solutions from each side of the $\pm$, the quadratic will be less than zero. That is</p>
+<p>$$
+\epsilon_1 \leq \epsilon \leq \epsilon_2
+$$</p>
+<p>if $\epsilon_1$ is the solution from the minus and $\epsilon_2$ is the solution from the positive. We only care about an upper bound on $\epsilon$, so we have</p>
+<p>$$
+\epsilon \leq \frac{1}{N} + \frac{1}{N}\sqrt{1+N\ln{\frac{6m_{\mathcal{H}}(2N)}{\delta}}}
+$$</p>
+<p>We need to substitute in the bound on $m_{\mathcal{H}} \leq N^{d_{vc}}$</p>
+<p>$$
+\epsilon \leq \frac{1}{N} + \frac{1}{N}\sqrt{1+N\ln{\frac{6m_{\mathcal{H}}(2N)}{\delta}}}
+$$</p>
+<p>becomes</p>
+<p>$$
+\epsilon \leq \frac{1}{N} + \frac{1}{N}\sqrt{1+N\ln{\frac{6((2N)^{d_{vc}} + 1)}{\delta}}}
+$$</p>
+<p>This is the form of the Parrondo and Van den Broek generalization bound that we will use later. $\blacksquare$</p>
+<p><em>Devroye</em></p>
+<p>$$
+\begin{aligned}
+\epsilon        &amp; \leq  \sqrt{\frac{1}{2N}(4\epsilon(1+\epsilon) + \ln{\frac{4m_{\mathcal{H}}(N^2)}{\delta}})} \\\\
+\epsilon^2      &amp; \leq  \frac{1}{2N}(4\epsilon(1+\epsilon) + \ln{\frac{4m_{\mathcal{H}}(N^2)}{\delta}}) \\\\
+\epsilon^2      &amp; \leq  \frac{1}{2N}(4\epsilon + 4\epsilon^2 + \ln{\frac{4m_{\mathcal{H}}(N^2)}{\delta}}) \\\\
+\epsilon^2      &amp; \leq  \frac{4}{2N}\epsilon + \frac{4}{2N}\epsilon^2 + \frac{1}{2N}\ln{\frac{4m_{\mathcal{H}}(N^2)}{\delta}} \\\\
+(1-\frac{2}{N})\epsilon^2 - \frac{2}{N}\epsilon - \frac{1}{2N}\ln{\frac{4m_{\mathcal{H}}(N^2)}{\delta}}     &amp; \leq  0
+\end{aligned}
+$$</p>
+<p>Now we are ready to use the quadratic equation with</p>
+<p>$$
+\begin{aligned}
+a   &amp; = 1-\frac{2}{N} \\
+b   &amp; = -\frac{2}{N} \\
+c   &amp; = -\frac{1}{2N}\ln{\frac{4m_{\mathcal{H}}(N^2)}{\delta}}
+\end{aligned}
+$$</p>
+<p>which yields</p>
+<p>$$
+\begin{aligned}
+\epsilon    &amp; = \frac{\frac{2}{N} \pm \sqrt{(\frac{2}{N})^2 + 4(1-\frac{2}{N})\frac{1}{2N}\ln{\frac{4m_{\mathcal{H}}(N^2)}{\delta}}}}{2(1-\frac{2}{N})} \\\\
+&amp; = \frac{ \frac{2}{N} \pm \sqrt{ (\frac{2}{N})^2 + (\frac{2}{N} - (\frac{2}{N})^2)\ln{\frac{4m_{\mathcal{H}}(N^2)}{\delta}}}}{2-2\cdot\frac{2}{N}} \\\\
+&amp; = \frac{ \frac{2}{N} \pm \frac{2}{N}\sqrt{ (1 + (\frac{N}{2}-1)\ln{\frac{4m_{\mathcal{H}}(N^2)}{\delta}}}}{\frac{2}{N}(N-2)} \\\\
+&amp; = \frac{ 1 \pm \sqrt{ (1 + (\frac{N}{2}-1)\ln{\frac{4m_{\mathcal{H}}(N^2)}{\delta}}}}{N-2} \\\\
+&amp; = \frac{ 2 \pm \sqrt{ (4 + (2N-4)\ln{\frac{4m_{\mathcal{H}}(N^2)}{\delta}}}}{2N-4} \\\\
+\end{aligned}
+$$</p>
+<p>I won't explain it here but again we only care about the plus side of the solution pair. We will have to take special care when substituting in the polynomial bound on the growth function for this bound to avoid overflow.</p>
+<p>$$
+\begin{aligned}
+\frac{ 2 \pm \sqrt{ (4 + (2N-4)\ln{\frac{4((N^2)^{d_{vc}} + 1)}{\delta}}}}{2N-4}    &amp; =         \frac{ 2 \pm \sqrt{ 4 + (2N-4)( \ln{ \frac{4}{\delta} } + \ln{ \frac{N^{2d_{vc}}+1}{\delta}})}}{2N-4}  \\\\
+&amp; \approx   \frac{ 2 \pm \sqrt{ (4 + (2N-4)(\ln{\frac{4}{\delta}} + 2d_{vc}\ln{N} - \ln{\delta})}}{2N-4}
+\end{aligned}
+$$</p>
+<p>The approximation is necessary for later when we implement this in code so the program doesn't overflow. $\blacksquare$</p>
+<p>We use these bounds in <code>hw4/bounds.py</code>.</p>
+<p>For large $N$, <code>python3 hw4/bounds.py</code> shows that the Devroye bound is the smallest.</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">❯</span><span> python3 hw4/bounds.py</span><span style="color:#bf616a;"> -N</span><span> 10000
+</span><span style="color:#bf616a;">VC</span><span> Bound                         0.632174915200836
+</span><span style="color:#bf616a;">Rademacher</span><span>                       0.3313087859616395
+</span><span style="color:#bf616a;">Parrondo</span><span> and Van den Broek       0.2236982936807856
+</span><span style="color:#bf616a;">Devroye</span><span>                          0.2155759485446348
+</span></code></pre>
+<h3 id="3-c">3. [c]</h3>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">❯</span><span> python3 hw4/bounds.py</span><span style="color:#bf616a;"> -N</span><span> 5
+</span><span style="color:#bf616a;">VC</span><span> Bound                         13.828161484991483
+</span><span style="color:#bf616a;">Rademacher</span><span>                       7.048776564183685
+</span><span style="color:#bf616a;">Parrondo</span><span> and Van den Broek       5.101361981989993
+</span><span style="color:#bf616a;">Devroye</span><span>                          5.629897473598194
+</span></code></pre>
+<h3 id="4-e">4. [e]</h3>
+<p><code>python3 hw4/bias.py</code> shows the average hypothesis has a slope of $1.43$.</p>
+<h3 id="5-b">5. [b]</h3>
+<p>The bias for this $\bar{g}(x)$ is likely the same as the $\bar{g}(x)$ for $\mathcal{H}_1$ in the book since they seem to be the same form. Of course, this $\mathcal{H}$ where each $h \in \mathcal{H}$ does not have the $y$-intercept parameter and so we would expect its variance to be smaller than that for $\mathcal{H}_1$</p>
+<h3 id="6-a">6. [a]</h3>
+<p>The maximum slope that $a$ could equal is $\pi$, while the most negative slope is $0$. If the line that goes through $x_1$ and $x_2$ would have a negative slope, the line of best fit through the origin will still have a positive slope less than $\pi$! So we can conclude that if you spin a line about the origin such that it has a slope of $0$ and $\pi$ and everything in between, you can convince yourself it doesn't vary nearly as much as the $\bar{g}(x)$ for $\mathcal{H}_1$, and is going to be close to the variance for $\bar{g}(x)$ of $\mathcal{H}_0$.</p>
+<h3 id="7-b">7. [b]</h3>
+<p>We use the principle explicitly stated in the lectures: "Match the model complexity to the data resources available".</p>
+<p>$h(x) = b$ is too simple, so it has a high bias. $h(x) = ax + b$ achieves better bias with some added model complexity, but this increase in model complexity introduces a killer variance of $1.69$! It is already too complex for this data set, as will any quadratic form. It seems $h(x) = ax$ is the optimal choice out of these options.</p>
+<h3 id="8-c">8. [c]</h3>
+<p>For $N&lt;q$, $m_{\mathcal{H}}(N+1) = 2^N\cdot2 = 2^{N+1}$. However, once $N=q$
+$$
+\begin{aligned}
+m_{\mathcal{H}}(N+1)    &amp; = 2^{N+1} - \binom{N}{q} \\\\
+m_{\mathcal{H}}(q+1)    &amp; = 2^{q+1} - \binom{q}{q} \\\\
+&amp; = 2^{q+1} - 1 \\\\
+&amp; &lt; 2^{q+1}
+\end{aligned}
+$$</p>
+<p>Note that for $N=q-1$, $m_{\mathcal{H}}(N+1) = m_{\mathcal{H}}(q)$
+$$
+\begin{aligned}
+m_{\mathcal{H}}(q)      &amp; = 2^{q} - \binom{q-1}{q} \\\\
+&amp; = 2^{q} - 0 \\\\
+&amp; = 2^{q} \\\\
+\end{aligned}
+$$</p>
+<p>Note that $d_{vc} = q$ because of the generous use of $N$. Let $N^\prime = N+1$, then $N^\prime = q+1$ is what I claim to be the first breakpoint. If it weren't then $m_{\mathcal{H}}(N^\prime) = 2^{N^{\prime}}$ but we know it equals $2^{N^\prime} - 1$ from our previous analysis. This is just a way to think about it in case the $N$'s and $N+1$'s were confusing and resulting in an off-by-one error.</p>
+<h3 id="9-b">9. [b]</h3>
+<p>Think of VC dimension as a sort of measure for a hypothesis set's classification "power" or "ability".</p>
+<p>Options [d] and [e] are automatically thrown out because it is very possible that the hypotheses have no common overlap because it just takes one hypothesis to have zero overlap with the others to make the entire intersection the empty set. Therefore, it would be incorrect to place the lower bound at the minimum $d_{vc}$.</p>
+<p>The upper bound of option [a] is correct but not tighter than the upper bound from [c]. Imagine $K=2$ and we have hypothesis sets $\mathcal{H}_{1}$ and $\mathcal{H}_{2}$, and let $d_{vc}(\mathcal{H}_{1}) = 5$ while $d_{vc}(\mathcal{H}_{2}) = 9$. The intersection of these sets is all hypotheses that are in both $\mathcal{H}_{1}$ and $\mathcal{H}_{2}$ and because their VC dimensions differ, we know they cannot be completely overlapping, or the same sets, because otherwise they would break at the same $N$. Let all the hypotheses of $\mathcal{H}_{1}$ be present in $\mathcal{H}_{2}$, <em>i.e.</em> $\mathcal{H}_{1} \subset \mathcal{H}_{2}$ then</p>
+<p>$$
+d_{vc}(\mathcal{H}_{1} \cap \mathcal{H}_{2}) = d_{vc}(\mathcal{H}_{1})
+$$</p>
+<p>In fact, this is equal to the worst case upper bound, because chances are $\exists\enspace h \in \mathcal{H}_{1} \notin \mathcal{H}_{2}$ which would decrease the VC dimension of the intersection.</p>
+<h3 id="10-e">10. [e]</h3>
+<p>The lower bound must be at least the maximum VC dimension of the hypothesis sets.</p>
+<p>We might think that the $d_{vc}(\bigcap^K\mathcal{H}_{k}) = \sum^{K}d_{vc}(\mathcal{H}_{k})$, but it is easy to imagine two hypothesis sets combining and increasing their collective classification power.</p>
+<p>Let our points be in $\mathbb{R}^2$ and we have two hypothesis sets. $\mathcal{H}_{1}$ is the set of hypotheses that are vertical lines while $\mathcal{H}_{2}$ is the set of hypotheses that are horizontal lines. Individually, the $d_{vc} = 1$, but the union has a VC dimension of $3 &gt; d_{vc}(\mathcal{H}_{1}) + d_{vc}(\mathcal{H}_{2})$ .</p>
+
+
+            </div>
+        </section>
+
+        <!-- MathJAX config -->
+        <script>
+            MathJax = {
+                /* TODO: Experiment with these delimiters */
+                tex: {
+                    displayMath: [['\\[', '\\]'], ['$$', '$$']],
+                    inlineMath: [['\\(', '\\)'], ['$', '$']],
+                }
+            };
+        </script>
+        <!-- Load V3.+ -->
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+    </body>
+
+
+    <footer>
+        <div>
+            <i class="nf nf-fa-copyright"></i> Lien Zhu 2025
+        </div>
+    </footer>
+
+</html>

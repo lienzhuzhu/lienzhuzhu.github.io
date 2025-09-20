@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+    <meta charset="utf-8">
+    <title>
+         Learning From Data Problem Set 1
+        
+    </title>
+    <!-- TODO: Use a Tera template to get the path to the css? -->
+    <link rel="stylesheet" href="/main.css"> 
+</head>
+
+
+    <body>
+
+        <nav>
+    <div class="nav-menu">
+        
+        <a href="/" class="">Home</a>
+        
+        <a href="/about/" class="">About</a>
+        
+        <a href="/blog/" class="">Blog</a>
+        
+        <a href="/dev" class="">Projects</a>
+        
+    </div>
+</nav>
+
+
+        <section class="section">
+            <div class="container">
+                
+<h1 class="title">
+    Learning From Data Problem Set 1
+</h1>
+<p class="subtitle"><strong>2023-10-19</strong></p>
+<p><a href="https://work.caltech.edu/homework/hw1.pdf">PDF of problems</a></p>
+<p><a href="https://github.com/lienzhuzhu/lfd">Code Repository</a></p>
+<h3 id="1-d">1. [d]</h3>
+<p>Scenario $ (\texttt{i}) $ is a design problem. Scenario $(\texttt{ii})$ is the typical supervised learning problem like the perceptron introduced in the first chapter. Scenario $(\texttt{iii})$ describes a reinforcement learning because it describes an agent learning to play a game with a reward or cost function.</p>
+<h3 id="2-a">2. [a]</h3>
+<p>$(\texttt{i})$ and $(\texttt{iii})$ describe problems where a mathematical equation can be found to describe the solution. So by process of elimination, the answer is [a].</p>
+<h3 id="3-d">3. [d]</h3>
+<p>This is a conditional probability and Baye's theorem problem with perhaps one more layer than most introductory stats classes will ask about because the probability of drawing a second black ball is dependent on the initial selection of a bag.</p>
+<p>We have:</p>
+<p>$$
+P(\textrm{Second ball drawn is black } | \textrm{ First ball drawn is black}) = \frac{P(\textrm{Second ball drawn is black } \cap \textrm{ First ball drawn is black})}{P(\textrm{First ball drawn is black})}
+$$</p>
+<p>Okay, so what is the probability of drawing two black balls in a row? Well, the bag chosen must be the one with two black, which has a probability of $\frac{1}{2}$ of being chosen, then the probability from that point is 1. So the probability along that branch is $\frac{1}{2} \cdot 1$</p>
+<p>The probability of drawing a black ball on the first draw is $\frac{1}{2} \cdot 1 + \frac{1}{2} \cdot \frac{1}{2}$. The first term is the same as the previous calculation, and the second term comes from the probability of drawing a black ball after choosing the half and half bag.</p>
+<p>All together now:</p>
+<p>$$
+\begin{aligned}
+P(\textrm{Second ball drawn is black } | \textrm{ First ball drawn is black})   &amp; = \frac{\frac{1}{2}}{\frac{1}{2} \cdot 1 + \frac{1}{2} \cdot \frac{1}{2}} \\\\
+&amp; = \frac{2}{3}
+\end{aligned}
+$$</p>
+<h3 id="4-b">4. [b]</h3>
+<p>Use binomial distribution. Let $X \sim \text{Binom}(10, 0.55)$. Then the $P(X = 0)$ can be calculated:</p>
+<p>$$
+\begin{aligned}
+P(X = 0)    &amp; = \binom{10}{0}(0.55)^0(0.45)^10 \\\\
+&amp; = 3.405 \times 10^{-4}
+\end{aligned}
+$$</p>
+<h3 id="5-c">5. [c]</h3>
+<p>We again have to use binomial distribution, but craft our random variable carefully. We have to zoom out and rethink our definition of a Bernoulli trial. Let's have $Y$ be the number of samples (or experiments) of 10 marble draws that have a $\nu$ of 0, in other words, 0 red marbles out of 10 drawn.</p>
+<p>Then, we can have $Y \sim \text{Binom}(1000, 3.405 \times 10^{-4})$ since we calculated the probability of any one sample having 0 red marbles out of 10 in the last problem.</p>
+<p>$$
+\begin{aligned}
+P(Y \geq 1) &amp; = 1 - P(Y = 0) \\\\
+&amp; = 1 - \binom{1000}{0}(3.405 \times 10^{-4})^0(1 - 3.405 \times 10^{-4})^{1000} \\\\
+&amp; = 0.2886
+\end{aligned}
+$$</p>
+<h3 id="6-e">6. [e]</h3>
+<p>Below is a table describing the remaining data points and the 8 possible target functions:</p>
+<p>$$
+\begin{array}{|c|c|c|c|c|c|c|c|c|}
+\hline
+x_n &amp; f_1 &amp; f_2 &amp; f_3 &amp; f_4 &amp; f_5 &amp; f_6 &amp; f_7 &amp; f_8 \\
+\hline
+\text{1 0 1} &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 1 &amp; 1 &amp; 1   \\
+\text{1 1 0} &amp; 0 &amp; 0 &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp; 1 &amp; 1   \\
+\text{1 1 1} &amp; 0 &amp; 1 &amp; 0 &amp; 1 &amp; 0 &amp; 1 &amp; 0 &amp; 1   \\
+\hline
+\end{array}
+$$</p>
+<p>Now let's analyze each option for $g$:</p>
+<p>[a]. $g(x_n) =
+\begin{bmatrix}
+1 \\
+1 \\
+1
+\end{bmatrix}
+$</p>
+<p>This $g$ matches $f_8$ for 3 points, $f_4$, $f_6$, $f_7$ for 2 points, and $f_2$, $f_3$, $f_5$ for 1 point. This is a total of <strong>12</strong> points.</p>
+<p>[b]. $g(x_n) =
+\begin{bmatrix}
+0 \\
+0 \\
+0
+\end{bmatrix}
+$</p>
+<p>This $g$ matches $f_1$ for 3 points, $f_2$, $f_3$, $f_5$ for 2 points, and $f_4$, $f_6$, $f_7$ for 1 point. This is a total of <strong>12</strong> points.</p>
+<p>[a] and [b] have the same score. So, we conclude that [e] must be the correct answer.</p>
+<h3 id="refer-to-the-following-output-for-7-and-8-the-graphs-drawn-are-for-the-final-experimental-trial">Refer to the following output for 7 and 8. The graphs drawn are for the final experimental trial.</h3>
+<pre data-lang="zsh" style="background-color:#2b303b;color:#c0c5ce;" class="language-zsh "><code class="language-zsh" data-lang="zsh"><span style="color:#bf616a;">❯</span><span> python3 hw1/pla.py</span><span style="color:#bf616a;"> -N</span><span> 10
+</span><span style="color:#bf616a;">Iterations:</span><span> 9.75
+</span><span style="color:#bf616a;">Disagreement:</span><span> 0.106781
+</span></code></pre>
+<h3 id="7-b">7. [b]</h3>
+<h3 id="8-c">8. [c]</h3>
+<h3 id="refer-to-the-following-output-for-9-and-10">Refer to the following output for 9 and 10.</h3>
+<pre data-lang="zsh" style="background-color:#2b303b;color:#c0c5ce;" class="language-zsh "><code class="language-zsh" data-lang="zsh"><span style="color:#bf616a;">❯</span><span> python3 hw1/pla.py</span><span style="color:#bf616a;"> -N</span><span> 100
+</span><span style="color:#bf616a;">Iterations:</span><span> 110.169
+</span><span style="color:#bf616a;">Disagreement:</span><span> 0.013299000000000004
+</span></code></pre>
+<h3 id="9-b">9. [b]</h3>
+<h3 id="10-b">10. [b]</h3>
+
+
+            </div>
+        </section>
+
+        <!-- MathJAX config -->
+        <script>
+            MathJax = {
+                /* TODO: Experiment with these delimiters */
+                tex: {
+                    displayMath: [['\\[', '\\]'], ['$$', '$$']],
+                    inlineMath: [['\\(', '\\)'], ['$', '$']],
+                }
+            };
+        </script>
+        <!-- Load V3.+ -->
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+    </body>
+
+
+    <footer>
+        <div>
+            <i class="nf nf-fa-copyright"></i> Lien Zhu 2025
+        </div>
+    </footer>
+
+</html>

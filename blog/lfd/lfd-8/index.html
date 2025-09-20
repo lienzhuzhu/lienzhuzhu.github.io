@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+    <meta charset="utf-8">
+    <title>
+         Learning From Data Problem Set 8
+        
+    </title>
+    <!-- TODO: Use a Tera template to get the path to the css? -->
+    <link rel="stylesheet" href="/main.css"> 
+</head>
+
+
+    <body>
+
+        <nav>
+    <div class="nav-menu">
+        
+        <a href="/" class="">Home</a>
+        
+        <a href="/about/" class="">About</a>
+        
+        <a href="/blog/" class="">Blog</a>
+        
+        <a href="/dev" class="">Projects</a>
+        
+    </div>
+</nav>
+
+
+        <section class="section">
+            <div class="container">
+                
+<h1 class="title">
+    Learning From Data Problem Set 8
+</h1>
+<p class="subtitle"><strong>2023-11-10</strong></p>
+<p><a href="https://work.caltech.edu/homework/hw8.pdf">PDF of problems</a></p>
+<p><a href="https://github.com/lienzhuzhu/lfd">Code Repository</a></p>
+<h3 id="1-d">1. [d]</h3>
+<p>With the primal problem solves for the weights and the bias term directly, which makes $d+1$ variables of interest.</p>
+<h3 id="for-2-4">For 2 - 4.</h3>
+<pre data-lang="zsh" style="background-color:#2b303b;color:#c0c5ce;" class="language-zsh "><code class="language-zsh" data-lang="zsh"><span style="color:#bf616a;">❯</span><span> python3 hw8/poly_svm.py
+</span><span style="color:#bf616a;">0</span><span> versus all  E_in: 0.10588  E_out: 0.11161  SVs: 2179
+</span><span style="color:#bf616a;">1</span><span> versus all  E_in: 0.01440  E_out: 0.02192  SVs: 386
+</span><span style="color:#bf616a;">2</span><span> versus all  E_in: 0.10026  E_out: 0.09865  SVs: 1970
+</span><span style="color:#bf616a;">3</span><span> versus all  E_in: 0.09025  E_out: 0.08271  SVs: 1950
+</span><span style="color:#bf616a;">4</span><span> versus all  E_in: 0.08943  E_out: 0.09965  SVs: 1856
+</span><span style="color:#bf616a;">5</span><span> versus all  E_in: 0.07626  E_out: 0.07972  SVs: 1585
+</span><span style="color:#bf616a;">6</span><span> versus all  E_in: 0.09107  E_out: 0.08470  SVs: 1893
+</span><span style="color:#bf616a;">7</span><span> versus all  E_in: 0.08847  E_out: 0.07324  SVs: 1704
+</span><span style="color:#bf616a;">8</span><span> versus all  E_in: 0.07434  E_out: 0.08271  SVs: 1776
+</span><span style="color:#bf616a;">9</span><span> versus all  E_in: 0.08833  E_out: 0.08819  SVs: 1978
+</span></code></pre>
+<h3 id="2-a">2. [a]</h3>
+<h3 id="3-a">3. [a]</h3>
+<h3 id="4-c">4. [c]</h3>
+<p>$$
+2179 - 386 = 1793
+$$</p>
+<h3 id="for-5-and-6">For 5 and 6.</h3>
+<pre data-lang="zsh" style="background-color:#2b303b;color:#c0c5ce;" class="language-zsh "><code class="language-zsh" data-lang="zsh"><span style="color:#bf616a;">❯</span><span> python3 hw8/poly_svm.py</span><span style="color:#bf616a;"> --digit</span><span>=1</span><span style="color:#bf616a;"> --other</span><span>=5
+</span><span style="color:#bf616a;">Q</span><span> = 2
+</span><span style="color:#bf616a;">C</span><span> = 0.0001      1 versus 5  E_in: 0.00897  E_out: 0.01651  SVs: 236
+</span><span style="color:#bf616a;">C</span><span> = 0.0010      1 versus 5  E_in: 0.00448  E_out: 0.01651  SVs: 76
+</span><span style="color:#bf616a;">C</span><span> = 0.0100      1 versus 5  E_in: 0.00448  E_out: 0.01887  SVs: 34
+</span><span style="color:#bf616a;">C</span><span> = 0.1000      1 versus 5  E_in: 0.00448  E_out: 0.01887  SVs: 24
+</span><span style="color:#bf616a;">C</span><span> = 1.0000      1 versus 5  E_in: 0.00320  E_out: 0.01887  SVs: 24
+</span><span>
+</span><span style="color:#bf616a;">Q</span><span> = 5
+</span><span style="color:#bf616a;">C</span><span> = 0.0001      1 versus 5  E_in: 0.00448  E_out: 0.01887  SVs: 26
+</span><span style="color:#bf616a;">C</span><span> = 0.0010      1 versus 5  E_in: 0.00448  E_out: 0.02123  SVs: 25
+</span><span style="color:#bf616a;">C</span><span> = 0.0100      1 versus 5  E_in: 0.00384  E_out: 0.02123  SVs: 23
+</span><span style="color:#bf616a;">C</span><span> = 0.1000      1 versus 5  E_in: 0.00320  E_out: 0.01887  SVs: 25
+</span><span style="color:#bf616a;">C</span><span> = 1.0000      1 versus 5  E_in: 0.00320  E_out: 0.02123  SVs: 21
+</span></code></pre>
+<h3 id="5-d">5. [d]</h3>
+<h3 id="6-b">6. [b]</h3>
+<h3 id="for-7-and-8">For 7 and 8.</h3>
+<pre data-lang="zsh" style="background-color:#2b303b;color:#c0c5ce;" class="language-zsh "><code class="language-zsh" data-lang="zsh"><span style="color:#bf616a;">❯</span><span> python3 hw8/cv_poly_svm.py</span><span style="color:#bf616a;"> --digit</span><span>=1</span><span style="color:#bf616a;"> --other</span><span>=5
+</span><span style="color:#bf616a;">The</span><span> model with the most selections is C = 0.001
+</span><span style="color:#bf616a;">1</span><span> versus 5
+</span><span style="color:#bf616a;">E_cv:</span><span>   0.004760
+</span><span style="color:#bf616a;">E_out:</span><span>  0.016509
+</span><span style="color:#bf616a;">SVs:</span><span>    76
+</span></code></pre>
+<h3 id="7-c">7. [c]</h3>
+<h3 id="8-c">8. [c]</h3>
+<h3 id="for-9-and-10">For 9 and 10.</h3>
+<pre data-lang="zsh" style="background-color:#2b303b;color:#c0c5ce;" class="language-zsh "><code class="language-zsh" data-lang="zsh"><span style="color:#bf616a;">❯</span><span> python3 hw8/rbf_svm.py</span><span style="color:#bf616a;"> --digit</span><span>=1</span><span style="color:#bf616a;"> --other</span><span>=5
+</span><span style="color:#bf616a;">C</span><span> = 0.01        1 versus 5  E_in: 0.00384  E_out: 0.02358  SVs: 406
+</span><span style="color:#bf616a;">C</span><span> = 1.00        1 versus 5  E_in: 0.00448  E_out: 0.02123  SVs: 31
+</span><span style="color:#bf616a;">C</span><span> = 100.00      1 versus 5  E_in: 0.00320  E_out: 0.01887  SVs: 22
+</span><span style="color:#bf616a;">C</span><span> = 10000.00    1 versus 5  E_in: 0.00256  E_out: 0.02358  SVs: 19
+</span><span style="color:#bf616a;">C</span><span> = 1000000.00  1 versus 5  E_in: 0.00064  E_out: 0.02358  SVs: 17
+</span></code></pre>
+<h3 id="9-e">9. [e]</h3>
+<h3 id="10-c">10. [c]</h3>
+
+
+            </div>
+        </section>
+
+        <!-- MathJAX config -->
+        <script>
+            MathJax = {
+                /* TODO: Experiment with these delimiters */
+                tex: {
+                    displayMath: [['\\[', '\\]'], ['$$', '$$']],
+                    inlineMath: [['\\(', '\\)'], ['$', '$']],
+                }
+            };
+        </script>
+        <!-- Load V3.+ -->
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+    </body>
+
+
+    <footer>
+        <div>
+            <i class="nf nf-fa-copyright"></i> Lien Zhu 2025
+        </div>
+    </footer>
+
+</html>
